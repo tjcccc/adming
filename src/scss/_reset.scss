@@ -1,0 +1,64 @@
+body,
+div,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+legend,
+fieldset,
+input,
+textarea,
+p,
+q,
+blockquote,
+caption,
+th,
+td,
+header,
+nav,
+aside,
+section,
+hgroup,
+article,
+footer {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-size: 62.5%;
+}
+
+img,
+button,
+fieldset {
+  border: 0;
+}
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+label,
+i,
+span {
+  display: inline-block;
+}
