@@ -1,7 +1,7 @@
 [
   {
     "name": "News",
-    "routeLink": "",
+    "routeLink": "collection",
     "nextLevel": [
       {
         "name": "All",
@@ -11,16 +11,16 @@
     ]
   },
   {
-    "name:": "Menu 2",
-    "routeLink": "",
+    "name": "Menu 2",
+    "routeLink": "#",
     "nextLevel": [
       {
         "name": "Menu 2-1",
-        "routeLink": "",
+        "routeLink": "##",
         "nextLevel": [
           {
             "name": "Menu 2-1-1",
-            "routeLink": "",
+            "routeLink": "###",
             "nextLevel": []
           }
         ]

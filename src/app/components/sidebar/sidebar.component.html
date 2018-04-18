@@ -1,3 +1,17 @@
-<div class="sidebar">
-  <p>Sidebar</p>
+<div *ngIf="sidebarMenus" class="sidebar">
+  <ul *ngFor="let sidebarMenuL1 of sidebarMenus">
+    <li>
+      <span>{{sidebarMenuL1.name}}</span>
+      <ul *ngFor="let sidebarMenuL2 of getNextLevelMenus(sidebarMenuL1)">
+        <li>
+          <span>{{sidebarMenuL2.name}}</span>
+          <ul *ngFor="let sidebarMenuL3 of getNextLevelMenus(sidebarMenuL2)">
+            <li>
+              <span>{{sidebarMenuL3.name}}</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </div>
