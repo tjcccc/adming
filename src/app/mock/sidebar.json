@@ -1,0 +1,30 @@
+[
+  {
+    "name": "News",
+    "routeLink": "",
+    "nextLevel": [
+      {
+        "name": "All",
+        "routeLink": "all-news",
+        "nextLevel": []
+      }
+    ]
+  },
+  {
+    "name:": "Menu 2",
+    "routeLink": "",
+    "nextLevel": [
+      {
+        "name": "Menu 2-1",
+        "routeLink": "",
+        "nextLevel": [
+          {
+            "name": "Menu 2-1-1",
+            "routeLink": "",
+            "nextLevel": []
+          }
+        ]
+      }
+    ]
+  }
+]

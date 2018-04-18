@@ -1,0 +1,12 @@
+@import "~scss/variables";
+
+.sidebar {
+    width: 20rem;
+    height: 100%;
+    background: $primary-color;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 3rem 1rem;
+}
