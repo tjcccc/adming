@@ -10,6 +10,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CollectionComponent } from './components/collection/collection.component';
 
+// Load all font-awsome icon (solid style).
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+library.add(fas);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +26,8 @@ import { CollectionComponent } from './components/collection/collection.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [
     ConfigService

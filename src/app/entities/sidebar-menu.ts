@@ -1,6 +1,7 @@
 export class SidebarMenu {
   id: number;
-  name: string;
+  label: string;
+  icon: string;
   routeLink: string;
   nextLevel: SidebarMenu[];
 }

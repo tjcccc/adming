@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule, ElementRef } from '@angular/core';
 import { ConfigService } from './../../services/config/config.service';
 import { SidebarMenu } from './../../entities/sidebar-menu';
 
@@ -11,9 +11,9 @@ export class SidebarComponent implements OnInit {
 
   sidebarMenus: SidebarMenu[] = [];
   fetchError;
+  show:boolean = false;
 
   constructor(private configService: ConfigService) {}
-  // constructor() {}
 
   ngOnInit() {
     this.getData();
@@ -34,11 +34,21 @@ export class SidebarComponent implements OnInit {
     return menu.nextLevel;
   }
 
+  displayNextLevelUl() {
+  }
+
+  clickMenu(menu: SidebarMenu) {
+    if (menu.nextLevel.length > 0) {
+
+    }
+  }
+
   private loadSidebarMenusDataByJson(sidebarMenus: SidebarMenu[], jsonData: object[]) {
     for (let i = 0; i < jsonData.length; i += 1) {
       const menu: SidebarMenu = {
         id: i,
-        name: jsonData[i]['name'],
+        label: jsonData[i]['label'],
+        icon: jsonData[i]['icon'],
         routeLink: jsonData[i]['routeLink'],
         nextLevel: []
       };
@@ -48,7 +58,5 @@ export class SidebarComponent implements OnInit {
       sidebarMenus.push(menu);
     }
   }
-
-
 
 }

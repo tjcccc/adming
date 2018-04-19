@@ -1,17 +1,35 @@
 <div *ngIf="sidebarMenus" class="sidebar">
+  <div class="sidebar-title">Sidebar Menus</div>
+  <!-- Level 1 -->
   <ul *ngFor="let sidebarMenuL1 of sidebarMenus">
     <li>
-      <span>{{sidebarMenuL1.name}}</span>
+      <a href="#" (click)="displayNextLevelUl()">
+        <fa-icon [icon]="['fas', sidebarMenuL1.icon]" [fixedWidth]="true"></fa-icon>
+        <span>{{sidebarMenuL1.label}}</span>
+        <fa-icon *ngIf="sidebarMenuL1.nextLevel.length > 0" [icon]="['fas', 'angle-right']" pull="right"></fa-icon>
+      </a>
+      <!-- Level 2 -->
       <ul *ngFor="let sidebarMenuL2 of getNextLevelMenus(sidebarMenuL1)">
         <li>
-          <span>{{sidebarMenuL2.name}}</span>
+          <a href="#">
+            <fa-icon [icon]="['fas', sidebarMenuL2.icon]" [fixedWidth]="true"></fa-icon>
+            <span>{{sidebarMenuL2.label}}</span>
+            <fa-icon *ngIf="sidebarMenuL2.nextLevel.length > 0" [icon]="['fas', 'angle-right']" pull="right"></fa-icon>
+          </a>
+          <!-- Level 3 -->
           <ul *ngFor="let sidebarMenuL3 of getNextLevelMenus(sidebarMenuL2)">
             <li>
-              <span>{{sidebarMenuL3.name}}</span>
+              <a href="#">
+                <fa-icon [icon]="['fas', sidebarMenuL3.icon]" [fixedWidth]="true"></fa-icon>
+                <span>{{sidebarMenuL3.label}}</span>
+              </a>
             </li>
           </ul>
+          <!-- End of Level 3 -->
         </li>
       </ul>
+      <!-- End of Level 2 -->
     </li>
   </ul>
+  <!-- End of Level 1 -->
 </div>

@@ -6,7 +6,7 @@ import { CollectionComponent } from '../../components/collection/collection.comp
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/collection',
+    redirectTo: '/',
     pathMatch: 'full'
   },
   {

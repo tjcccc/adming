@@ -1,26 +1,31 @@
 [
   {
-    "name": "News",
+    "label": "News",
     "routeLink": "collection",
+    "icon": "home",
     "nextLevel": [
       {
-        "name": "All",
+        "label": "All",
         "routeLink": "all-news",
+        "icon": "list-ul",
         "nextLevel": []
       }
     ]
   },
   {
-    "name": "Menu 2",
+    "label": "Menu 2",
     "routeLink": "#",
+    "icon": "book",
     "nextLevel": [
       {
-        "name": "Menu 2-1",
+        "label": "Menu 2-1",
         "routeLink": "##",
+        "icon": "list",
         "nextLevel": [
           {
-            "name": "Menu 2-1-1",
+            "label": "Menu 2-1-1",
             "routeLink": "###",
+            "icon": "shower",
             "nextLevel": []
           }
         ]
