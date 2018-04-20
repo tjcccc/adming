@@ -3,23 +3,29 @@
   <!-- Level 1 -->
   <ul *ngFor="let sidebarMenuL1 of sidebarMenus">
     <li>
-      <a href="#" (click)="displayNextLevelUl()">
+      <a appCollapseNext>
         <fa-icon [icon]="['fas', sidebarMenuL1.icon]" [fixedWidth]="true"></fa-icon>
         <span>{{sidebarMenuL1.label}}</span>
-        <fa-icon *ngIf="sidebarMenuL1.nextLevel.length > 0" [icon]="['fas', 'angle-right']" pull="right"></fa-icon>
+        <ng-container *ngIf="sidebarMenuL1.nextLevel.length > 0">
+          <fa-icon id="open-icon" [icon]="['fas', 'angle-down']" pull="right" [style.display]="'none'"></fa-icon>
+          <fa-icon id="folded-icon" [icon]="['fas', 'angle-right']" pull="right" [style.display]="'inline'"></fa-icon>
+        </ng-container>
       </a>
       <!-- Level 2 -->
-      <ul *ngFor="let sidebarMenuL2 of getNextLevelMenus(sidebarMenuL1)">
+      <ul *ngFor="let sidebarMenuL2 of getNextLevelMenus(sidebarMenuL1)" [style.display]="'none'">
         <li>
-          <a href="#">
+          <a appCollapseNext>
             <fa-icon [icon]="['fas', sidebarMenuL2.icon]" [fixedWidth]="true"></fa-icon>
             <span>{{sidebarMenuL2.label}}</span>
-            <fa-icon *ngIf="sidebarMenuL2.nextLevel.length > 0" [icon]="['fas', 'angle-right']" pull="right"></fa-icon>
+            <ng-container *ngIf="sidebarMenuL2.nextLevel.length > 0">
+              <fa-icon id="open-icon" [icon]="['fas', 'angle-down']" pull="right" [style.display]="'none'"></fa-icon>
+              <fa-icon id="folded-icon" [icon]="['fas', 'angle-right']" pull="right" [style.display]="'inline'"></fa-icon>
+            </ng-container>
           </a>
           <!-- Level 3 -->
-          <ul *ngFor="let sidebarMenuL3 of getNextLevelMenus(sidebarMenuL2)">
+          <ul *ngFor="let sidebarMenuL3 of getNextLevelMenus(sidebarMenuL2)" [style.display]="'none'">
             <li>
-              <a href="#">
+              <a>
                 <fa-icon [icon]="['fas', sidebarMenuL3.icon]" [fixedWidth]="true"></fa-icon>
                 <span>{{sidebarMenuL3.label}}</span>
               </a>

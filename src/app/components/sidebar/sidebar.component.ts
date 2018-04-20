@@ -11,7 +11,7 @@ export class SidebarComponent implements OnInit {
 
   sidebarMenus: SidebarMenu[] = [];
   fetchError;
-  show:boolean = false;
+  isNextExpanded = false;
 
   constructor(private configService: ConfigService) {}
 
@@ -32,15 +32,6 @@ export class SidebarComponent implements OnInit {
 
   getNextLevelMenus(menu: SidebarMenu): SidebarMenu[] {
     return menu.nextLevel;
-  }
-
-  displayNextLevelUl() {
-  }
-
-  clickMenu(menu: SidebarMenu) {
-    if (menu.nextLevel.length > 0) {
-
-    }
   }
 
   private loadSidebarMenusDataByJson(sidebarMenus: SidebarMenu[], jsonData: object[]) {
