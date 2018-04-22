@@ -1,12 +1,21 @@
 [
   {
-    "label": "News",
-    "routeLink": "collection",
+    "label": "Home",
+    "level": 1,
+    "routerLink": "home",
     "icon": "home",
+    "nextLevel": []
+  },
+  {
+    "label": "Collection",
+    "level": 1,
+    "routerLink": "$",
+    "icon": "list",
     "nextLevel": [
       {
         "label": "All",
-        "routeLink": "all-news",
+        "level": 2,
+        "routerLink": "/collection",
         "icon": "list-ul",
         "nextLevel": []
       }
@@ -14,17 +23,20 @@
   },
   {
     "label": "Menu 2",
-    "routeLink": "#",
+    "level": 1,
+    "routerLink": "$",
     "icon": "book",
     "nextLevel": [
       {
         "label": "Menu 2-1",
-        "routeLink": "##",
+        "level": 2,
+        "routerLink": "$",
         "icon": "list",
         "nextLevel": [
           {
             "label": "Menu 2-1-1",
-            "routeLink": "###",
+            "level": 3,
+            "routerLink": "/home",
             "icon": "shower",
             "nextLevel": []
           }

@@ -24,6 +24,8 @@ export class CollapseNextDirective {
     const openIcon = this.el.nativeElement.children.namedItem('open-icon');
     const foldedIcon = this.el.nativeElement.children.namedItem('folded-icon');
 
+    console.log(this.el);
+
     if (sibling) {
       const nextLevelStyle = this.el.nativeElement.nextElementSibling.style;
       if (nextLevelStyle.display === 'none') {

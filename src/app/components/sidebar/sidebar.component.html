@@ -1,41 +1,6 @@
 <div *ngIf="sidebarMenus" class="sidebar">
   <div class="sidebar-title">Sidebar Menus</div>
-  <!-- Level 1 -->
-  <ul *ngFor="let sidebarMenuL1 of sidebarMenus">
-    <li>
-      <a appCollapseNext>
-        <fa-icon [icon]="['fas', sidebarMenuL1.icon]" [fixedWidth]="true"></fa-icon>
-        <span>{{sidebarMenuL1.label}}</span>
-        <ng-container *ngIf="sidebarMenuL1.nextLevel.length > 0">
-          <fa-icon id="open-icon" [icon]="['fas', 'angle-down']" pull="right" [style.display]="'none'"></fa-icon>
-          <fa-icon id="folded-icon" [icon]="['fas', 'angle-right']" pull="right" [style.display]="'inline'"></fa-icon>
-        </ng-container>
-      </a>
-      <!-- Level 2 -->
-      <ul *ngFor="let sidebarMenuL2 of getNextLevelMenus(sidebarMenuL1)" [style.display]="'none'">
-        <li>
-          <a appCollapseNext>
-            <fa-icon [icon]="['fas', sidebarMenuL2.icon]" [fixedWidth]="true"></fa-icon>
-            <span>{{sidebarMenuL2.label}}</span>
-            <ng-container *ngIf="sidebarMenuL2.nextLevel.length > 0">
-              <fa-icon id="open-icon" [icon]="['fas', 'angle-down']" pull="right" [style.display]="'none'"></fa-icon>
-              <fa-icon id="folded-icon" [icon]="['fas', 'angle-right']" pull="right" [style.display]="'inline'"></fa-icon>
-            </ng-container>
-          </a>
-          <!-- Level 3 -->
-          <ul *ngFor="let sidebarMenuL3 of getNextLevelMenus(sidebarMenuL2)" [style.display]="'none'">
-            <li>
-              <a>
-                <fa-icon [icon]="['fas', sidebarMenuL3.icon]" [fixedWidth]="true"></fa-icon>
-                <span>{{sidebarMenuL3.label}}</span>
-              </a>
-            </li>
-          </ul>
-          <!-- End of Level 3 -->
-        </li>
-      </ul>
-      <!-- End of Level 2 -->
-    </li>
-  </ul>
-  <!-- End of Level 1 -->
+  <div *ngFor="let sidebarMenu of sidebarMenus; index as i; trackBy: trackByFn">
+    <app-sidebar-menu [menuData]="sidebarMenus[i]"></app-sidebar-menu>
+  </div>
 </div>

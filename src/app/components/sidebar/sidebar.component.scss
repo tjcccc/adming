@@ -10,38 +10,15 @@
     z-index: 2;
     padding: 5rem 0;
     color: white;
-    & a {
-      display: block;
-      padding: $space-common * 2;
-      &:link,
-      &:hover,
-      &:visited {
-        color: white;
-        text-decoration: none;
-      }
-      &:hover {
-        background: darken($primary-color, $darken-hover-bg);
-      }
-    }
-    & li {
-      cursor: pointer;
-    }
-    & > ul > li {
-      font-size: $font-size-l;
-      font-weight: bold;
-      & > ul > li {
-        font-size: $font-size-m;
-        font-weight: bold;
-        margin: 0 0 0 ($space-common * 2);
-        & > ul > li {
-          font-size: $font-size-m;
-          font-weight: normal;
-          margin: 0 0 0 ($space-common * 2);
-        }
-      }
-    }
     & > .sidebar-title {
       font-size: $font-size-m;
-      padding: $space-common ($space-common * 2);
+    }
+
+    & > .collapse {
+      display: none;
+    }
+
+    & > .expand {
+      display: block;
     }
 }
