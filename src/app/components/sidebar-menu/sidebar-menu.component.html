@@ -1,18 +1,17 @@
 <ng-container *ngIf="menuData.nextLevel.length == 0">
-  <a [ngClass]="[getLevelClass(menuData.level)]">
+  <a [ngClass]="menuStyle">
     <fa-icon [icon]="['fas', menuData.icon]" [fixedWidth]="true"></fa-icon>
     <span>{{menuData.label}}</span>
   </a>
 </ng-container>
 <ng-container *ngIf="menuData.nextLevel.length > 0">
-  <a [ngClass]="[getLevelClass(menuData.level)]">
+  <a [ngClass]="menuStyle" (click)="selectMenu()">
     <fa-icon [icon]="['fas', menuData.icon]" [fixedWidth]="true"></fa-icon>
     <span>{{menuData.label}}</span>
-    <fa-icon id="open-icon" [icon]="['fas', 'angle-down']" pull="right" [style.display]="'none'"></fa-icon>
-    <fa-icon id="folded-icon" [icon]="['fas', 'angle-right']" pull="right" [style.display]="'inline'"></fa-icon>
+    <fa-icon [icon]="iconStyle" pull="right" [style.display]="'inline'"></fa-icon>
   </a>
   <ng-template ngFor let-nextLevelMenu [ngForOf]="menuData.nextLevel" let-i="index" [ngForTrackBy]="trackByFn">
-    <div [ngClass]="'collapse'">
+    <div [ngClass]="nextLevelMenuGroupStyle">
       <app-sidebar-menu [menuData]="menuData.nextLevel[i]"></app-sidebar-menu>
     </div>
   </ng-template>

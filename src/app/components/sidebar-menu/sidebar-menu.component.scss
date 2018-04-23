@@ -19,10 +19,6 @@ a {
   }
 }
 
-.selected {
-  background: darken($primary-color, $darken-hover-bg);
-}
-
 .level-1 {
   width: 18rem;
   font-size: $font-size-l;
@@ -41,4 +37,16 @@ a {
   font-size: $font-size-m;
   font-weight: normal;
   margin: 0 0 0 ($space-common * 4);
+}
+
+.collapse {
+  display: none;
+}
+
+.expand {
+  display: block;
+}
+
+.selected {
+  background: darken($primary-color, $darken-hover-bg);
 }

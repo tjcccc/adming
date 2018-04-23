@@ -24,23 +24,39 @@ export class CollapseNextDirective {
     const openIcon = this.el.nativeElement.children.namedItem('open-icon');
     const foldedIcon = this.el.nativeElement.children.namedItem('folded-icon');
 
-    console.log(this.el);
+    // console.log(this.el);
 
     if (sibling) {
-      const nextLevelStyle = this.el.nativeElement.nextElementSibling.style;
-      if (nextLevelStyle.display === 'none') {
-        nextLevelStyle.display = 'block';
+      console.log(sibling);
+      if (sibling.class === '.collapse') {
+        sibling.class += 'expand';
         if (openIcon && foldedIcon) {
           openIcon.style.display = 'inline';
           foldedIcon.style.display = 'none';
         }
       } else {
-        nextLevelStyle.display = 'none';
+        sibling.class += 'collapse';
         if (openIcon && foldedIcon) {
           openIcon.style.display = 'none';
           foldedIcon.style.display = 'inline';
         }
       }
+
+      // const nextLevelStyle = this.el.nativeElement.nextElementSibling.style;
+      // const nextLevelClass = this.el.nativeElement.nextElementSibling.class;
+      // if (nextLevelStyle.display === 'none') {
+      //   nextLevelStyle.display = 'block';
+      //   if (openIcon && foldedIcon) {
+      //     openIcon.style.display = 'inline';
+      //     foldedIcon.style.display = 'none';
+      //   }
+      // } else {
+      //   nextLevelStyle.display = 'none';
+      //   if (openIcon && foldedIcon) {
+      //     openIcon.style.display = 'none';
+      //     foldedIcon.style.display = 'inline';
+      //   }
+      // }
     }
 
   }
