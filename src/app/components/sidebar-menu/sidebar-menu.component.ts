@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { SidebarMenu } from '../../entities/sidebar-menu';
-import { CollapseNextDirective } from '../../directives/collapse-next/collapse-next.directive';
 
 const MENU_ID_PREFIX = 'menu-';
 const LEVEL_STYLE_PREFIX = 'level-';

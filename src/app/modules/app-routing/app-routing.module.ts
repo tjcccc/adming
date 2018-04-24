@@ -17,10 +17,6 @@ const routes: Routes = [
   {
     path: 'collection',
     component: CollectionComponent
-  },
-  {
-    path: '$',
-    redirectTo: '#'
   }
 ];
 

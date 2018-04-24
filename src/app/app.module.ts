@@ -16,7 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CollectionComponent } from './components/collection/collection.component';
 
 // Directives
-import { CollapseNextDirective } from './directives/collapse-next/collapse-next.directive';
+
 
 // Load all font-awsome icon (solid style).
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -31,7 +31,6 @@ library.add(fas);
     SidebarComponent,
     HomeComponent,
     CollectionComponent,
-    CollapseNextDirective,
     SidebarMenuComponent
   ],
   imports: [

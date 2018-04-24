@@ -1,11 +1,15 @@
 [
   {
     "path": "",
-    "redirectTo": "",
-    "pathMatch": ""
+    "redirectTo": "home",
+    "pathMatch": "full"
   },
   {
-    "path": "",
-    "component": ""
+    "path": "home",
+    "component": "HomeComponent"
+  },
+  {
+    "path": "collection",
+    "component": "CollectionComponent"
   }
 ]
