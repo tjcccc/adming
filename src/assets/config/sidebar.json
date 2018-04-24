@@ -9,13 +9,13 @@
   {
     "label": "Collection",
     "level": 1,
-    "routerLink": "$",
+    "routerLink": "",
     "icon": "list",
     "nextLevel": [
       {
         "label": "All",
         "level": 2,
-        "routerLink": "/collection",
+        "routerLink": "collection",
         "icon": "list-ul",
         "nextLevel": []
       }
@@ -24,19 +24,19 @@
   {
     "label": "Menu 2",
     "level": 1,
-    "routerLink": "$",
+    "routerLink": "",
     "icon": "book",
     "nextLevel": [
       {
         "label": "Menu 2-1",
         "level": 2,
-        "routerLink": "$",
+        "routerLink": "",
         "icon": "list",
         "nextLevel": [
           {
             "label": "Menu 2-1-1",
             "level": 3,
-            "routerLink": "/home",
+            "routerLink": "home",
             "icon": "shower",
             "nextLevel": []
           }

@@ -1,14 +1,8 @@
-<ng-container *ngIf="menuData.nextLevel.length == 0">
-  <a [ngClass]="menuStyle">
-    <fa-icon [icon]="['fas', menuData.icon]" [fixedWidth]="true"></fa-icon>
+<ng-container *ngIf="menuData">
+  <a [ngClass]="menuStyle" (click)="selectMenu()" [id]="menuId">
+    <fa-icon [icon]="menuIconStyle" [fixedWidth]="true"></fa-icon>
     <span>{{menuData.label}}</span>
-  </a>
-</ng-container>
-<ng-container *ngIf="menuData.nextLevel.length > 0">
-  <a [ngClass]="menuStyle" (click)="selectMenu()">
-    <fa-icon [icon]="['fas', menuData.icon]" [fixedWidth]="true"></fa-icon>
-    <span>{{menuData.label}}</span>
-    <fa-icon [icon]="iconStyle" pull="right" [style.display]="'inline'"></fa-icon>
+    <fa-icon *ngIf="navIconStyle.length > 0" [icon]="navIconStyle" pull="right"></fa-icon>
   </a>
   <ng-template ngFor let-nextLevelMenu [ngForOf]="menuData.nextLevel" let-i="index" [ngForTrackBy]="trackByFn">
     <div [ngClass]="nextLevelMenuGroupStyle">
