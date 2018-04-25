@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { NavigationService } from '../../services/navigation/navigation.service';
 
 @Component({
   selector: 'app-collection',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CollectionComponent implements OnInit {
 
-  constructor() { }
+  @Input() public menuName;
+
+  constructor(private navigationService: NavigationService) {
+  }
 
   ngOnInit() {
+    this.navigationService.sayHello();
   }
 
 }

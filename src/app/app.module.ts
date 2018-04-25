@@ -6,6 +6,7 @@ import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 
 // Services
 import { ConfigService } from './services/config/config.service';
+import { NavigationService } from './services/navigation/navigation.service';
 
 // Components
 import { AppComponent } from './app.component';
@@ -40,7 +41,8 @@ library.add(fas);
     FontAwesomeModule
   ],
   providers: [
-    ConfigService
+    ConfigService,
+    NavigationService
   ],
   bootstrap: [ AppComponent ]
 })

@@ -18,6 +18,13 @@
         "routerLink": "collection",
         "icon": "list-ul",
         "nextLevel": []
+      },
+      {
+        "label": "Form",
+        "level": 2,
+        "routerLink": "form",
+        "icon": "edit",
+        "nextLevel": []
       }
     ]
   },

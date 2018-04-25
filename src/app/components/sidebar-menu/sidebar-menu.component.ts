@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 import { SidebarMenu } from '../../entities/sidebar-menu';
 
 const MENU_ID_PREFIX = 'menu-';
@@ -21,15 +22,15 @@ export class SidebarMenuComponent implements OnInit {
   menuIconStyle: string[] = [];
   navIconStyle: string[] = [];
   isSelected: boolean = false;
-  isActive: boolean = false;
+  activeStyle: string = ACTIVED_STYLE;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
     this.setMenuId();
+    this.setMenuStyle();
     this.setMenuIcon();
     this.setNavIcon(this.isSelected);
-    this.setMenuStyle(this.isSelected);
     this.setChildMenuGroupStyle(this.isSelected);
   }
 
@@ -41,8 +42,8 @@ export class SidebarMenuComponent implements OnInit {
     this.menuId = MENU_ID_PREFIX + this.menuData.routerLink;
   }
 
-  setMenuStyle(isActive: boolean) {
-    this.menuStyle = isActive ? [this.getLevelClass(this.menuData.level), 'active'] : [this.getLevelClass(this.menuData.level)];
+  setMenuStyle() {
+    this.menuStyle = [this.getLevelClass(this.menuData.level)];
   }
 
   setMenuIcon() {
@@ -67,26 +68,10 @@ export class SidebarMenuComponent implements OnInit {
     this.setChildMenuGroupStyle(isSelected);
   }
 
-  setMenuActive(isActive: boolean) {
-    this.isActive = isActive;
-    this.setMenuStyle(this.isActive);
-  }
-
   selectMenu() {
-
     this.isSelected = !this.isSelected;
     this.setNavIcon(this.isSelected);
     this.setChildMenuGroupStyle(this.isSelected);
-
-    if (this.menuData.routerLink !== '') {
-      this.navigateRoute();
-      this.setMenuActive(this.isSelected);
-    }
-
-  }
-
-  navigateRoute() {
-    this.router.navigate([this.menuData.routerLink]);
   }
 
 }
