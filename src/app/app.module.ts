@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.component';
+import { SidebarMenuItemComponent } from './components/sidebar-menu-item/sidebar-menu-item.component';
 import { HomeComponent } from './components/home/home.component';
 import { CollectionComponent } from './components/collection/collection.component';
 
@@ -32,7 +33,8 @@ library.add(fas);
     SidebarComponent,
     HomeComponent,
     CollectionComponent,
-    SidebarMenuComponent
+    SidebarMenuComponent,
+    SidebarMenuItemComponent
   ],
   imports: [
     BrowserModule,

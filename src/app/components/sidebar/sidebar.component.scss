@@ -1,16 +1,16 @@
 @import "~scss/variables";
 
 .sidebar {
-    width: 20rem;
-    background: $primary-color;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    padding: 5rem 0;
-    color: white;
-    & > .sidebar-title {
-      font-size: $font-size-m;
-    }
+  width: 20rem;
+  background: $primary-color;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  padding: 5rem 0;
+  color: white;
+  & > .sidebar-title {
+    font-size: $font-size-m;
+  }
 }

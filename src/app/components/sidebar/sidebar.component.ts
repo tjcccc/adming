@@ -1,7 +1,9 @@
-import { Component, OnInit, NgModule, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, NgModule, ElementRef } from '@angular/core';
 import { ConfigService } from '../../services/config/config.service';
 import { SidebarMenu } from '../../entities/sidebar-menu';
 import { SidebarMenuComponent } from '../../components/sidebar-menu/sidebar-menu.component';
+import { NavigationNode } from '../../services/navigation/navigation.model';
+import { NavigationService } from '../../services/navigation/navigation.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,45 +12,11 @@ import { SidebarMenuComponent } from '../../components/sidebar-menu/sidebar-menu
 })
 export class SidebarComponent implements OnInit {
 
-  sidebarMenus: SidebarMenu[] = [];
-  fetchError;
+  @Input() nodes: NavigationNode[];
+  @Input() currentNode: NavigationNode;
 
-  constructor(private configService: ConfigService) {}
+  constructor(private navigationService: NavigationService) {}
 
-  ngOnInit() {
-    this.getData();
-  }
-
-  getData() {
-    this.configService.getSidebarData()
-      .subscribe(data => {
-        this.loadSidebarMenusDataByJson(this.sidebarMenus, data);
-      },
-      error => {
-        this.fetchError = error;
-      }
-    );
-  }
-
-  getNextLevelMenus(menu: SidebarMenu): SidebarMenu[] {
-    return menu.nextLevel;
-  }
-
-  private loadSidebarMenusDataByJson(sidebarMenus: SidebarMenu[], jsonData: object[]) {
-    for (let i = 0; i < jsonData.length; i += 1) {
-      const menu: SidebarMenu = {
-        id: i,
-        label: jsonData[i]['label'],
-        level: jsonData[i]['level'],
-        icon: jsonData[i]['icon'],
-        routerLink: jsonData[i]['routerLink'],
-        nextLevel: []
-      };
-      if (jsonData[i]['nextLevel'].length > 0) {
-        this.loadSidebarMenusDataByJson(menu.nextLevel, jsonData[i]['nextLevel']);
-      }
-      sidebarMenus.push(menu);
-    }
-  }
+  ngOnInit() {}
 
 }

@@ -13,8 +13,6 @@ export class CollectionComponent implements OnInit {
   constructor(private navigationService: NavigationService) {
   }
 
-  ngOnInit() {
-    this.navigationService.sayHello();
-  }
+  ngOnInit() {}
 
 }

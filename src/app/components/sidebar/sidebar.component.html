@@ -1,6 +1,8 @@
-<div *ngIf="sidebarMenus" class="sidebar">
+<div class="sidebar">
   <div class="sidebar-title">Sidebar Menus</div>
-  <div *ngFor="let sidebarMenu of sidebarMenus; index as i; trackBy: trackByFn">
-    <app-sidebar-menu [menuData]="sidebarMenus[i]"></app-sidebar-menu>
-  </div>
+  <app-sidebar-menu
+    *ngIf="nodes"
+    [nodes]="nodes"
+    [currentNode]="currentNode">
+  </app-sidebar-menu>
 </div>

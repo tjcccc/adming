@@ -1,52 +1,5 @@
 @import "~scss/variables";
 
-button,
-a {
-  cursor: pointer;
-  display: block;
-  background: none;
-  text-align: left;
-  padding: $space-common * 2;
-  color: white;
-  &:link,
-  &:hover,
-  &:visited {
-    color: white;
-    text-decoration: none;
-  }
-  &:hover {
-    background: darken($primary-color, $darken-hover-bg);
-  }
-}
-
-.level-1 {
-  width: 18rem;
-  font-size: $font-size-l;
-  font-weight: bold;
-}
-
-.level-2 {
-  width: 17rem;
-  font-size: $font-size-m;
-  font-weight: bold;
-  margin: 0 0 0 ($space-common * 2);
-}
-
-.level-3 {
-  width: 16rem;
-  font-size: $font-size-m;
-  font-weight: normal;
-  margin: 0 0 0 ($space-common * 4);
-}
-
-.collapse {
-  display: none;
-}
-
-.expand {
-  display: block;
-}
-
-.active {
-  background: darken($primary-color, $darken-hover-bg);
+.sidebar-menu {
+  visibility: visible;
 }

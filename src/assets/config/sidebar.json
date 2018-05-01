@@ -1,54 +1,35 @@
 [
   {
     "label": "Home",
-    "level": 1,
-    "routerLink": "home",
     "icon": "home",
-    "nextLevel": []
+    "link": "/home",
+    "tooltip": "Home page."
   },
   {
     "label": "Collection",
-    "level": 1,
-    "routerLink": "",
-    "icon": "list",
-    "nextLevel": [
+    "icon": "list-ul",
+    "tooltip": "Collection component.",
+    "children": [
       {
-        "label": "All",
-        "level": 2,
-        "routerLink": "collection",
-        "icon": "list-ul",
-        "nextLevel": []
-      },
-      {
-        "label": "Form",
-        "level": 2,
-        "routerLink": "form",
+        "label": "Level-2",
         "icon": "edit",
-        "nextLevel": []
-      }
-    ]
-  },
-  {
-    "label": "Menu 2",
-    "level": 1,
-    "routerLink": "",
-    "icon": "book",
-    "nextLevel": [
-      {
-        "label": "Menu 2-1",
-        "level": 2,
-        "routerLink": "",
-        "icon": "list",
-        "nextLevel": [
+        "link": "/home",
+        "tooltip": "Level 2",
+        "children": [
           {
-            "label": "Menu 2-1-1",
-            "level": 3,
-            "routerLink": "home",
-            "icon": "shower",
-            "nextLevel": []
+            "label": "Level-3",
+            "icon": "smile",
+            "link": "/collection",
+            "tooltip": "Level 3"
           }
         ]
       }
     ]
+  },
+  {
+    "label": "Config",
+    "icon": "cog",
+    "link": "/",
+    "tooltip": "Configuration"
   }
 ]

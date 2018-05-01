@@ -1,20 +1,7 @@
-<ng-container *ngIf="menuData">
-  <ng-container *ngIf="menuData.nextLevel.length > 0">
-    <button [id]="menuId" [ngClass]="menuStyle" (click)="selectMenu()">
-      <fa-icon [icon]="menuIconStyle" [fixedWidth]="true"></fa-icon>
-      <span>{{menuData.label}}</span>
-      <fa-icon *ngIf="navIconStyle.length > 0" [icon]="navIconStyle" pull="right"></fa-icon>
-    </button>
-  </ng-container>
-  <ng-container *ngIf="menuData.nextLevel.length === 0">
-    <a [id]="menuId" [ngClass]="menuStyle" [routerLink]="menuData.routerLink" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}" (click)="selectMenu()">
-      <fa-icon [icon]="menuIconStyle" [fixedWidth]="true"></fa-icon>
-      <span>{{menuData.label}}</span>
-    </a>
-  </ng-container>
-  <div [ngClass]="nextLevelMenuGroupStyle">
-    <ng-template ngFor let-nextLevelMenu [ngForOf]="menuData.nextLevel" let-i="index" [ngForTrackBy]="trackByFn">
-      <app-sidebar-menu [menuData]="menuData.nextLevel[i]"></app-sidebar-menu>
-    </ng-template>
-  </div>
-</ng-container>
+<div class="sidebar-menu">
+  <app-sidebar-menu-item
+    *ngFor="let node of filteredNodes"
+    [node]="node"
+    [selectedNode]="currentNode">
+  </app-sidebar-menu-item>
+</div>
