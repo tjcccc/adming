@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Location } from '@angular/common';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
+import { Observable, throwError } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
 import { HttpResponse } from 'selenium-webdriver/http';
 import { NavigationNode } from './navigation.model';
@@ -46,8 +45,8 @@ export class NavigationService {
         `Backend returned code ${error.status}, ` +
         `body was: ${error.error}`);
     }
-    // return an ErrorObservable with a user-facing error message
-    return new ErrorObservable(
+    // return an observable with a user-facing error message
+    return throwError(
       'Something bad happened; please try again later.');
   }
 
