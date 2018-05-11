@@ -21,6 +21,10 @@ export class SidebarMenuComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.currentNode) {
+      console.log(this.currentNode.label);
+    }
+  }
 
 }

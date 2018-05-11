@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { Router } from '@angular/router';
+import { NavigationEnd } from '@angular/router';
 import { NavigationNode } from './services/navigation/navigation.model';
 import { NavigationService } from './services/navigation/navigation.service';
 
@@ -15,20 +17,29 @@ export class AppComponent implements OnInit {
   fetchError: any = null;
 
   // Header
-  appTitle = 'adming';
+  appTitle: string = 'adming';
 
   // Sidebar
-  sidebarNavigationNodes: NavigationNode[] = [];
+  sidebarNavigationNodes: NavigationNode[];
   currentNavigationNode: NavigationNode;
   isSidebarDataLoaded: boolean = false;
 
   constructor(
     private navigationService: NavigationService,
-    private location: Location
-  ) {}
+    private location: Location,
+    private router: Router
+  ) {
+    router.events.subscribe(event => {
+      // console.log('router: ' + (event as NavigationEnd).url);
+      const routerUrl =  (event as NavigationEnd).url;
+      this.currentNavigationNode = this.sidebarNavigationNodes.find(node => node.link === routerUrl);
+      // console.log('currentNode: ' + this.currentNavigationNode.label);
+    });
+  }
 
   ngOnInit() {
     this.fetchSidebarNavigationNodes();
+    this.navigationService.currentNode.subscribe(currentNode => this.currentNavigationNode = currentNode);
   }
 
   getPath() {

@@ -12,11 +12,15 @@ const CONFIG_SIDEBAR_URL = 'assets/config/sidebar.json';
 export class NavigationService {
 
   navigationNodes: Observable<NavigationNode[]>;
-  currentNode: NavigationNode;
+  currentNode: Observable<NavigationNode>;
   fetchError;
 
-  constructor(private http: HttpClient, private loaction: Location) {
+  constructor(
+    private http: HttpClient,
+    private loaction: Location,
+  ) {
     this.navigationNodes = this.fetchNavigationNodes();
+    this.currentNode = this.getCurrentNode(this.navigationNodes);
   }
 
   private fetchNavigationNodes(): Observable<NavigationNode[]> {
@@ -28,10 +32,10 @@ export class NavigationService {
     return nodes;
   }
 
-  setCurrentNode() {
-    this.navigationNodes.subscribe(nodes => {
-      this.currentNode = nodes.find(n => n.link === this.loaction.path());
-    });
+  getCurrentNode(nodes: Observable<NavigationNode[]>): Observable<NavigationNode> {
+    const path = this.loaction.path;
+    const currentNode = 
+    return currentNode;
   }
 
   private handleError(error: HttpErrorResponse) {

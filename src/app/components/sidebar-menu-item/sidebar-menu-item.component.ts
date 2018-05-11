@@ -30,10 +30,11 @@ export class SidebarMenuItemComponent implements OnChanges {
   }
 
   ngOnChanges() {
-    if (this.node && this.node.label != null) {
-      console.log('node: ' + this.node.label + ' is changed.');
+    if (this.selectedNode) {
+      console.log(this.selectedNode.label);
+    } else {
+      console.log('no selectedNode');
     }
-
     this.checkSelectedState();
     this.setIcon();
     this.setNodeChildren();

@@ -17,6 +17,10 @@ export class SidebarComponent implements OnInit {
 
   constructor(private navigationService: NavigationService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.currentNode) {
+      console.log(this.currentNode.label);
+    }
+  }
 
 }
