@@ -26,20 +26,12 @@ export class AppComponent implements OnInit {
 
   constructor(
     private navigationService: NavigationService,
-    private location: Location,
-    private router: Router
-  ) {
-    router.events.subscribe(event => {
-      // console.log('router: ' + (event as NavigationEnd).url);
-      const routerUrl =  (event as NavigationEnd).url;
-      this.currentNavigationNode = this.sidebarNavigationNodes.find(node => node.link === routerUrl);
-      // console.log('currentNode: ' + this.currentNavigationNode.label);
-    });
-  }
+    private location: Location
+  ) {}
 
   ngOnInit() {
     this.fetchSidebarNavigationNodes();
-    this.navigationService.currentNode.subscribe(currentNode => this.currentNavigationNode = currentNode);
+    this.navigationService.currentNode.subscribe(node => this.currentNavigationNode = node);
   }
 
   getPath() {

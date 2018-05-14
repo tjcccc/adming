@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Location } from '@angular/common';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
 import { HttpResponse } from 'selenium-webdriver/http';
 import { NavigationNode } from './navigation.model';
@@ -32,9 +32,17 @@ export class NavigationService {
     return nodes;
   }
 
-  getCurrentNode(nodes: Observable<NavigationNode[]>): Observable<NavigationNode> {
+  private getCurrentNode(navigationNodes: Observable<NavigationNode[]>): Observable<NavigationNode> {
     const path = this.loaction.path;
-    const currentNode = 
+    let currentNode: Observable<NavigationNode>;
+    navigationNodes.pipe(
+      map(nodes => {
+        nodes.forEach(node => {
+          currentNode = node.link === path(true) ? of(node) : null;
+          console.log('current node: ' + node.link);
+        });
+      })
+    );
     return currentNode;
   }
 

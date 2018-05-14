@@ -10,8 +10,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private navigationService: NavigationService) {}
 
-  ngOnInit() {
-    this.navigationService.setCurrentNode();
-  }
+  ngOnInit() {}
 
 }
