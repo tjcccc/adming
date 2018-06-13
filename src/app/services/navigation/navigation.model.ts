@@ -6,8 +6,3 @@ export interface NavigationNode {
   hidden?: boolean;
   children?: NavigationNode[];
 }
-
-// export interface CurrentNode {
-//   link: string;
-//   node: NavigationNode;
-// }

@@ -8,9 +8,8 @@ import { map, tap } from 'rxjs/operators';
 })
 export class LocationService {
 
-  private readonly urlParser = document.createElement('a');
+  // private readonly urlParser = document.createElement('a');
   private urlSubject = new ReplaySubject<string>(1);
-  private swUpdateActivated = false;
 
   currentUrl = this.urlSubject
     .pipe(map(url => this.stripSlashes(url)));
@@ -20,8 +19,7 @@ export class LocationService {
   );
 
   constructor(
-    private location: Location,
-    private platformLocation: PlatformLocation
+    private location: Location
   ) {
     this.urlSubject.next(location.path(true));
     this.location.subscribe(state => {

@@ -2,6 +2,7 @@
   {
     "label": "Home",
     "icon": "home",
+    "link": "home",
     "tooltip": "Home page."
   },
   {
@@ -17,13 +18,13 @@
           {
             "label": "Level-3 Home",
             "icon": "smile",
-            "link": "/home",
+            "link": "home",
             "tooltip": "Level 3"
           },
           {
             "label": "Level-3 Collection",
             "icon": "smile",
-            "link": "/collection",
+            "link": "collection",
             "tooltip": "Level 3"
           }
         ]
@@ -33,7 +34,11 @@
   {
     "label": "Config",
     "icon": "cog",
-    "link": "/",
     "tooltip": "Configuration"
+  },
+  {
+    "label": "Test",
+    "icon": "cog",
+    "tooltip": "testing..."
   }
 ]
