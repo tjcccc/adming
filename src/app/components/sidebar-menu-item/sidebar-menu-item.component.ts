@@ -1,9 +1,8 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { NavigationNode } from '../../services/navigation/navigation.model';
+import { NavigationNode } from '@adming/services/navigation/navigation.model';
 
 const LEVEL_STYLE_PREFIX = 'level-';
 const FONT_AWESOME_ICON_PREFIX = 'fas';
-const ICON_DEFAULT = 'circle';
 const NAVIGATION_ICON_DEFAULT = 'angle-down';
 
 @Component({
@@ -14,12 +13,12 @@ const NAVIGATION_ICON_DEFAULT = 'angle-down';
 export class SidebarMenuItemComponent implements OnChanges {
 
   @Input() node: NavigationNode;
-  @Input() selectedNode: NavigationNode;
+  @Input() selectedPath: string;
   @Input() level = 1;
-  @Input() isParentExpanded = true;
 
   isExpanded = false;
   isSelected = false;
+  isChildSelected = false;
   cssClasses: { [index: string]: boolean };
   icon: string[];
   navIcon: string[] = [FONT_AWESOME_ICON_PREFIX, NAVIGATION_ICON_DEFAULT];
@@ -30,14 +29,9 @@ export class SidebarMenuItemComponent implements OnChanges {
   }
 
   ngOnChanges() {
-    // if (this.selectedNode) {
-    //   console.log(this.selectedNode.label);
-    // } else {
-    //   console.log('no selectedNode');
-    // }
+    this.setNodeChildren();
     this.checkSelectedState();
     this.setIcon();
-    this.setNodeChildren();
     this.setCssClasses();
     this.setNavIconRotation();
   }
@@ -55,9 +49,12 @@ export class SidebarMenuItemComponent implements OnChanges {
   }
 
   checkSelectedState() {
-    if (this.selectedNode) {
-      this.isSelected = this.node === this.selectedNode;
-      this.isExpanded = this.isParentExpanded && (this.isSelected || this.isExpanded);
+    if (this.selectedPath) {
+      if (this.node.children) {
+        this.isChildSelected = this.node.children.find(childNode => childNode.link === this.selectedPath) !== null;
+      }
+      this.isSelected = this.node.link === this.selectedPath;
+      this.isExpanded = this.isSelected || this.isChildSelected;
     } else {
       this.isSelected = false;
     }
@@ -75,6 +72,7 @@ export class SidebarMenuItemComponent implements OnChanges {
   clickMenuItem() {
     this.isExpanded = !this.isExpanded;
     this.setCssClasses();
+    this.setNavIconRotation();
   }
 
   setNavIconRotation() {

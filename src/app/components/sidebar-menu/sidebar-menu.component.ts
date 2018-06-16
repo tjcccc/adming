@@ -1,5 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { NavigationNode } from '../../services/navigation/navigation.model';
+import { NavigationNode } from '@adming/services/navigation/navigation.model';
 
 @Component({
   selector: 'app-sidebar-menu',
@@ -9,22 +9,14 @@ import { NavigationNode } from '../../services/navigation/navigation.model';
 export class SidebarMenuComponent implements OnInit {
 
   @Input() nodes: NavigationNode[];
-  @Input() currentNode: NavigationNode;
+  @Input() currentPath: string;
 
   get filteredNodes() {
     return this.nodes ? this.nodes.filter(n => !n.hidden) : [];
   }
 
-  // get selectedNode() {
-  //   return this.currentNode;
-  // }
-
   constructor() {}
 
-  ngOnInit() {
-    if (this.currentNode) {
-      console.log(this.currentNode.label);
-    }
-  }
+  ngOnInit() {}
 
 }

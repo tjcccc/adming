@@ -1,9 +1,6 @@
-import { Component, OnInit, Input, NgModule, ElementRef } from '@angular/core';
-import { ConfigService } from '../../services/config/config.service';
-import { SidebarMenu } from '../../entities/sidebar-menu';
-import { SidebarMenuComponent } from '../../components/sidebar-menu/sidebar-menu.component';
-import { NavigationNode } from '../../services/navigation/navigation.model';
-import { NavigationService } from '../../services/navigation/navigation.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { NavigationNode } from '@adming/services/navigation/navigation.model';
+import { LocationService } from '@adming/services/location/location.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,14 +10,11 @@ import { NavigationService } from '../../services/navigation/navigation.service'
 export class SidebarComponent implements OnInit {
 
   @Input() nodes: NavigationNode[];
-  @Input() currentNode: NavigationNode;
+  @Input() currentPath: string;
 
-  constructor(private navigationService: NavigationService) {}
+  constructor() {}
 
   ngOnInit() {
-    if (this.currentNode) {
-      console.log(this.currentNode.label);
-    }
   }
 
 }

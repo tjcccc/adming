@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { Router } from '@angular/router';
-import { LocationService } from './services/location/location.service';
-import { NavigationEnd } from '@angular/router';
-import { NavigationNode } from './services/navigation/navigation.model';
-import { NavigationService } from './services/navigation/navigation.service';
+/**
+ * Reference: angular.io (https://github.com/angular/angular/tree/master/aio)
+ */
+
+import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
+import { LocationService } from '@adming/services/location/location.service';
+import { NavigationNode } from '@adming/services/navigation/navigation.model';
+import { NavigationService } from '@adming/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-root',
@@ -14,22 +15,18 @@ import { NavigationService } from './services/navigation/navigation.service';
 export class AppComponent implements OnInit {
 
   // Global
-  // location: Location;
-  fetchError: any = null;
   currentPath: string;
-  currentNode: NavigationNode;
+  // currentNode: NavigationNode;
 
   // Header
   appTitle: string = 'adming';
 
   // Sidebar
   sidebarNavigationNodes: NavigationNode[];
-  currentNavigationNode: NavigationNode;
-  isSidebarDataLoaded: boolean = false;
 
   constructor(
     private navigationService: NavigationService,
-    private locationService: LocationService
+    private locationService: LocationService,
   ) {}
 
   ngOnInit() {
@@ -42,36 +39,28 @@ export class AppComponent implements OnInit {
       }
     );
 
-    this.navigationService.currentNode.subscribe(
-      currentNode => {
-        this.currentNode = currentNode;
-        console.log(this.currentNode);
+    this.navigationService.navigationNodes.subscribe(
+      navigationNodes => {
+        this.sidebarNavigationNodes = navigationNodes;
       }
     );
 
-    this.navigationService.navigationNodes.subscribe(
-      navigationNodes => this.sidebarNavigationNodes = navigationNodes
-    );
-
-    this.isSidebarDataLoaded = true;
   }
 
-  private fetchSidebarNavigationNodes() {
+  @HostListener('click', ['$event.target', '$event.button'])
+  onClick(eventTarget: HTMLElement, button: number): boolean {
 
-    // this.navigationService.navigationNodes.subscribe(
-    //   nodes => {
-    //     this.sidebarNavigationNodes = nodes;
-    //     this.currentNavigationNode = nodes.find(node => node.link === this.getPath());
-    //     this.isSidebarDataLoaded = true;
-    //   },
-    //   error => {
-    //     this.fetchError = error;
-    //   }
-    // );
+    // Deal with anchor clicks; climb DOM tree until anchor found (or null)
+    let target: HTMLElement | null = eventTarget;
+    while (target && !(target instanceof HTMLAnchorElement)) {
+      target = target.parentElement;
+    }
+    if (target instanceof HTMLAnchorElement) {
+      return this.locationService.handleAnchorClick(target, button);
+    }
+
+    // Allow the click to pass through
+    return true;
   }
-
-  // private stripSlashes(url: string) {
-  //   return url.replace(/^\/+/, '').replace(/\/+(\?|#|$)/, '$1');
-  // }
 
 }

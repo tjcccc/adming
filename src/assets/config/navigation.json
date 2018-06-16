@@ -2,7 +2,6 @@
   {
     "label": "Home",
     "icon": "home",
-    "link": "home",
     "tooltip": "Home page."
   },
   {
@@ -35,10 +34,5 @@
     "label": "Config",
     "icon": "cog",
     "tooltip": "Configuration"
-  },
-  {
-    "label": "Test",
-    "icon": "cog",
-    "tooltip": "testing..."
   }
 ]

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NavigationService } from '../../services/navigation/navigation.service';
+import { NavigationService } from '@adming/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-collection',

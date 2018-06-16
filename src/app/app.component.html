@@ -1,5 +1,5 @@
 <app-header [title]="appTitle"></app-header>
-<app-sidebar *ngIf="isSidebarDataLoaded" [nodes]="sidebarNavigationNodes" [currentNode]="currentNavigationNode"></app-sidebar>
+<app-sidebar [nodes]="sidebarNavigationNodes" [currentPath]="currentPath"></app-sidebar>
 <div class="container">
   <router-outlet></router-outlet>
 </div>

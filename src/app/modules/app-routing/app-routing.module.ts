@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from '../../components/home/home.component';
-import { CollectionComponent } from '../../components/collection/collection.component';
+import { HomeComponent } from '@adming/components/home/home.component';
+import { CollectionComponent } from '@adming/components/collection/collection.component';
 
 const routes: Routes = [
   {
@@ -21,11 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(
-      routes
-    )
-  ],
+  imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ],
   declarations: []
 })
