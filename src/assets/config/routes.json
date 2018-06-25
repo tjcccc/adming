@@ -11,5 +11,9 @@
   {
     "path": "collection",
     "component": "CollectionComponent"
+  },
+  {
+    "path": "form",
+    "component": "FormComponent"
   }
 ]

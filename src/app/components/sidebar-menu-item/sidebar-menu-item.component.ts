@@ -51,13 +51,25 @@ export class SidebarMenuItemComponent implements OnChanges {
   checkSelectedState() {
     if (this.selectedPath) {
       if (this.node.children) {
-        this.isChildSelected = this.node.children.find(childNode => childNode.link === this.selectedPath) !== null;
+        const requestNodes = this.filterChildNodesByPath(this.node, this.selectedPath);
+        this.isChildSelected = requestNodes.length > 0;
       }
       this.isSelected = this.node.link === this.selectedPath;
       this.isExpanded = this.isSelected || this.isChildSelected;
     } else {
       this.isSelected = false;
     }
+  }
+
+  filterChildNodesByPath(node: NavigationNode, path: string): NavigationNode[] {
+    let requestNodes: NavigationNode[] = [];
+    if (node.children) {
+      requestNodes = requestNodes.concat(node.children.filter(childNode => childNode.link === path));
+      for (let i = 0; i < node.children.length; i += 1) {
+        requestNodes = requestNodes.concat(this.filterChildNodesByPath(node.children[i], path));
+      }
+    }
+    return requestNodes;
   }
 
   setCssClasses() {

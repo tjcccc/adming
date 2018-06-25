@@ -16,6 +16,7 @@ import { SidebarMenuComponent } from '@adming/components/sidebar-menu/sidebar-me
 import { SidebarMenuItemComponent } from '@adming/components/sidebar-menu-item/sidebar-menu-item.component';
 import { HomeComponent } from '@adming/components/home/home.component';
 import { CollectionComponent } from '@adming/components/collection/collection.component';
+import { FormComponent } from '@adming/components/form/form.component';
 
 // Directives
 
@@ -34,7 +35,8 @@ library.add(fas);
     HomeComponent,
     CollectionComponent,
     SidebarMenuComponent,
-    SidebarMenuItemComponent
+    SidebarMenuItemComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

@@ -31,6 +31,12 @@
     ]
   },
   {
+    "label": "Form",
+    "icon": "edit",
+    "link": "form",
+    "tooltip": "Form component."
+  },
+  {
     "label": "Config",
     "icon": "cog",
     "tooltip": "Configuration"

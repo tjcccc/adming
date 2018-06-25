@@ -8,7 +8,7 @@ import { NavigationService } from '@adming/services/navigation/navigation.servic
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private navigationService: NavigationService) {}
+  constructor() {}
 
   ngOnInit() {}
 
