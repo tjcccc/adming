@@ -1,9 +1,11 @@
-<p>
-  form works!
-</p>
-<p>
-  form works!
-</p>
-<p>
-  form works!
-</p>
+<div class="form-container">
+  <form action="test">
+    <div class="form-group">
+      <label for="input-text">Input: text</label>
+      <input type="text" [(ngModel)]="value" name="value">
+    </div>
+    <div class="button-group content-center">
+        <button class="btn-function" type="submit" (click)="showInput()">Show</button>
+    </div>
+  </form>
+</div>

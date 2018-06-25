@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '@adming/modules/app-routing/app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 // Services
 import { ConfigService } from '@adming/services/config/config.service';
@@ -42,7 +43,8 @@ library.add(fas);
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [
     ConfigService,

@@ -17,9 +17,21 @@ $label-light: #ccc;
 $link-blue: #1f87c9;
 $warning-red: #a00101;
 $success-green: #259e41;
+$input-line: #ccc;
+$input-line-highlight: $primary-color;
 
 // Lighter and darken
 $darken-hover-bg: 5%;
 
 // Margin, Padding
 $space-common: 0.5rem;
+
+// Radius
+$btn-radius: 0.6rem;
+$input-radius: 0.3rem;
+
+// Shadow
+$darken-shadow: 5%;
+
+// Button
+$button-height: 0.2rem;

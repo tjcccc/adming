@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
+  value: string = '';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getInput(event: any) {
+    this.value = event.target.value;
+  }
+
+  showInput() {
+    console.log(this.value);
   }
 
 }
