@@ -1,8 +1,21 @@
 <div class="form-container">
   <form action="test">
-    <div class="form-group">
-      <label for="input-text">Input: text</label>
-      <input type="text" [(ngModel)]="value" name="value">
+    <app-form-input type="textx" name="test" label="Input: text" [(model)]="value"></app-form-input>
+    <div>
+      <p>{{value}}</p>
+    </div>
+    <div class="grid-container">
+      <app-form-input type="text" name="test1" label="Input A" [(model)]="value"></app-form-input>
+      <app-form-input type="text" name="test2" label="Input B" [(model)]="value"></app-form-input>
+      <app-form-input type="text" name="test3" label="Input C" [(model)]="value"></app-form-input>
+      <app-form-input type="text" name="test4" label="Input D" [(model)]="value"></app-form-input>
+      <app-form-input type="text" name="test5" label="Input E" [(model)]="value"></app-form-input>
+      <app-form-input type="text" name="test6" label="Input F" [(model)]="value"></app-form-input>
+    </div>
+    <div class="grid-container">
+      <div class="test">123</div>
+      <div class="test">456</div>
+      <div class="test">789</div>
     </div>
     <div class="button-group content-center">
         <button class="btn-function" type="submit" (click)="showInput()">Show</button>

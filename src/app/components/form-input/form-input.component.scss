@@ -1,0 +1,21 @@
+@import "~scss/variables";
+
+.form-group {
+  & > label {
+    display: block;
+    font-size: $font-size-m;
+    color: $label-dark;
+    padding: $space-common 0;
+  }
+
+  & > input[type="text"] {
+    padding: $space-common;
+    border: 0.1rem solid $input-line;
+    border-radius: $input-radius;
+    color: $text-dark;
+    &:focus {
+      border-color: $input-line-highlight;
+    }
+  }
+}
+
