@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TestModel } from './TestModel';
 
 @Component({
   selector: 'app-form',
@@ -7,19 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
+  private testModel = new TestModel();
+
   value: string = '';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   getInput(event: any) {
     this.value = event.target.value;
   }
 
   showInput() {
-    console.log(this.value);
+    console.log(this.testModel);
   }
 
 }

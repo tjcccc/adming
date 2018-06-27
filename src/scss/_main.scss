@@ -1,3 +1,5 @@
+@import "~scss/variables";
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -5,6 +7,23 @@ body {
 .container {
   padding: 0;
   display: block;
-  margin: 4rem 0 0 20rem;
+  margin: ($space-common * 8) ($space-common * 4) 0 20rem;
   z-index: 1;
+}
+
+.grid-container {
+  display: flex;
+  & > * {
+    flex: 1 1 0rem;
+    padding: 0 ($space-common * 2);
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+    & input {
+      width: 100%;
+    }
+  }
 }
