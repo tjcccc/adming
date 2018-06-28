@@ -3,12 +3,15 @@
 .form-group {
   & > label {
     display: block;
-    font-size: $font-size-m;
+    font-size: $font-size-s;
+    font-weight: bold;
     color: $label-dark;
     padding: $space-common 0;
   }
 
   & > input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
     padding: $space-common;
     border: 0.1rem solid $input-line;
     border-radius: $input-radius;

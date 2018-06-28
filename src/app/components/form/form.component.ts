@@ -16,12 +16,8 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {}
 
-  getInput(event: any) {
-    this.value = event.target.value;
-  }
-
   showInput() {
-    console.log(this.testModel);
+    this.value = 'Name: ' + this.testModel.name + ' Age: ' + this.testModel.age + ' Sex: ' + this.testModel.sex;
   }
 
 }

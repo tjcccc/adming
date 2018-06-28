@@ -1,0 +1,34 @@
+@import "~scss/variables";
+
+app-root {
+  display: grid;
+  min-height: 60rem;
+  grid-template-columns: auto;
+  grid-template-rows: 3rem auto 2rem;
+  grid-template-areas:  "header"
+                        "main"
+                        "footer";
+  grid-gap: 0;
+}
+
+app-header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+  display: flex;
+  & > .sidebar {
+    flex: 0 0 20rem;
+  }
+  & > .content-container {
+    flex: 1 1 auto;
+  }
+}
+
+.footer {
+  grid-area: footer;
+
+  // temp
+  font-size: 1.4rem;
+}

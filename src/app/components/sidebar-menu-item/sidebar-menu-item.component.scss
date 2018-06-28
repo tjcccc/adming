@@ -25,23 +25,26 @@ a {
 }
 
 .level-1 {
-  width: 18rem;
+  width: 100%;
+  box-sizing: border-box;
   font-size: $font-size-m;
   font-weight: bold;
 }
 
 .level-2 {
-  width: 17rem;
+  width: 100%;
+  box-sizing: border-box;
   font-size: $font-size-m;
   font-weight: normal;
-  margin: 0 0 0 ($space-common * 2);
+  padding-left: ($space-common * 4);
 }
 
 .level-3 {
-  width: 16rem;
+  width: 100%;
+  box-sizing: border-box;
   font-size: $font-size-s;
   font-weight: normal;
-  margin: 0 0 0 ($space-common * 2);
+  padding-left: ($space-common * 2);
 }
 
 .children-container.collapsed {

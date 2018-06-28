@@ -1,5 +1,11 @@
 <app-header [title]="appTitle"></app-header>
-<app-sidebar [nodes]="sidebarNavigationNodes" [currentPath]="currentPath"></app-sidebar>
-<div class="container">
-  <router-outlet></router-outlet>
+<div class="main">
+  <app-sidebar [nodes]="sidebarNavigationNodes" [currentPath]="currentPath"></app-sidebar>
+  <div class="content-container">
+    <router-outlet></router-outlet>
+  </div>
 </div>
+<div class="footer">
+  <p align="center">tjcccc @ Cronoworks 2018</p>
+</div>
+

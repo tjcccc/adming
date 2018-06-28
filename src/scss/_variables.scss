@@ -15,10 +15,11 @@ $text-light: #fff;
 $label-dark: #777;
 $label-light: #ccc;
 $link-blue: #1f87c9;
+$highlight-blue: #1f87c9;
 $warning-red: #a00101;
 $success-green: #259e41;
 $input-line: #ccc;
-$input-line-highlight: $primary-color;
+$input-line-highlight: $highlight-blue;
 
 // Lighter and darken
 $darken-hover-bg: 5%;
