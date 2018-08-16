@@ -25,12 +25,11 @@ export class SidebarMenuItemComponent implements OnChanges {
   navIconRotate: number;
   nodeChildren: NavigationNode[];
 
-  constructor() {
-  }
+  constructor() { }
 
   ngOnChanges() {
     this.setNodeChildren();
-    this.checkSelectedState();
+    this.checkSelectedState(false);
     this.setIcon();
     this.setCssClasses();
     this.setNavIconRotation();
@@ -55,7 +54,7 @@ export class SidebarMenuItemComponent implements OnChanges {
         this.isChildSelected = requestNodes.length > 0;
       }
       this.isSelected = this.node.link === this.selectedPath;
-      this.isExpanded = this.isSelected || this.isChildSelected;
+      this.isExpanded = this.isExpanded === false ? (this.isSelected || this.isChildSelected) : this.isExpanded;
     } else {
       this.isSelected = false;
     }
