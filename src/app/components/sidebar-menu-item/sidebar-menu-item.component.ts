@@ -29,7 +29,7 @@ export class SidebarMenuItemComponent implements OnChanges {
 
   ngOnChanges() {
     this.setNodeChildren();
-    this.checkSelectedState(false);
+    this.checkSelectedState();
     this.setIcon();
     this.setCssClasses();
     this.setNavIconRotation();

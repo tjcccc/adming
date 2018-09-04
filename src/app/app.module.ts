@@ -27,6 +27,7 @@ import { FormInputComponent } from '@adming/components/form-input/form-input.com
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { FormSelectComponent } from './components/form-select/form-select.component';
 library.add(fas);
 
 @NgModule({
@@ -39,7 +40,8 @@ library.add(fas);
     SidebarMenuComponent,
     SidebarMenuItemComponent,
     FormComponent,
-    FormInputComponent
+    FormInputComponent,
+    FormSelectComponent
   ],
   imports: [
     BrowserModule,

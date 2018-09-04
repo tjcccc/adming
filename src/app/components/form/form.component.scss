@@ -2,7 +2,7 @@
 
 .form-container {
   & > form {
-    & > .form-input-row {
+    & > .form-row {
       display: flex;
       & > * {
         flex: 1 1 0rem;
@@ -20,5 +20,3 @@
     }
   }
 }
-
-

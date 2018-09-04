@@ -1,0 +1,45 @@
+@import "~scss/variables";
+
+.form-group {
+  & > select,
+  & > select > option {
+    // Clear default style.
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    &::-ms-expand {
+      display: none;
+    }
+  }
+  & > select {
+    width: 100%;
+    height: $line-height-s;
+    box-sizing: border-box;
+    padding: $space-common ($space-common * 6) $space-common $space-common;
+    background: #fff;
+    border: 0.1rem solid $input-line;
+    border-radius: $input-radius;
+    color: $text-dark;
+    &:focus {
+      border-color: $input-line-highlight;
+    }
+    & > option {
+      height: $line-height-s - $space-common * 2;
+      padding: $space-common * 2;
+      outline: none;
+      border: 1px solid #efefef;
+      border-left: none;
+      border-right: none;
+      &:hover {
+        background: $highlight-blue;
+      }
+    }
+  }
+  & > fa-icon {
+    pointer-events: none;
+    font-size: $font-size-l;
+    color: $label-dark;
+    position: absolute;
+    margin: 0.3rem 0 0 -3rem;
+  }
+}

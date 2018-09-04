@@ -1,9 +1,9 @@
 <div class="form-container">
   <form action="test">
-    <div class="form-input-row">
-      <app-form-input type="text" name="name" label="Name" [(model)]="testModel.name"></app-form-input>
-      <app-form-input type="text" name="age" label="Age" [(model)]="testModel.age"></app-form-input>
-      <app-form-input type="text" name="sex" label="Sex" [(model)]="testModel.sex"></app-form-input>
+    <div class="form-row">
+      <app-form-input type="text" name="name" label="NAME" [(model)]="testModel.name"></app-form-input>
+      <app-form-input type="text" name="age" label="AGE" [(model)]="testModel.age"></app-form-input>
+      <app-form-select name="sex" label="SEX" [(model)]="testModel.sex"></app-form-select>
     </div>
     <div class="button-group content-center">
         <button class="btn-function" type="submit" (click)="showInput()">Show</button>

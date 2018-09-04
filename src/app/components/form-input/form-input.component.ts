@@ -1,11 +1,12 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { FormInput } from '@adming/components/form/form.component';
 
 @Component({
   selector: 'app-form-input',
   templateUrl: './form-input.component.html',
   styleUrls: ['./form-input.component.scss']
 })
-export class FormInputComponent implements OnInit {
+export class FormInputComponent implements FormInput, OnInit {
 
   inputValue: string;
 
@@ -17,11 +18,10 @@ export class FormInputComponent implements OnInit {
 
   constructor() { }
 
-  changeModelValue(value: string) {
-    this.modelChange.emit(value);
-  }
+  ngOnInit() { }
 
-  ngOnInit() {
+  changeModelValue(value: string): void {
+    this.modelChange.emit(value);
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { TestModel } from './TestModel';
 
 @Component({
@@ -17,7 +17,17 @@ export class FormComponent implements OnInit {
   ngOnInit() {}
 
   showInput() {
-    this.value = 'Name: ' + this.testModel.name + ' Age: ' + this.testModel.age + ' Sex: ' + this.testModel.sex;
+    this.value = 'Name: ' + this.testModel.name + '\nAge: ' + this.testModel.age.toString() + '\nSex: ' + this.testModel.sex.toString();
   }
 
+}
+
+export interface FormInput {
+
+  name: string;
+  label: string;
+  model: string;
+  modelChange: EventEmitter<any>;
+
+  changeModelValue(value: any);
 }
