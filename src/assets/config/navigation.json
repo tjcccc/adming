@@ -2,6 +2,7 @@
   {
     "label": "Home",
     "icon": "home",
+    "link": "home",
     "tooltip": "Home page."
   },
   {
@@ -10,20 +11,19 @@
     "tooltip": "Collection component.",
     "children": [
       {
+        "label": "Common",
+        "icon": "list-ul",
+        "link": "collection",
+        "tooltip": "Common collection."
+      },
+      {
         "label": "Level-2",
-        "icon": "edit",
+        "icon": "smile",
         "tooltip": "Level 2",
         "children": [
           {
-            "label": "Level-3 Home",
+            "label": "Level-3",
             "icon": "smile",
-            "link": "home",
-            "tooltip": "Level 3"
-          },
-          {
-            "label": "Level-3 Collection",
-            "icon": "smile",
-            "link": "collection",
             "tooltip": "Level 3"
           }
         ]
@@ -33,8 +33,15 @@
   {
     "label": "Form",
     "icon": "edit",
-    "link": "form",
-    "tooltip": "Form component."
+    "tooltip": "Form component.",
+    "children": [
+      {
+        "label": "Reactive Form",
+        "icon": "edit",
+        "link": "form",
+        "tooltip": "Default form."
+      }
+    ]
   },
   {
     "label": "Config",

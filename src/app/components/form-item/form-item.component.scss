@@ -1,6 +1,25 @@
 @import "~scss/variables";
 
-.form-group {
+// textbox
+.form-item {
+  & > input[type="text"],
+  & > input[type="number"] {
+    width: 100%;
+    height: $line-height-s;
+    box-sizing: border-box;
+    background: #fff;
+    padding: $space-common;
+    border: 0.1rem solid $input-line;
+    border-radius: $input-radius;
+    color: $text-dark;
+    &:focus {
+      border-color: $input-line-highlight;
+    }
+  }
+}
+
+// select
+.form-item {
   & > select,
   & > select > option {
     // Clear default style.
@@ -41,5 +60,13 @@
     color: $label-dark;
     position: absolute;
     margin: 0.3rem 0 0 -3rem;
+  }
+}
+
+// error-message
+.form-item {
+  & > .error-message {
+    color: $warning-red;
+    font-size: $font-size-s;
   }
 }

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '@adming/modules/app-routing/app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Services
 import { ConfigService } from '@adming/services/config/config.service';
@@ -18,7 +18,6 @@ import { SidebarMenuItemComponent } from '@adming/components/sidebar-menu-item/s
 import { HomeComponent } from '@adming/components/home/home.component';
 import { CollectionComponent } from '@adming/components/collection/collection.component';
 import { FormComponent } from '@adming/components/form/form.component';
-import { FormInputComponent } from '@adming/components/form-input/form-input.component';
 
 // Directives
 
@@ -27,7 +26,7 @@ import { FormInputComponent } from '@adming/components/form-input/form-input.com
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { FormSelectComponent } from './components/form-select/form-select.component';
+import { FormItemComponent } from './components/form-item/form-item.component';
 library.add(fas);
 
 @NgModule({
@@ -40,15 +39,15 @@ library.add(fas);
     SidebarMenuComponent,
     SidebarMenuItemComponent,
     FormComponent,
-    FormInputComponent,
-    FormSelectComponent
+    FormItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ConfigService,

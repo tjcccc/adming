@@ -1,33 +1,41 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
-import { TestModel } from './TestModel';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { FormItemControlService } from '@adming/services/form/form-item-control.service';
+import { FormItemService } from '@adming/services/form/form-item-service';
+import { FormItemBase } from '@adming/components/form-item/form-item-base';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  styleUrls: ['./form.component.scss'],
+  providers: [ FormItemControlService, FormItemService ]
 })
 export class FormComponent implements OnInit {
 
-  private testModel = new TestModel();
+  admingForm: FormGroup;
+  payLoad = '';
 
-  value: string = '';
+  // Form Items
+  nameInput: FormItemBase<string>;
+  ageInput: FormItemBase<string>;
+  sexSelect: FormItemBase<string>;
 
-  constructor() {}
+  constructor(private formItemControlService: FormItemControlService, private formItemService: FormItemService) {
+    this.nameInput = formItemService.nameInput;
+    this.ageInput = formItemService.ageInput;
+    this.sexSelect = formItemService.sexSelect;
 
-  ngOnInit() {}
-
-  showInput() {
-    this.value = 'Name: ' + this.testModel.name + '\nAge: ' + this.testModel.age.toString() + '\nSex: ' + this.testModel.sex.toString();
+    this.admingForm = this.formItemControlService.toFormGroup([
+      this.nameInput,
+      this.ageInput,
+      this.sexSelect
+    ]);
   }
 
-}
+  ngOnInit() { }
 
-export interface FormInput {
+  onSubmit() {
+    this.payLoad = JSON.stringify(this.admingForm.value);
+  }
 
-  name: string;
-  label: string;
-  model: string;
-  modelChange: EventEmitter<any>;
-
-  changeModelValue(value: any);
 }

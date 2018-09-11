@@ -1,9 +1,0 @@
-<div class="form-group">
-    <label for="">{{label}}</label>
-    <select name="{{name}}" [(ngModel)]="model" (ngModelChange)="changeModelValue(model)">
-      <option *ngFor="let option of optionKeys(enumOptions)" [ngValue]="enumOptions[option]" [selected]="option === optionKeys(enumOptions)[0]">
-        {{enumOptions[option]}}
-      </option>
-    </select>
-    <fa-icon *ngIf="dropdownIcon" [icon]="dropdownIcon" [fixedWidth]="true" pull="right"></fa-icon>
-  </div>

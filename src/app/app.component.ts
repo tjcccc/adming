@@ -26,8 +26,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private navigationService: NavigationService,
-    private locationService: LocationService,
-  ) {}
+    private locationService: LocationService
+  ) { }
 
   ngOnInit() {
 
