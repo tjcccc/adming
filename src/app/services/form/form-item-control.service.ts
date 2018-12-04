@@ -10,6 +10,9 @@ export class FormItemControlService {
     const group: any = {};
 
     formItems.forEach(formItem => {
+      if (formItem.defaultValue !== undefined) {
+        formItem.value = formItem.defaultValue;
+      }
       group[formItem.key] = formItem.required ?
         new FormControl(formItem.value || '', Validators.required) : new FormControl(formItem.value || '');
     });

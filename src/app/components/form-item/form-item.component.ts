@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { FormItemBase } from '@adming/components/form-item/form-item-base';
+import { FormItemBase, FormItemType } from './form-item-base';
 
 @Component({
   selector: 'app-form-item',
@@ -13,11 +13,13 @@ export class FormItemComponent implements OnInit {
   @Input() formControl: FormControl;
   @Input() formItem: FormItemBase<any>;
 
+  formItemType = FormItemType;
+
   constructor() { }
 
   ngOnInit() {
     // Set the default option for select.
-    if (this.formItem.controlType === 'select') {
+    if (this.formItem.controlType === FormItemType.Select) {
       this.form.get(this.formItem.key).setValue(this.formItem.defaultValue || null);
     }
   }

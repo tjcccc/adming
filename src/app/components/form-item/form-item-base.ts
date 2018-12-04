@@ -1,23 +1,29 @@
+export enum FormItemType {
+  InputText = 'text',
+  InputNumber = 'number',
+  Select = 'select'
+}
+
 export class FormItemBase<T> {
   value: T;
   key: string;
   label: string;
   required: boolean;
-  defaultValue: string;
+  defaultValue: T;
   placeholder: string;
   limit: [number, number];
-  controlType: string;
+  controlType: FormItemType;
 
   constructor(setting: {
       value?: T,
       key?: string,
       label?: string,
       required?: boolean,
-      defaultValue?: string,
+      defaultValue?: T,
       placeholder?: string;
       limit?: [number, number];
       order?: number,
-      controlType?: string
+      controlType?: FormItemType
     } = {}) {
     this.value = setting.value;
     this.key = setting.key || '';
@@ -26,6 +32,6 @@ export class FormItemBase<T> {
     this.defaultValue = setting.defaultValue || undefined;
     this.placeholder = setting.placeholder || undefined;
     this.limit = setting.limit || [NaN, NaN];
-    this.controlType = setting.controlType || '';
+    this.controlType = setting.controlType || FormItemType.InputText;
   }
 }

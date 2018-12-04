@@ -1,7 +1,7 @@
-import { FormItemBase } from '@adming/components/form-item/form-item-base';
+import { FormItemBase, FormItemType } from './form-item-base';
 
 export class TextInputFormItem extends FormItemBase<string> {
-  controlType = 'input-text';
+  controlType = FormItemType.InputText;
   type: string;
 
   constructor(setting: {} = {}) {

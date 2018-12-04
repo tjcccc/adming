@@ -13,8 +13,12 @@ button.btn-function {
     background: darken($link-blue, $darken-hover-bg);
     box-shadow: 0 $button-height darken($link-blue, $darken-shadow * 2);
   }
-  &:active {
+  &:active,
+  &:disabled {
     transform: translate(0, $button-height);
     box-shadow: none;
+  }
+  &:disabled {
+    background: $disabled-bg;
   }
 }

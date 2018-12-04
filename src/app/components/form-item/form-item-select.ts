@@ -1,7 +1,7 @@
-import { FormItemBase } from '@adming/components/form-item/form-item-base';
+import { FormItemBase, FormItemType } from './form-item-base';
 
 export class SelectFormItem extends FormItemBase<string> {
-  controlType = 'select';
+  controlType = FormItemType.Select;
   options: { key: string, value: string, selected: boolean }[] = [];
 
   constructor(setting: {} = {}) {

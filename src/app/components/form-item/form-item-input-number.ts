@@ -1,8 +1,8 @@
-import { FormItemBase } from '@adming/components/form-item/form-item-base';
+import { FormItemBase, FormItemType } from './form-item-base';
 
-export class NumberInputFormItem extends FormItemBase<string> {
-  controlType = 'input-number';
-  type: string;
+export class NumberInputFormItem extends FormItemBase<number> {
+  controlType = FormItemType.InputNumber;
+  type: number;
 
   constructor(setting: {} = {}) {
     super(setting);
