@@ -9,10 +9,6 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 end_of_line = lf
 
-[*.{html,scss,css,ts,js}]
-indent_style = space
-indent_size = 2
-
 [*.{md,markdown}]
 max_line_length = off
 trim_trailing_whitespace = false
