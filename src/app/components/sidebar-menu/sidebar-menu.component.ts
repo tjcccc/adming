@@ -1,5 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { NavigationNode } from '@adming/services/navigation/navigation.model';
+import { NavigationNode } from '@adming/models/navigation.model';
 
 @Component({
   selector: 'app-sidebar-menu',

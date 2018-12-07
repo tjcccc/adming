@@ -2,8 +2,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from '@adming/modules/app-routing/app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { AdmingIconsModule } from '@adming/modules/adming-icons/adming-icons.module';
+import { AdmingSidebarModule } from '@adming/modules/adming-sidebar/adming-sidebar.module';
+import { AdmingFormModule } from '@adming/modules/adming-form/adming-form.module';
 
 // Services
 import { ConfigService } from '@adming/services/config/config.service';
@@ -12,41 +13,34 @@ import { NavigationService } from '@adming/services/navigation/navigation.servic
 // Components
 import { AppComponent } from '@adming/app.component';
 import { HeaderComponent } from '@adming/components/header/header.component';
-import { SidebarComponent } from '@adming/components/sidebar/sidebar.component';
-import { SidebarMenuComponent } from '@adming/components/sidebar-menu/sidebar-menu.component';
-import { SidebarMenuItemComponent } from '@adming/components/sidebar-menu-item/sidebar-menu-item.component';
 import { HomeComponent } from '@adming/components/home/home.component';
 import { CollectionComponent } from '@adming/components/collection/collection.component';
-import { FormComponent } from '@adming/components/form/form.component';
 
 // Directives
 
 
 // Load all font-awsome icon (solid style).
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { FormItemComponent } from './components/form-item/form-item.component';
-library.add(fas);
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { fas } from '@fortawesome/free-solid-svg-icons';
+
+// library.add(fas);
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SidebarComponent,
     HomeComponent,
-    CollectionComponent,
-    SidebarMenuComponent,
-    SidebarMenuItemComponent,
-    FormComponent,
-    FormItemComponent
+    CollectionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    // AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule,
-    ReactiveFormsModule
+    // FontAwesomeModule,
+    AdmingIconsModule,
+    AdmingSidebarModule,
+    AdmingFormModule
   ],
   providers: [
     ConfigService,

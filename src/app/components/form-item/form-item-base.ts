@@ -1,6 +1,7 @@
 export enum FormItemType {
   InputText = 'text',
   InputNumber = 'number',
+  InputPassword = 'password',
   Select = 'select'
 }
 

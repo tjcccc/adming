@@ -4,9 +4,11 @@
 
   <ng-container [ngSwitch]="formItem.controlType">
 
-    <input *ngSwitchCase="formItemType.InputText" type="text" [formControlName]="formItem.key" [id]="formItem.key" [value]="formItem.defaultValue || ''" [placeholder]="formItem.placeholder">
+    <input *ngSwitchCase="formItemType.InputText" type="text" [formControlName]="formItem.key" [id]="formItem.key" [value]="formItem.defaultValue || ''" [placeholder]="formItem.placeholder" />
 
-    <input *ngSwitchCase="formItemType.InputNumber" type="number" [formControlName]="formItem.key" [id]="formItem.key" [value]="formItem.defaultValue || ''" [placeholder]="formItem.placeholder" [min]="formItem.limit[0]" [max]="formItem.limit[1]">
+    <input *ngSwitchCase="formItemType.InputNumber" type="number" [formControlName]="formItem.key" [id]="formItem.key" [value]="formItem.defaultValue || ''" [placeholder]="formItem.placeholder" [min]="formItem.limit[0]" [max]="formItem.limit[1]" />
+
+    <input *ngSwitchCase="formItemType.InputPassword" type="password" [formControlName]="formItem.key" [id]="formItem.key" [placeholder]="formItem.placeholder" />
 
     <select *ngSwitchCase="formItemType.Select" [formControlName]="formItem.key" [id]="formItem.key">
       <option *ngFor="let option of formItem.options" [ngValue]="option.key" [attr.selected]="option.key === formItem.defaultValue">{{option.value}}</option>

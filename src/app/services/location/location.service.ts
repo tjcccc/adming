@@ -59,7 +59,7 @@ export class LocationService {
   /**
    * Handle user's anchor click
    *
-   * @param anchor {HTMLAnchorElement} - the anchor element clicked
+   * @param anchor `{HTMLAnchorElement}` - the anchor element clicked
    * @param button Number of the mouse button held down. 0 means left or none
    * @return false if service navigated with `go()`; true if browser should handle it.
    *

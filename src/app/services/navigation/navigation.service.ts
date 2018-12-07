@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, ConnectableObservable } from 'rxjs';
 import { publishLast } from 'rxjs/operators';
-import { NavigationNode } from './navigation.model';
+import { ConfigService } from '@adming/services/config/config.service';
+import { NavigationNode } from '@adming/models/navigation.model';
 
 const CONFIG_NAVIGATION_URL = 'assets/config/navigation.json';
 
@@ -16,12 +17,13 @@ export class NavigationService {
   navigationNodes: Observable<NavigationNode[]>;
   currentNode: Observable<NavigationNode>;
 
-  constructor(private http: HttpClient) {
+  constructor(private configService: ConfigService, private http: HttpClient) {
     this.navigationNodes = this.fetchNavigationNodes();
   }
 
   private fetchNavigationNodes(): Observable<NavigationNode[]> {
-    const nodes = this.http.get<NavigationNode[]>(CONFIG_NAVIGATION_URL)
+    // const nodes = this.configService.getNavigation()
+    const nodes = this.http.get<NavigationNode>(CONFIG_NAVIGATION_URL)
       .pipe(publishLast()) as ConnectableObservable<NavigationNode[]>;
     nodes.connect();
     return nodes;

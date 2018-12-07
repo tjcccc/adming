@@ -40,6 +40,18 @@
         "icon": "edit",
         "link": "form",
         "tooltip": "Default form."
+      },
+      {
+        "label": "Test Form",
+        "icon": "cat",
+        "link": "test-form",
+        "tooltip": "Form for test."
+      },
+      {
+        "label": "Register User",
+        "icon": "user",
+        "link": "user-registration-form",
+        "tooltip": "Create a new user."
       }
     ]
   },

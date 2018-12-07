@@ -4,7 +4,7 @@
 
 import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
 import { LocationService } from '@adming/services/location/location.service';
-import { NavigationNode } from '@adming/services/navigation/navigation.model';
+import { NavigationNode } from '@adming/models/navigation.model';
 import { NavigationService } from '@adming/services/navigation/navigation.service';
 
 @Component({

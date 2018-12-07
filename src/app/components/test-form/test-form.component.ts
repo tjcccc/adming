@@ -6,12 +6,12 @@ import { FormItemBase } from '@adming/components/form-item/form-item-base';
 import { User } from '@adming/models/user.model';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss'],
+  selector: 'app-test-form',
+  templateUrl: './test-form.component.html',
+  styleUrls: ['./test-form.component.scss'],
   providers: [ FormItemControlService, FormItemService ]
 })
-export class FormComponent implements OnInit {
+export class TestFormComponent implements OnInit {
 
   admingForm: FormGroup;
   payLoad = '';

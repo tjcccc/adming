@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { NavigationNode } from '@adming/services/navigation/navigation.model';
+import { NavigationNode } from '@adming/models/navigation.model';
 
 const LEVEL_STYLE_PREFIX = 'level-';
 const FONT_AWESOME_ICON_PREFIX = 'fas';

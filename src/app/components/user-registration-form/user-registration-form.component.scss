@@ -1,0 +1,22 @@
+@import "~styles/variables";
+
+.form-container {
+  & > form {
+    & > .form-row {
+      display: flex;
+      & > * {
+        flex: 1 1 0rem;
+        padding: 0 $space-common;
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+    & > .button-group {
+      margin: $space-common * 2;
+    }
+  }
+}

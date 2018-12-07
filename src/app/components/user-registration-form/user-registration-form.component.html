@@ -1,0 +1,18 @@
+<div class="form-container">
+  <form [formGroup]="userRegistrationForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <app-form-item [form]="userRegistrationForm" [formItem]="emailInput"></app-form-item>
+      <app-form-item [form]="userRegistrationForm" [formItem]="usernameInput"></app-form-item>
+    </div>
+    <div class="form-row">
+      <app-form-item [form]="userRegistrationForm" [formItem]="passwordInput"></app-form-item>
+      <app-form-item [form]="userRegistrationForm" [formItem]="passwordConfirmationInput"></app-form-item>
+    </div>
+    <div class="button-group content-center">
+        <button class="btn-function" type="submit" [disabled]="!userRegistrationForm.valid">Register</button>
+    </div>
+    <div *ngIf="payLoad">
+      <p style="font-size: 14px; text-align: center;">{{payLoad}}</p>
+    </div>
+  </form>
+</div>

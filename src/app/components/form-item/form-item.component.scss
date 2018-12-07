@@ -3,7 +3,8 @@
 // textbox
 .form-item {
   & > input[type="text"],
-  & > input[type="number"] {
+  & > input[type="number"],
+  & > input[type="password"] {
     width: 100%;
     height: $line-height-s;
     box-sizing: border-box;
