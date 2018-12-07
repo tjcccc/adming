@@ -1,5 +1,5 @@
 <div class="form-container">
-  <form [formGroup]="userRegistrationForm" (ngSubmit)="onSubmit()">
+  <form class="common" [formGroup]="userRegistrationForm" (ngSubmit)="onSubmit()">
     <div class="form-row">
       <app-form-item [form]="userRegistrationForm" [formItem]="emailInput"></app-form-item>
       <app-form-item [form]="userRegistrationForm" [formItem]="usernameInput"></app-form-item>

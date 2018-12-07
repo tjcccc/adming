@@ -1,7 +1,7 @@
 @import "~styles/variables";
 
 .form-container {
-  & > form {
+  & > form.common {
     & > .form-row {
       display: flex;
       & > * {

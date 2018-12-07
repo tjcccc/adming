@@ -8,7 +8,6 @@ import { User } from '@adming/models/user.model';
 @Component({
   selector: 'app-user-registration-form',
   templateUrl: './user-registration-form.component.html',
-  styleUrls: ['./user-registration-form.component.scss'],
   providers: [ FormItemControlService, FormItemService ]
 })
 export class UserRegistrationFormComponent implements OnInit {

@@ -1,5 +1,5 @@
 <div class="form-container">
-  <form [formGroup]="admingForm" (ngSubmit)="onSubmit()">
+  <form class="common" [formGroup]="admingForm" (ngSubmit)="onSubmit()">
     <div class="form-row">
       <app-form-item [form]="admingForm" [formItem]="nameInput"></app-form-item>
       <app-form-item [form]="admingForm" [formItem]="ageInput"></app-form-item>

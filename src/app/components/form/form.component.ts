@@ -8,7 +8,6 @@ import { User } from '@adming/models/user.model';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss'],
   providers: [ FormItemControlService, FormItemService ]
 })
 export class FormComponent implements OnInit {

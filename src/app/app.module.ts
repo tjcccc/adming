@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AdmingIconsModule } from '@adming/modules/adming-icons/adming-icons.module';
+import { AdmingHeaderModule } from '@adming/modules/adming-header/adming-header.module';
 import { AdmingSidebarModule } from '@adming/modules/adming-sidebar/adming-sidebar.module';
+import { AdmingHomeModule } from '@adming/modules/adming-home/adming-home.module';
 import { AdmingFormModule } from '@adming/modules/adming-form/adming-form.module';
 
 // Services
@@ -12,34 +14,22 @@ import { NavigationService } from '@adming/services/navigation/navigation.servic
 
 // Components
 import { AppComponent } from '@adming/app.component';
-import { HeaderComponent } from '@adming/components/header/header.component';
-import { HomeComponent } from '@adming/components/home/home.component';
+
 import { CollectionComponent } from '@adming/components/collection/collection.component';
 
-// Directives
-
-
-// Load all font-awsome icon (solid style).
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { fas } from '@fortawesome/free-solid-svg-icons';
-
-// library.add(fas);
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    HomeComponent,
     CollectionComponent
   ],
   imports: [
     BrowserModule,
-    // AppRoutingModule,
     HttpClientModule,
-    // FontAwesomeModule,
     AdmingIconsModule,
+    AdmingHeaderModule,
     AdmingSidebarModule,
+    AdmingHomeModule,
     AdmingFormModule
   ],
   providers: [
