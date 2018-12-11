@@ -1,4 +1,4 @@
-const terms = [
+export const terms = [
   {
     sex: {
       female: 'Female',
@@ -6,5 +6,3 @@ const terms = [
     }
   }
 ];
-
-export default terms;

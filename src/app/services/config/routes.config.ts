@@ -5,7 +5,7 @@ import { FormComponent } from '@adming/components/form/form.component';
 import { UserRegistrationFormComponent } from '@adming/components/user-registration-form/user-registration-form.component';
 import { TestFormComponent } from '@adming/components/test-form/test-form.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     redirectTo: '',
@@ -32,5 +32,3 @@ const routes: Routes = [
     component: TestFormComponent
   }
 ];
-
-export default routes;

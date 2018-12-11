@@ -4,7 +4,8 @@
 .form-item {
   & > input[type="text"],
   & > input[type="number"],
-  & > input[type="password"] {
+  & > input[type="password"],
+  & > input[type="email"] {
     width: 100%;
     height: $line-height-s;
     box-sizing: border-box;
@@ -66,6 +67,19 @@
 
 // error-message
 .form-item {
+  &.error {
+    & > label {
+      color: $warning-red;
+    }
+    & > input,
+    & > select {
+      border-color: $warning-red;
+      color: $warning-red;
+      &:focus {
+        border-color: $input-line-error-highlight;
+      }
+    }
+  }
   & > .error-message {
     color: $warning-red;
     font-size: $font-size-s;

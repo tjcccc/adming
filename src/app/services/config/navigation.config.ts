@@ -1,4 +1,4 @@
-const navigation = [
+export const navigation = [
   {
     label: 'Home',
     icon: 'home',
@@ -61,5 +61,3 @@ const navigation = [
     tooltip: 'Configuration'
   }
 ];
-
-export default navigation;

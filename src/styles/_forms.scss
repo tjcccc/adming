@@ -4,6 +4,7 @@
   & > form.common {
     & > .form-row {
       display: flex;
+      padding: $space-common 0;
       & > * {
         flex: 1 1 0rem;
         padding: 0 $space-common;
