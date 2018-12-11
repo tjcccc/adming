@@ -10,38 +10,123 @@ ng generate component your-form
 
 ## 表单组件设计
 
-### 引入表单基本模型和服务
+### 引入表单服务
 
 ```typescript
-import { FormItemBase } from '@adming/components/form-item/form-item-base';
 import { FormItemControlService } from '@adming/services/form/form-item-control.service';
+
+@Component({
+  providers: [ FormItemControlService ]
+})
 ```
 
-### 为表单创建 formGroup
+### 引入表单项相对应的类型
+
+#### 输入框
+
+```typescript
+import { TextInputFormItem, NumberInputFormItem PasswordInputFormItem, MailInputFormItem } from '@adming/components/form-item/form-item-input';
+```
+
+- `TextInputFormItem`: 文本
+- `NumberInputFormItem`: 数字
+- `PasswordInputFormItem`: 密码
+- `MailInputFormItem`: 邮箱
+
+#### 下拉菜单
+
+```typescript
+import { SelectFormItem } from '@adming/components/form-item/form-item-select';
+```
+
+- `SelectFormItem`: 下拉菜单
+
+### 为表单创建 FormGroup
+
+以 `yourForm` 作为表单示例：
 
 ```typescript
 export class FormComponent implements OnInit {
-  admingForm: FormGroup;
+  yourForm: FormGroup;
 }
 ```
 
 ### 创建表单项
 
+示例：
+
 ```typescript
-inputItem1: FormItemBase<string>;
-inputItem2: FormItemBase<number>;
-selectItem: FormItemBase<string>;
+nameInput = new TextInputFormItem({
+  type: 'text',
+  key: 'name',
+  label: 'NAME',
+  placeholder: 'Input your name.',
+  required: true
+});
+ageInput = new NumberInputFormItem({
+  type: 'name',
+  key: 'age',
+  label: 'AGE',
+  placeholder: 'Input your age.',
+  defaultValue: 1,
+  limit: [0, 200],
+  required: true
+});
+sexSelect = new SelectFormItem({
+  type: 'text',
+  key: 'sex',
+  label: 'SEX',
+  defaultValue: 'male',
+  options: [
+    { key: 'female', value: 'FEMALE', selected: true },
+    { key: 'male', value: 'MALE', selected: false }
+  ]
+});
+emailInput = new MailInputFormItem({
+  type: 'email',
+  key: 'email',
+  label: 'E-MAIL',
+  placeholder: 'Input your e-mail address.',
+  required: true
+});
 ```
+
+- `type`: 数据类型。选填。
+- `key`: formControl 的标识。
+- `label`: 表单项的标签。
+- `defaultValue`: 表单项的默认数据。选填。
+- `placeholder`: 表单项的占位提示文字。选填。
+- `required`: 表单内容是否必须？影响到表单数据是否有效。
+
+### 将表单项加入 FormGroup
+
+```typescript
+constructor(private formItemControlService: FormItemControlService) {
+  this.userRegistrationForm = this.formItemControlService.toFormGroup([
+    this.nameInput,
+    this.ageInput,
+    this.sexSelect,
+    this.emailInput
+  ]);
+}
+```
+
+### 获取表单数据
+
+可通过 `this.yourForm.value` 获取，即 `FormGroup` 的 value 值。
 
 ## 表单模板结构
 
 ```html
 <div class="form-container">
-  <form class="common" [formGroup]="admingForm" (ngSubmit)="onSubmit()">
+  <form class="common" [formGroup]="yourForm" (ngSubmit)="onSubmit()">
     <div class="form-row">
-      <app-form-item [form]="admingForm" [formItem]="inputItem1"></app-form-item>
-      <app-form-item [form]="admingForm" [formItem]="inputItem2"></app-form-item>
-      <app-form-item [form]="admingForm" [formItem]="selectItem"></app-form-item>
+      <app-form-item [form]="yourForm" [formItem]="nameInput"></app-form-item>
+      <app-form-item [form]="yourForm" [formItem]="ageInput"></app-form-item>
+    </div>
+    <div class="form-row">
+      <app-form-item [form]="yourForm" [formItem]="sexSelect"></app-form-item>
+      <app-form-item [form]="yourForm" [formItem]="emailInput"></app-form-item>
     </div>
     <div class="button-group content-center">
         <button class="btn-function" type="submit" [disabled]="!admingForm.valid">Show</button>
@@ -49,3 +134,12 @@ selectItem: FormItemBase<string>;
   </form>
 </div>
 ```
+
+- `<div class="form-container">...</div>`: 最外层由 `form-container` 包裹。
+- `<form class="common">...</form>`: common 是表单的默认样式。
+- `(ngSubmit)="onSubmit()`: 表单提交的方法，与 `type="submit"` 的提交按钮关联。
+- `<div class="form-row">...</div>`: 每一行由 `form-row` 分割。
+
+## 例子
+
+可参考 `FormComponent` 组件。
