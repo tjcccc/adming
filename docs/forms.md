@@ -25,7 +25,7 @@ import { FormItemControlService } from '@adming/services/form/form-item-control.
 #### 输入框
 
 ```typescript
-import { TextInputFormItem, NumberInputFormItem PasswordInputFormItem, MailInputFormItem } from '@adming/components/form-item/form-item-input';
+import { TextInputFormItem, NumberInputFormItem, PasswordInputFormItem, MailInputFormItem } from '@adming/components/form-item/form-item-input';
 ```
 
 - `TextInputFormItem`: 文本

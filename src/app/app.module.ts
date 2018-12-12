@@ -14,7 +14,6 @@ import { NavigationService } from '@adming/services/navigation/navigation.servic
 
 // Components
 import { AppComponent } from '@adming/app.component';
-
 import { CollectionComponent } from '@adming/components/collection/collection.component';
 
 

@@ -1,4 +1,4 @@
-<div class="form-item" [formGroup]="form">
+<div [ngClass]="{ 'form-item': true, 'error': isError }" [formGroup]="form">
   <label [attr.for]="formItem.key">{{formItem.label}}</label>
   <ng-container [ngSwitch]="formItem.controlType">
     <input
@@ -6,7 +6,8 @@
       type="text" [formControlName]="formItem.key"
       [id]="formItem.key"
       [value]="formItem.defaultValue || ''"
-      [placeholder]="formItem.placeholder" />
+      [placeholder]="formItem.placeholder"
+      (keyup)="onKeyup($event)" />
     <input
       *ngSwitchCase="formItemType.InputNumber"
       type="number" [formControlName]="formItem.key"
@@ -14,20 +15,23 @@
       [value]="formItem.defaultValue || ''"
       [placeholder]="formItem.placeholder"
       [min]="formItem.limit[0]"
-      [max]="formItem.limit[1]" />
+      [max]="formItem.limit[1]"
+      (keyup)="onKeyup($event)" />
     <input
       *ngSwitchCase="formItemType.InputPassword"
       type="password"
       [formControlName]="formItem.key"
       [id]="formItem.key"
-      [placeholder]="formItem.placeholder" />
+      [placeholder]="formItem.placeholder"
+      (keyup)="onKeyup($event)" />
     <input
       *ngSwitchCase="formItemType.InputMail"
       type="email"
       [formControlName]="formItem.key"
       [id]="formItem.key"
       [placeholder]="formItem.placeholder"
-      [email]="true" />
+      [email]="true"
+      (keyup)="onKeyup($event)" />
     <select
       *ngSwitchCase="formItemType.Select"
       [formControlName]="formItem.key"
@@ -40,6 +44,6 @@
       </option>
     </select>
   </ng-container>
-  <div class="error-message" *ngIf="!isValid">{{formItem.errorMessage}}</div>
+  <div class="error-message" *ngIf="isError">{{formItem.errorMessage}}</div>
 
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { terms } from '@adming/config/terms.config';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormItemControlService } from '@adming/services/form/form-item-control.service';
 import { TextInputFormItem, MailInputFormItem, PasswordInputFormItem } from '@adming/components/form-item/form-item-input';
@@ -17,33 +18,33 @@ export class UserRegistrationFormComponent implements OnInit {
   emailInput = new MailInputFormItem({
     type: 'email',
     key: 'email',
-    label: 'E-MAIL',
-    placeholder: 'Input your e-mail address.',
+    label: terms.label.email,
+    placeholder: terms.phrase.inputMail,
     required: true,
     validators: [
       Validators.required
     ],
-    errorMessage: 'Your inputed E-mail is invalid.'
+    errorMessage: terms.phrase.mailError
   });
   usernameInput = new TextInputFormItem({
     type: 'text',
     key: 'name',
-    label: 'NAME',
-    placeholder: 'Input your username.',
+    label: terms.label.name,
+    placeholder: terms.phrase.inputUsername,
     required: true
   });
   passwordInput = new PasswordInputFormItem({
     type: 'password',
     key: 'password',
-    label: 'PASSWORD',
-    placeholder: 'Input your password.',
+    label: terms.label.password,
+    placeholder: terms.phrase.inputPassword,
     required: true
   });
   passwordConfirmationInput = new PasswordInputFormItem({
     type: 'password',
     key: 'passwordComfirmation',
-    label: 'CONFIRM PASSWORD',
-    placeholder: 'Input your password again.',
+    label: terms.label.confirmPassword,
+    placeholder: terms.phrase.inputPasswordAgain,
     required: true
   });
 

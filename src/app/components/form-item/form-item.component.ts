@@ -14,6 +14,7 @@ export class FormItemComponent implements OnInit {
   @Input() formItem: FormItemBase<any>;
 
   formItemType = FormItemType;
+  isError = false;
 
   constructor() { }
 
@@ -27,5 +28,17 @@ export class FormItemComponent implements OnInit {
   get isValid() {
     return this.form.controls[this.formItem.key].valid;
   }
+
+  get isDirty() {
+    return this.form.controls[this.formItem.key].dirty;
+  }
+
+  get hasValue() {
+    return this.form.controls[this.formItem.key].value !== "";
+  }
+
+  onKeyup = (event: any) => {
+    this.isError = !this.isValid && this.isDirty && this.hasValue;
+  };
 
 }
