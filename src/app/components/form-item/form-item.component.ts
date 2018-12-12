@@ -34,11 +34,11 @@ export class FormItemComponent implements OnInit {
   }
 
   get hasValue() {
-    return this.form.controls[this.formItem.key].value !== "";
+    return this.form.controls[this.formItem.key].value !== '';
   }
 
   onKeyup = (event: any) => {
     this.isError = !this.isValid && this.isDirty && this.hasValue;
-  };
+  }
 
 }

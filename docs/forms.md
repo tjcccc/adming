@@ -103,8 +103,20 @@ emailInput = new MailInputFormItem({
 - `key`: formControl 的标识。
 - `label`: 表单项的标签。
 - `defaultValue`: 表单项的默认数据。选填。
+- `limit`: 数字表单项的上下限。值为数组：`[min, max]`，请与表单项验证器配合使用。
 - `placeholder`: 表单项的占位提示文字。选填。
 - `validators`: 验证条件。影响到表单数据是否有效。
+
+### 表单项验证器
+
+在 validators 数组中配置可各种验证条件。
+
+- `Validators.required`: 内容是否必须。
+- `Validators.min()`: 最小值。
+- `Validators.max()`: 最大值。
+- `Validators.minLength()`: 最小长度。
+- `Validators.maxLength()`: 最大长度。
+- `forbiddenNamesValidator(['name1', 'name2'])`: 禁用名字验证器。参数为禁用名字数字。如输入 `name1` 或 `name2` 表单就会报错。
 
 ### 将表单项加入 FormGroup
 

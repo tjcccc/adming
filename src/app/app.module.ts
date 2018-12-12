@@ -16,7 +16,6 @@ import { NavigationService } from '@adming/services/navigation/navigation.servic
 import { AppComponent } from '@adming/app.component';
 import { CollectionComponent } from '@adming/components/collection/collection.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

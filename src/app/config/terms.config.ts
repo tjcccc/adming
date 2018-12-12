@@ -16,6 +16,7 @@ export const terms = {
     inputUsername: 'Input your username.',
     inputPassword: 'Input your password.',
     inputPasswordAgain: 'Input your password again.',
-    mailError: 'Your inputted e-mail is invalid.'
+    mailError: 'Your inputted e-mail is invalid.',
+    usernameError: 'This username is invalid.'
   }
 };

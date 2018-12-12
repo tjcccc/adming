@@ -3,6 +3,7 @@ import { terms } from '@adming/config/terms.config';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormItemControlService } from '@adming/services/form/form-item-control.service';
 import { TextInputFormItem, MailInputFormItem, PasswordInputFormItem } from '@adming/components/form-item/form-item-input';
+import { forbiddenInputValidator } from '@adming/directives/form/forbidden-input-validator.directive';
 import { User } from '@adming/models/user.model';
 
 @Component({
@@ -31,7 +32,11 @@ export class UserRegistrationFormComponent implements OnInit {
     key: 'name',
     label: terms.label.name,
     placeholder: terms.phrase.inputUsername,
-    required: true
+    required: true,
+    validators: [
+      forbiddenInputValidator(['张三', 'Bob'])
+    ],
+    errorMessage: terms.phrase.usernameError
   });
   passwordInput = new PasswordInputFormItem({
     type: 'password',
