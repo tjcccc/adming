@@ -80,6 +80,16 @@
       }
     }
   }
+  & > input,
+  & > select {
+    &.ng-invalid:not(.ng-pristine) {
+      border-color: $warning-red;
+      color: $warning-red;
+      &:focus {
+        border-color: $input-line-error-highlight;
+      }
+    }
+  }
   & > .error-message {
     color: $warning-red;
     font-size: $font-size-s;

@@ -26,7 +26,8 @@
       type="email"
       [formControlName]="formItem.key"
       [id]="formItem.key"
-      [placeholder]="formItem.placeholder" />
+      [placeholder]="formItem.placeholder"
+      [email]="true" />
     <select
       *ngSwitchCase="formItemType.Select"
       [formControlName]="formItem.key"
@@ -39,7 +40,6 @@
       </option>
     </select>
   </ng-container>
-
-  <!-- <div class="error-message" *ngIf="!isValid">{{input.label}} is required.</div> -->
+  <div class="error-message" *ngIf="!isValid">{{formItem.errorMessage}}</div>
 
 </div>

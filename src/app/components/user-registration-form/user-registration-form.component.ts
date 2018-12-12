@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, Validators } from '@angular/forms';
 import { FormItemControlService } from '@adming/services/form/form-item-control.service';
 import { TextInputFormItem, MailInputFormItem, PasswordInputFormItem } from '@adming/components/form-item/form-item-input';
 import { User } from '@adming/models/user.model';
@@ -13,36 +13,38 @@ export class UserRegistrationFormComponent implements OnInit {
 
   userRegistrationForm: FormGroup;
 
+  // Form Items
   emailInput = new MailInputFormItem({
     type: 'email',
     key: 'email',
-    label: 'E-Mail',
+    label: 'E-MAIL',
     placeholder: 'Input your e-mail address.',
-    require: true
+    required: true,
+    validators: [
+      Validators.required
+    ],
+    errorMessage: 'Your inputed E-mail is invalid.'
   });
-
   usernameInput = new TextInputFormItem({
     type: 'text',
-    key: 'username',
-    label: 'Username',
+    key: 'name',
+    label: 'NAME',
     placeholder: 'Input your username.',
-    require: true
+    required: true
   });
-
   passwordInput = new PasswordInputFormItem({
     type: 'password',
     key: 'password',
-    label: 'Password',
-    placeholder: 'Input your password',
-    require: true
+    label: 'PASSWORD',
+    placeholder: 'Input your password.',
+    required: true
   });
-
   passwordConfirmationInput = new PasswordInputFormItem({
     type: 'password',
     key: 'passwordComfirmation',
-    label: 'Confirm Password',
+    label: 'CONFIRM PASSWORD',
     placeholder: 'Input your password again.',
-    require: true
+    required: true
   });
 
   payLoad = '';
@@ -56,8 +58,7 @@ export class UserRegistrationFormComponent implements OnInit {
     ]);
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   onSubmit() {
     const user: User = this.userRegistrationForm.value;

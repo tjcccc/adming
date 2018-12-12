@@ -61,7 +61,9 @@ nameInput = new TextInputFormItem({
   key: 'name',
   label: 'NAME',
   placeholder: 'Input your name.',
-  required: true
+  validators: [
+    Validators.required
+  ]
 });
 ageInput = new NumberInputFormItem({
   type: 'name',
@@ -70,7 +72,11 @@ ageInput = new NumberInputFormItem({
   placeholder: 'Input your age.',
   defaultValue: 1,
   limit: [0, 200],
-  required: true
+  validators: [
+    Validators.required,
+    Validators.min(0),
+    Validators.max(200)
+  ]
 });
 sexSelect = new SelectFormItem({
   type: 'text',
@@ -87,7 +93,9 @@ emailInput = new MailInputFormItem({
   key: 'email',
   label: 'E-MAIL',
   placeholder: 'Input your e-mail address.',
-  required: true
+  validators: [
+    Validators.required
+  ]
 });
 ```
 
@@ -96,7 +104,7 @@ emailInput = new MailInputFormItem({
 - `label`: 表单项的标签。
 - `defaultValue`: 表单项的默认数据。选填。
 - `placeholder`: 表单项的占位提示文字。选填。
-- `required`: 表单内容是否必须？影响到表单数据是否有效。
+- `validators`: 验证条件。影响到表单数据是否有效。
 
 ### 将表单项加入 FormGroup
 
