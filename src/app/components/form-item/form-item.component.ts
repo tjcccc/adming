@@ -12,6 +12,7 @@ export class FormItemComponent implements OnInit {
   @Input() form: FormGroup;
   @Input() formControl: FormControl;
   @Input() formItem: FormItemBase<any>;
+  @Input() matchingItem: FormItemBase<any>;
 
   formItemType = FormItemType;
   isError = false;
@@ -37,8 +38,15 @@ export class FormItemComponent implements OnInit {
     return this.form.controls[this.formItem.key].value !== '';
   }
 
-  onKeyup = (event: any) => {
-    this.isError = !this.isValid && this.isDirty && this.hasValue;
+  get isMatched() {
+    return this.form.controls[this.formItem.key].value === this.form.controls[this.matchingItem.key].value;
   }
 
+  validate = (event: any) => {
+    if (this.matchingItem !== undefined) {
+      this.isError = !this.isMatched && this.isDirty && this.hasValue;
+      return;
+    }
+    this.isError = !this.isValid && this.isDirty && this.hasValue;
+  }
 }

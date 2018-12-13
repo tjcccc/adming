@@ -6,7 +6,7 @@
     </div>
     <div class="form-row">
       <app-form-item [form]="userRegistrationForm" [formItem]="passwordInput"></app-form-item>
-      <app-form-item [form]="userRegistrationForm" [formItem]="passwordConfirmationInput"></app-form-item>
+      <app-form-item [form]="userRegistrationForm" [formItem]="passwordConfirmationInput" [matchingItem]="passwordInput"></app-form-item>
     </div>
     <div class="button-group content-center">
         <button class="btn-function" type="submit" [disabled]="!userRegistrationForm.valid">Register</button>

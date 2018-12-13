@@ -7,7 +7,7 @@
       [id]="formItem.key"
       [value]="formItem.defaultValue || ''"
       [placeholder]="formItem.placeholder"
-      (keyup)="onKeyup($event)" />
+      (keyup)="validate($event)" />
     <input
       *ngSwitchCase="formItemType.InputNumber"
       type="number" [formControlName]="formItem.key"
@@ -16,14 +16,14 @@
       [placeholder]="formItem.placeholder"
       [min]="formItem.limit[0]"
       [max]="formItem.limit[1]"
-      (keyup)="onKeyup($event)" />
+      (keyup)="validate($event)" />
     <input
       *ngSwitchCase="formItemType.InputPassword"
       type="password"
       [formControlName]="formItem.key"
       [id]="formItem.key"
       [placeholder]="formItem.placeholder"
-      (keyup)="onKeyup($event)" />
+      (keyup)="validate($event)" />
     <input
       *ngSwitchCase="formItemType.InputMail"
       type="email"
@@ -31,7 +31,7 @@
       [id]="formItem.key"
       [placeholder]="formItem.placeholder"
       [email]="true"
-      (keyup)="onKeyup($event)" />
+      (keyup)="validate($event)" />
     <select
       *ngSwitchCase="formItemType.Select"
       [formControlName]="formItem.key"

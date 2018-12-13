@@ -20,7 +20,7 @@ export class ForbiddenInputValidatorDirective implements Validator {
 // Recommend.
 export function forbiddenInputValidator(names: string[]): ValidatorFn {
   const namesRe = new RegExp(names.join('|'), 'i');
-  return (control: AbstractControl): {[key: string]: any} | null => {
+  return (control: AbstractControl): { [key: string]: any } | null => {
     const forbidden = namesRe.test(control.value);
     return forbidden ? { 'forbiddenName': { value: control.value } } : null;
   };

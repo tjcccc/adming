@@ -160,6 +160,21 @@ constructor(private formItemControlService: FormItemControlService) {
 - `(ngSubmit)="onSubmit()`: 表单提交的方法，与 `type="submit"` 的提交按钮关联。
 - `<div class="form-row">...</div>`: 每一行由 `form-row` 分割。
 
+### 相同内容输入验证
+
+如果要验证一个表单项的输入内容是否与另一个相同，则需要在 `<app-form-item>` 中将欲匹配的表单项填入 `matchingItem` 中。
+
+示例：
+
+```typescript
+<div class="form-row">
+  <app-form-item [form]="yourForm" [formItem]="item1"></app-form-item>
+  <app-form-item [form]="yourForm" [formItem]="item2" [matchingItem]="item1"></app-form-item>
+</div>
+```
+
+标记 `[matchingItem]="item2"` 之后，`item2` 每次输入内容后都会被拿去和 `item1` 做比较，如果内容不同，则表单项验证不通过。
+
 ## 例子
 
 可参考 `FormComponent` 组件。
