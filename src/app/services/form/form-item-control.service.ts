@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { FormItemBase } from '@adming/components/form-item/form-item-base';
 
 @Injectable()
@@ -11,14 +11,10 @@ export class FormItemControlService {
     const group: any = {};
 
     formItems.forEach(formItem => {
-      // Set default value
-      if (formItem.defaultValue !== undefined) {
-        formItem.value = formItem.defaultValue;
-      }
-
-      group[formItem.key] = formItem.validators ?
-        new FormControl(formItem.value || '', formItem.validators) : new FormControl(formItem.value || '');
+      formItem.value = formItem.defaultValue || '';
+      group[formItem.key] = new FormControl(formItem.value, formItem.validators);
     });
+
     return new FormGroup(group);
   }
 }

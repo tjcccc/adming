@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { terms } from '@adming/config/terms.config';
 import { FormGroup, Validators } from '@angular/forms';
+import { terms } from '@adming/config/terms.config';
 import { FormItemControlService } from '@adming/services/form/form-item-control.service';
+import { UserService } from '@adming/services/user/user.service';
 import { TextInputFormItem, MailInputFormItem, PasswordInputFormItem } from '@adming/components/form-item/form-item-input';
 import { forbiddenInputValidator } from '@adming/directives/form/forbidden-input-validator.directive';
 import { forbiddenName } from '@adming/config/forbidden-name.config';
@@ -57,7 +58,7 @@ export class UserRegistrationFormComponent implements OnInit {
 
   payLoad = '';
 
-  constructor(private formItemControlService: FormItemControlService) {
+  constructor(private formItemControlService: FormItemControlService, private userService: UserService) {
     this.userRegistrationForm = this.formItemControlService.toFormGroup([
       this.emailInput,
       this.usernameInput,
@@ -70,7 +71,14 @@ export class UserRegistrationFormComponent implements OnInit {
 
   onSubmit() {
     const user: User = this.userRegistrationForm.value;
-    this.payLoad = JSON.stringify(user);
+    console.log(user);
+    this.registerUser(user);
   }
+
+  registerUser = (newUser: User) => {
+    this.userService.registerUser(newUser);
+  }
+
+
 
 }
