@@ -8,6 +8,7 @@ import { Observable, ConnectableObservable } from 'rxjs';
 import { publishLast } from 'rxjs/operators';
 import { ConfigService } from '@adming/services/config/config.service';
 import { NavigationNode } from '@adming/models/navigation.model';
+import { navigation } from '@adming/config/navigation.config';
 
 const CONFIG_NAVIGATION_URL = 'assets/config/navigation.json';
 
@@ -22,11 +23,11 @@ export class NavigationService {
   }
 
   private fetchNavigationNodes(): Observable<NavigationNode[]> {
-    // const nodes = this.configService.getNavigation()
-    const nodes = this.http.get<NavigationNode>(CONFIG_NAVIGATION_URL)
-      .pipe(publishLast()) as ConnectableObservable<NavigationNode[]>;
-    nodes.connect();
-    return nodes;
+    return this.configService.getNavigation();
+    // const nodes = this.http.get<NavigationNode>(CONFIG_NAVIGATION_URL)
+    //   .pipe(publishLast()) as ConnectableObservable<NavigationNode[]>;
+    // nodes.connect();
+    // return nodes;
   }
 
   // TODO: Get real current node.

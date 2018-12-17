@@ -11,7 +11,7 @@ caption,
 th {
   text-align: left;
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 td {
@@ -81,6 +81,16 @@ h6 {
   font-size: $font-size-xs;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  color: $text-dark;
+}
+
 .content-left {
   text-align: left;
 }
@@ -91,4 +101,8 @@ h6 {
 
 .content-center {
   text-align: center;
+}
+
+.highlight {
+  font-weight: bold;
 }

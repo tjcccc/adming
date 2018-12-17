@@ -7,6 +7,7 @@ import { AdmingHeaderModule } from '@adming/modules/adming-header/adming-header.
 import { AdmingSidebarModule } from '@adming/modules/adming-sidebar/adming-sidebar.module';
 import { AdmingHomeModule } from '@adming/modules/adming-home/adming-home.module';
 import { AdmingFormModule } from '@adming/modules/adming-form/adming-form.module';
+import { AdmingTableModule } from '@adming/modules/adming-table/adming-table.module';
 
 // Services
 import { ConfigService } from '@adming/services/config/config.service';
@@ -28,7 +29,8 @@ import { CollectionComponent } from '@adming/components/collection/collection.co
     AdmingHeaderModule,
     AdmingSidebarModule,
     AdmingHomeModule,
-    AdmingFormModule
+    AdmingFormModule,
+    AdmingTableModule
   ],
   providers: [
     ConfigService,

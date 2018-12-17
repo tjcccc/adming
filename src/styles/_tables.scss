@@ -1,0 +1,53 @@
+@import "variables";
+
+table.common {
+  width: auto;
+  overflow: auto;
+  border-collapse: collapse;
+  & > thead > tr {
+    background: $table-header-light;
+    &.dark {
+      background: $table-header-dark;
+      & > th {
+        color: white;
+      }
+    }
+  }
+  & tr {
+    border-bottom: 0.1rem solid $border-light;
+    &.align-left {
+      & > th,
+      & > td {
+        text-align: left;
+      }
+    }
+    &.align-right {
+      & > th,
+      & > td {
+        text-align: right;
+      }
+    }
+    &.align-center {
+      & > th,
+      & > td {
+        text-align: center;
+      }
+    }
+  }
+  & th,
+  & td {
+    font-size: $font-size-m;
+    // border: 0.1rem solid $border-light;
+    padding: $space-common * 2;
+  }
+  & th {
+    color: $label-dark;
+    font-weight: bold;
+  }
+  & td {
+    color: $text-dark;
+    &.label {
+      color: $label-dark;
+    }
+  }
+}

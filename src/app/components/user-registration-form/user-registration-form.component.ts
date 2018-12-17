@@ -15,6 +15,7 @@ import { User } from '@adming/models/user.model';
 })
 export class UserRegistrationFormComponent implements OnInit {
 
+  pagetitle = 'Adming Form';
   userRegistrationForm: FormGroup;
 
   // Form Items
@@ -79,6 +80,8 @@ export class UserRegistrationFormComponent implements OnInit {
     this.userService.registerUser(newUser);
   }
 
-
+  test = () => {
+    this.userService.getUsers().subscribe((data) => console.log(data));
+  }
 
 }

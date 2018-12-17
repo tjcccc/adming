@@ -1,4 +1,6 @@
 <div class="form-container">
+  <h1>{{pagetitle}}</h1>
+  <hr>
   <form class="common" [formGroup]="userRegistrationForm" (ngSubmit)="onSubmit()">
     <div class="form-row">
       <app-form-item [form]="userRegistrationForm" [formItem]="emailInput"></app-form-item>
@@ -15,4 +17,5 @@
       <p style="font-size: 14px; text-align: center;">{{payLoad}}</p>
     </div>
   </form>
+  <button (click)="test()">Test Api</button>
 </div>

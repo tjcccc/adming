@@ -1,4 +1,6 @@
-export const navigation = [
+import { NavigationNode } from '@adming/models/navigation.model';
+
+export const navigation: NavigationNode[] = [
   {
     label: 'Home',
     icon: 'home',
@@ -52,6 +54,19 @@ export const navigation = [
         icon: 'cat',
         link: 'test-form',
         tooltip: '???'
+      }
+    ]
+  },
+  {
+    label: 'table',
+    icon: 'table',
+    tooltip: 'Table component.',
+    children: [
+      {
+        label: 'Common Table',
+        icon: 'table',
+        link: 'table',
+        tooltip: 'Default table.'
       }
     ]
   },

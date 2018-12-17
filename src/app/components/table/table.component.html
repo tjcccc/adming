@@ -1,0 +1,35 @@
+<div class="data-table">
+  <h1>{{pagetitle}}</h1>
+  <hr>
+  <h2>{{tableTitle.tableA}}</h2>
+  <table class="common">
+    <thead>
+      <tr class="align-center">
+        <th>#</th>
+        <th>NAME</th>
+        <th>E-MAIL</th>
+        <th>PHONE</th>
+        <th>LEVEL</th>
+        <th>STATE</th>
+        <th>BIRTH-DATE</th>
+        <th>SEX</th>
+        <th>REALNAME</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-template ngFor let-item [ngForOf]="data" let-i="index" [ngForTrackBy]="trackByFn">
+        <tr class="align-center">
+          <td class="highlight label">{{i}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.level}}</td>
+          <td>{{item.state}}</td>
+          <td>{{formatDate(item.birth)}}</td>
+          <td>{{item.sex}}</td>
+          <td>{{item.firstName + ' ' + item.lastName}}</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+</div>

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { from } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { NavigationNode } from '@adming/models/navigation.model';
 import { navigation } from '../../config/navigation.config';
 import { terms } from '../../config/terms.config';
 
@@ -12,7 +11,7 @@ export class ConfigService {
   termsUri = 'terms.config.json';
 
   getNavigation = () => {
-    return from<NavigationNode>(navigation);
+    return from([navigation]);
   }
 
   getTerms = () => {

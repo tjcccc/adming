@@ -4,6 +4,7 @@ import { CollectionComponent } from '@adming/components/collection/collection.co
 import { FormComponent } from '@adming/components/form/form.component';
 import { UserRegistrationFormComponent } from '@adming/components/user-registration-form/user-registration-form.component';
 import { TestFormComponent } from '@adming/components/test-form/test-form.component';
+import { TableComponent } from '@adming/components/table/table.component';
 
 export const routes: Routes = [
   {
@@ -30,5 +31,9 @@ export const routes: Routes = [
   {
     path: 'test-form',
     component: TestFormComponent
+  },
+  {
+    path: 'table',
+    component: TableComponent
   }
 ];

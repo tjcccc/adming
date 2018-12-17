@@ -4,7 +4,7 @@ $font-size-s: 1.2rem;
 $font-size-m: 1.4rem;
 $font-size-l: 1.8rem;
 $font-size-xl: 2.4rem;
-$font-size-xxl: 3.0rem;
+$font-size-xxl: 2.8rem;
 
 // Color
 $primary-color: #012456;
@@ -23,6 +23,9 @@ $input-line: #ccc;
 $input-line-highlight: $highlight-blue;
 $input-line-error-highlight: $highlight-red;
 $disabled-bg: #ccc;
+$border-light: #ccc;
+$table-header-light: #efefef;
+$table-header-dark: $primary-color-dark;
 
 // Lighter and darken
 $darken-hover-bg: 5%;
@@ -33,6 +36,7 @@ $space-common: 0.5rem;
 // Radius
 $btn-radius: 0.6rem;
 $input-radius: 0.3rem;
+$container-radius: 0.2rem;
 
 // Shadow
 $darken-shadow: 5%;
