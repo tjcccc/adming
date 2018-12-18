@@ -25,8 +25,8 @@ $input-line-highlight: $highlight-blue;
 $input-line-error-highlight: $highlight-red;
 $disabled-bg: #ccc;
 $border-light: #ccc;
-$table-header-light: $primary-color;
-$table-header-dark: $primary-color-dark;
+$table-header-light: #ddd;
+$table-header-dark: $primary-color;
 $table-highlight: #efefef;
 $table-highlight-dark: $table-header-dark;
 
@@ -49,7 +49,8 @@ $darken-shadow: 5%;
 $button-height: 0.2rem;
 
 // Line
-$line-height-s: 2.5rem;
+$line-height-s: 3rem;
 
 // Table
 $table-striped-order: odd !default;
+$table-border-width: 0.1rem;

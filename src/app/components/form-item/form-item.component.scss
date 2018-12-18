@@ -1,5 +1,13 @@
 @import "~styles/variables";
 
+// general
+.form-item {
+  & > input,
+  & > select {
+    font-size: $font-size-m;
+  }
+}
+
 // textbox
 .form-item {
   & > input[type="text"],

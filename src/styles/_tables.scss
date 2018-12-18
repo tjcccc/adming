@@ -8,7 +8,13 @@ table.common {
     &,
     & th,
     & td {
-      border: 0.1rem solid $border-light;
+      border: $table-border-width solid $border-light;
+    }
+    & thead > tr {
+      background: $table-header-light !important;
+      & > th {
+        color: $label-dark;
+      }
     }
   }
   &.striped {
@@ -23,13 +29,7 @@ table.common {
 
   }
   & > thead > tr {
-    background: $table-header-light;
-    &.dark {
-      background: $table-header-dark;
-      & > th {
-        color: white;
-      }
-    }
+    background: $table-header-dark;
   }
   & > tbody > tr {
     &:hover {
@@ -37,7 +37,7 @@ table.common {
     }
   }
   & tr {
-    border-bottom: 0.1rem solid $border-light;
+    border-bottom: $table-border-width solid $border-light;
     &.align-left {
       & > th,
       & > td {
@@ -60,7 +60,6 @@ table.common {
   & th,
   & td {
     font-size: $font-size-m;
-    // border: 0.1rem solid $border-light;
     padding: $space-common * 2;
   }
   & th {

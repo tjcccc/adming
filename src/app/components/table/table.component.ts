@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 
 import { User } from '@adming/models/user.model';
-import { userMock } from '@adming/mock/users.mock';
+import { usersMock } from '@adming/mock/users.mock';
 
 @Component({
   selector: 'app-table',
@@ -19,16 +19,11 @@ export class TableComponent implements OnInit {
   data: User[] = [];
 
   constructor() {
-    this.data = this.makeUsers(userMock);
-    console.log(userMock);
-    console.log(this.data);
+    // Fake data.
+    this.data = usersMock;
   }
 
   ngOnInit() {
-  }
-
-  makeUsers = (user: User): User[] => {
-    return new Array<User>(10).fill(user);
   }
 
   formatDate = (rawDate: Date): string => {

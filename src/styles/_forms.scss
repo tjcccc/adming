@@ -1,4 +1,4 @@
-@import "~styles/variables";
+@import "variables";
 
 form.common {
   & > .form-row {
@@ -17,5 +17,12 @@ form.common {
   }
   & > .button-group {
     margin: $space-common * 2;
+  }
+  & label {
+    display: block;
+    font-size: $font-size-s;
+    font-weight: bold;
+    color: $label-dark;
+    padding: $space-common 0;
   }
 }

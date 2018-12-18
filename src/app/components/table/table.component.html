@@ -38,7 +38,7 @@
   <h2>{{tableTitle.tableB}}</h2>
   <table class="common bordered">
     <thead>
-      <tr class="align-center">
+      <tr>
         <th>#</th>
         <th>NAME</th>
         <th>E-MAIL</th>
@@ -52,7 +52,7 @@
     </thead>
     <tbody>
       <ng-template ngFor let-item [ngForOf]="data" let-i="index" [ngForTrackBy]="trackByFn">
-        <tr class="align-center">
+        <tr>
           <td class="highlight label">{{i + 1}}</td>
           <td>{{item.name}}</td>
           <td>{{item.email}}</td>
@@ -71,7 +71,7 @@
   <h2>{{tableTitle.tableC}}</h2>
   <table class="common striped">
     <thead>
-      <tr class="align-center">
+      <tr class="align-right">
         <th>#</th>
         <th>NAME</th>
         <th>E-MAIL</th>
@@ -85,7 +85,7 @@
     </thead>
     <tbody>
       <ng-template ngFor let-item [ngForOf]="data" let-i="index" [ngForTrackBy]="trackByFn">
-        <tr class="align-center">
+        <tr class="align-right">
           <td class="highlight label">{{i + 1}}</td>
           <td>{{item.name}}</td>
           <td>{{item.email}}</td>

@@ -12,3 +12,5 @@ export const userMock: User = {
   email: 'tester@cronoworks.cn',
   phone: '+86 13900112233'
 };
+
+export const usersMock: User[] = new Array<User>(10).fill(userMock);

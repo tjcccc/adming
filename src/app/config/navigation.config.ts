@@ -58,7 +58,7 @@ export const navigation: NavigationNode[] = [
     ]
   },
   {
-    label: 'table',
+    label: 'Table',
     icon: 'table',
     tooltip: 'Table component.',
     children: [

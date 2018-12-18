@@ -2,7 +2,7 @@
 
 app-root {
   display: grid;
-  min-height: 60rem;
+  height: 100%;
   grid-template-columns: auto;
   grid-template-rows: 6rem auto 2rem;
   grid-template-areas:  "header"
