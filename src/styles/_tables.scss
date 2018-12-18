@@ -4,6 +4,24 @@ table.common {
   width: auto;
   overflow: auto;
   border-collapse: collapse;
+  &.bordered {
+    &,
+    & th,
+    & td {
+      border: 0.1rem solid $border-light;
+    }
+  }
+  &.striped {
+    & tbody > tr {
+      &:nth-of-type(#{$table-striped-order}) {
+        background: $table-highlight;
+      }
+      &:hover {
+        background: darken($table-highlight, $darken-shadow);
+      }
+    }
+
+  }
   & > thead > tr {
     background: $table-header-light;
     &.dark {
@@ -11,6 +29,11 @@ table.common {
       & > th {
         color: white;
       }
+    }
+  }
+  & > tbody > tr {
+    &:hover {
+      background: $table-highlight;
     }
   }
   & tr {
@@ -41,7 +64,7 @@ table.common {
     padding: $space-common * 2;
   }
   & th {
-    color: $label-dark;
+    color: $label-light;
     font-weight: bold;
   }
   & td {
@@ -51,3 +74,4 @@ table.common {
     }
   }
 }
+

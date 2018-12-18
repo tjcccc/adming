@@ -1,8 +1,9 @@
-<div class="data-table">
+<div class="page">
   <h1>{{pagetitle}}</h1>
   <hr>
+  <!-- Table Style A -->
   <h2>{{tableTitle.tableA}}</h2>
-  <table class="common">
+  <table class="common full">
     <thead>
       <tr class="align-center">
         <th>#</th>
@@ -19,7 +20,73 @@
     <tbody>
       <ng-template ngFor let-item [ngForOf]="data" let-i="index" [ngForTrackBy]="trackByFn">
         <tr class="align-center">
-          <td class="highlight label">{{i}}</td>
+          <td class="highlight label">{{i + 1}}</td>
+          <td><a href="#">{{item.name}}</a></td>
+          <td>{{item.email}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.level}}</td>
+          <td>{{item.state}}</td>
+          <td>{{formatDate(item.birth)}}</td>
+          <td>{{item.sex}}</td>
+          <td>{{item.firstName + ' ' + item.lastName}}</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+  <br>
+  <!-- Table Style B -->
+  <h2>{{tableTitle.tableB}}</h2>
+  <table class="common bordered">
+    <thead>
+      <tr class="align-center">
+        <th>#</th>
+        <th>NAME</th>
+        <th>E-MAIL</th>
+        <th>PHONE</th>
+        <th>LEVEL</th>
+        <th>STATE</th>
+        <th>BIRTH-DATE</th>
+        <th>SEX</th>
+        <th>REALNAME</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-template ngFor let-item [ngForOf]="data" let-i="index" [ngForTrackBy]="trackByFn">
+        <tr class="align-center">
+          <td class="highlight label">{{i + 1}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.level}}</td>
+          <td>{{item.state}}</td>
+          <td>{{formatDate(item.birth)}}</td>
+          <td>{{item.sex}}</td>
+          <td>{{item.firstName + ' ' + item.lastName}}</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+  <br>
+  <!-- Table Style C -->
+  <h2>{{tableTitle.tableC}}</h2>
+  <table class="common striped">
+    <thead>
+      <tr class="align-center">
+        <th>#</th>
+        <th>NAME</th>
+        <th>E-MAIL</th>
+        <th>PHONE</th>
+        <th>LEVEL</th>
+        <th>STATE</th>
+        <th>BIRTH-DATE</th>
+        <th>SEX</th>
+        <th>REALNAME</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-template ngFor let-item [ngForOf]="data" let-i="index" [ngForTrackBy]="trackByFn">
+        <tr class="align-center">
+          <td class="highlight label">{{i + 1}}</td>
           <td>{{item.name}}</td>
           <td>{{item.email}}</td>
           <td>{{item.phone}}</td>

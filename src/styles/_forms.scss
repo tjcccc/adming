@@ -1,23 +1,21 @@
 @import "~styles/variables";
 
-.form-container {
-  & > form.common {
-    & > .form-row {
-      display: flex;
-      padding: $space-common 0;
-      & > * {
-        flex: 1 1 0rem;
-        padding: 0 $space-common;
-        &:first-child {
-          padding-left: 0;
-        }
-        &:last-child {
-          padding-right: 0;
-        }
+form.common {
+  & > .form-row {
+    display: flex;
+    padding: $space-common 0;
+    & > * {
+      flex: 1 1 0rem;
+      padding: 0 $space-common;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
       }
     }
-    & > .button-group {
-      margin: $space-common * 2;
-    }
+  }
+  & > .button-group {
+    margin: $space-common * 2;
   }
 }

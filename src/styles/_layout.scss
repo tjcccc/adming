@@ -4,7 +4,7 @@ app-root {
   display: grid;
   min-height: 60rem;
   grid-template-columns: auto;
-  grid-template-rows: 3rem auto 2rem;
+  grid-template-rows: 6rem auto 2rem;
   grid-template-areas:  "header"
                         "main"
                         "footer";
@@ -31,6 +31,10 @@ app-header {
 
   // temp
   font-size: 1.4rem;
+}
+
+.full {
+  width: 100% !important;
 }
 
 .margin-center {

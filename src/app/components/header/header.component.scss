@@ -1,11 +1,15 @@
 @import "~styles/variables";
 
 header {
-  background: $bg-light;
-  height: 2rem;
+  background: $bg-dark;
+  height: 4rem;
   z-index: 10;
-  padding: $space-common;
-  & > h2 {
-    color: $text-dark;
+  padding: ($space-common * 2) 0;
+  & > h1 {
+    color: $text-light;
+    line-height: 4rem;
+    display: block;
+    padding: 0 ($space-common * 2);
+    float: left;
   }
 }

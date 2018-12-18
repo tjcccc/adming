@@ -6,14 +6,15 @@ import { userMock } from '@adming/mock/users.mock';
 
 @Component({
   selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  templateUrl: './table.component.html'
 })
 export class TableComponent implements OnInit {
 
   pagetitle = 'Adming Data Table';
   tableTitle = {
-    tableA: 'Table A'
+    tableA: 'Table Style A',
+    tableB: 'Table Style B',
+    tableC: 'Table Style C'
   };
   data: User[] = [];
 

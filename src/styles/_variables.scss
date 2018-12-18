@@ -3,13 +3,14 @@ $font-size-xs: 1.0rem;
 $font-size-s: 1.2rem;
 $font-size-m: 1.4rem;
 $font-size-l: 1.8rem;
-$font-size-xl: 2.4rem;
-$font-size-xxl: 2.8rem;
+$font-size-xl: 2.0rem;
+$font-size-xxl: 2.6rem;
 
 // Color
 $primary-color: #012456;
 $primary-color-dark: #1d1a37;
 $bg-light: #efefef;
+$bg-dark: $primary-color-dark;
 $text-dark: #333;
 $text-light: #fff;
 $label-dark: #777;
@@ -24,14 +25,17 @@ $input-line-highlight: $highlight-blue;
 $input-line-error-highlight: $highlight-red;
 $disabled-bg: #ccc;
 $border-light: #ccc;
-$table-header-light: #efefef;
+$table-header-light: $primary-color;
 $table-header-dark: $primary-color-dark;
+$table-highlight: #efefef;
+$table-highlight-dark: $table-header-dark;
 
 // Lighter and darken
 $darken-hover-bg: 5%;
 
 // Margin, Padding
 $space-common: 0.5rem;
+$space-header: 1rem;
 
 // Radius
 $btn-radius: 0.6rem;
@@ -46,3 +50,6 @@ $button-height: 0.2rem;
 
 // Line
 $line-height-s: 2.5rem;
+
+// Table
+$table-striped-order: odd !default;
