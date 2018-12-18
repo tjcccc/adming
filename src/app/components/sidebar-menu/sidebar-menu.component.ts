@@ -3,8 +3,7 @@ import { NavigationNode } from '@adming/models/navigation.model';
 
 @Component({
   selector: 'app-sidebar-menu',
-  templateUrl: './sidebar-menu.component.html',
-  styleUrls: ['./sidebar-menu.component.scss']
+  templateUrl: './sidebar-menu.component.html'
 })
 export class SidebarMenuComponent implements OnInit {
 

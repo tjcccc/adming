@@ -1,0 +1,14 @@
+.sidebar {
+  width: 20rem;
+  min-height: 100vh;
+  overflow: hidden;
+  background: $primary-color;
+  z-index: 2;
+  padding: ($space-common * 2) 0;
+  color: white;
+}
+
+.sidebar-menu {
+  width: 20rem;
+  visibility: visible;
+}

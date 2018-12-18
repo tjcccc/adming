@@ -7,10 +7,12 @@ $font-size-xl: 2.0rem;
 $font-size-xxl: 2.6rem;
 
 // Color
-$primary-color: #012456;
-$primary-color-dark: #1d1a37;
+$primary-color: #123456;
+// $primary-color-dark: darken($primary-color, 5%);
+// $primary-color-dark: #123456;
+$bg-container: white;
 $bg-light: #efefef;
-$bg-dark: $primary-color-dark;
+$bg-dark: $primary-color;
 $text-dark: #333;
 $text-light: #fff;
 $label-dark: #777;
@@ -39,8 +41,8 @@ $space-header: 1rem;
 
 // Radius
 $btn-radius: 0.6rem;
-$input-radius: 0.3rem;
-$container-radius: 0.2rem;
+$input-radius: 0.4rem;
+$container-radius: 0.4rem;
 
 // Shadow
 $darken-shadow: 5%;

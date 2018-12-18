@@ -2,9 +2,8 @@
 
 app-root {
   display: grid;
-  height: 100%;
   grid-template-columns: auto;
-  grid-template-rows: 6rem auto 2rem;
+  grid-template-rows: 4rem auto 2rem;
   grid-template-areas:  "header"
                         "main"
                         "footer";
@@ -26,7 +25,7 @@ app-header {
   }
 }
 
-.footer {
+footer {
   grid-area: footer;
 
   // temp

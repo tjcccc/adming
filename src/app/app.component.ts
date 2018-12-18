@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   // currentNode: NavigationNode;
 
   // Header
-  appTitle = 'adming';
+  appTitle = 'Adming';
 
   // Sidebar
   sidebarNavigationNodes: NavigationNode[];
