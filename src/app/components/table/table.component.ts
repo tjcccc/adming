@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import * as moment from 'moment';
-
-import { User } from '@adming/models/user.model';
-import { usersMock } from '@adming/mock/users.mock';
+import { Component, OnInit, Input } from '@angular/core';
+import { dataProcessing } from '@adming/shared/data-processing';
+import { tableHelper } from '@adming/shared/table-helper';
 
 @Component({
   selector: 'app-table',
@@ -10,24 +8,22 @@ import { usersMock } from '@adming/mock/users.mock';
 })
 export class TableComponent implements OnInit {
 
-  pagetitle = 'Adming Data Table';
-  tableTitle = {
-    tableA: 'Table Style A',
-    tableB: 'Table Style B',
-    tableC: 'Table Style C'
-  };
-  data: User[] = [];
+  @Input() tableTitle?: string;
+  @Input() tableData?: Array<any>;
+  @Input() entriesPerPage?: number;
+  @Input() pageNumber?: number;
 
-  constructor() {
-    // Fake data.
-    this.data = usersMock;
-  }
+  formatDate = dataProcessing.formatDate;
+  getTableItemIndex = tableHelper.getTableItemIndex;
+  getTotalPageCount = tableHelper.getTotalPageCount;
+  getCurrentPageData = tableHelper.getCurrentPageData;
 
-  ngOnInit() {
-  }
+  constructor() { }
 
-  formatDate = (rawDate: Date): string => {
-    return moment(rawDate).format('YYYY-MM-DD');
+  ngOnInit() { }
+
+  gotoPage = (pageNumber: number) => {
+    this.pageNumber = pageNumber;
   }
 
 }

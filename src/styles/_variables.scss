@@ -39,13 +39,21 @@ $darken-hover-bg: 5%;
 $space-common: 0.5rem;
 $space-header: 1rem;
 
+// Width
+$sidebar-width: 20rem;
+$right-content-width: calc(100vw - #{$sidebar-width + $space-common * 4 * 2});
+
 // Radius
 $btn-radius: 0.6rem;
 $input-radius: 0.4rem;
 $container-radius: 0.4rem;
+$list-radius: 1rem;
 
 // Shadow
 $darken-shadow: 5%;
+
+// Border
+$border-width-common: 0.1rem;
 
 // Button
 $button-height: 0.2rem;
@@ -55,4 +63,13 @@ $line-height-s: 3rem;
 
 // Table
 $table-striped-order: odd !default;
-$table-border-width: 0.1rem;
+$table-striped-nested-interval: 4 !default;
+$table-border-width: $border-width-common;
+
+// Collection
+$collection-column-width-xs: 3rem;
+$collection-column-width-s: 5rem;
+$collection-column-width-m: 10rem;
+$collection-column-width-l: 18rem;
+$collection-column-width-xl: 30rem;
+$collection-border-width: $border-width-common;

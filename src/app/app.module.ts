@@ -8,6 +8,7 @@ import { AdmingSidebarModule } from '@adming/modules/adming-sidebar/adming-sideb
 import { AdmingHomeModule } from '@adming/modules/adming-home/adming-home.module';
 import { AdmingFormModule } from '@adming/modules/adming-form/adming-form.module';
 import { AdmingTableModule } from '@adming/modules/adming-table/adming-table.module';
+import { AdmingExamplesModule } from '@adming/modules/adming-examples/adming-examples.module';
 
 // Services
 import { ConfigService } from '@adming/services/config/config.service';
@@ -15,12 +16,10 @@ import { NavigationService } from '@adming/services/navigation/navigation.servic
 
 // Components
 import { AppComponent } from '@adming/app.component';
-import { CollectionComponent } from '@adming/components/collection/collection.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CollectionComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +29,8 @@ import { CollectionComponent } from '@adming/components/collection/collection.co
     AdmingSidebarModule,
     AdmingHomeModule,
     AdmingFormModule,
-    AdmingTableModule
+    AdmingTableModule,
+    AdmingExamplesModule
   ],
   providers: [
     ConfigService,

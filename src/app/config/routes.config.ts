@@ -1,10 +1,10 @@
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { HomeComponent } from '@adming/components/home/home.component';
-import { CollectionComponent } from '@adming/components/collection/collection.component';
 import { FormComponent } from '@adming/components/form/form.component';
 import { UserRegistrationFormComponent } from '@adming/components/user-registration-form/user-registration-form.component';
 import { TestFormComponent } from '@adming/components/test-form/test-form.component';
-import { TableComponent } from '@adming/components/table/table.component';
+import { CommonTableListComponent } from '@adming/components/common-table-list/common-table-list.component';
+import { CollectionTableComponent } from '@adming/components/collection-table/collection-table.component';
 
 export const routes: Routes = [
   {
@@ -15,10 +15,6 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  },
-  {
-    path: 'collection',
-    component: CollectionComponent
   },
   {
     path: 'form',
@@ -33,7 +29,11 @@ export const routes: Routes = [
     component: TestFormComponent
   },
   {
-    path: 'table',
-    component: TableComponent
+    path: 'common-table-list',
+    component: CommonTableListComponent
+  },
+  {
+    path: 'collection-table',
+    component: CollectionTableComponent
   }
 ];

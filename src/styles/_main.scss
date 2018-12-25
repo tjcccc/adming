@@ -12,9 +12,9 @@
   z-index: 1;
   background: $bg-container;
   & .page {
-    & > h1,
-    & > h2,
-    & > h3 {
+    & h1,
+    & h2,
+    & h3 {
       padding: $space-header 0;
     }
   }

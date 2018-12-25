@@ -14,3 +14,4 @@ export const userMock: User = {
 };
 
 export const usersMock: User[] = new Array<User>(10).fill(userMock);
+export const usersMock300: User[] = new Array<User>(295).fill(userMock);

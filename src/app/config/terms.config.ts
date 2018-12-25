@@ -9,7 +9,10 @@ export const terms = {
     email: 'E-MAIL',
     name: 'NAME',
     password: 'PASSWORD',
-    confirmPassword: 'CONFIRM PASSWORD'
+    confirmPassword: 'CONFIRM PASSWORD',
+    prev: 'PREV',
+    next: 'NEXT',
+    go: 'GO'
   },
   phrase: {
     inputMail: 'Input your e-mail address.',

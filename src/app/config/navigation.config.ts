@@ -8,23 +8,17 @@ export const navigation: NavigationNode[] = [
     tooltip: 'Home page.'
   },
   {
-    label: 'Collection',
+    label: 'Menu Levels',
     icon: 'list-ul',
-    tooltip: 'Collection component.',
+    tooltip: 'Level 1.',
     children: [
       {
-        label: 'Common',
-        icon: 'list-ul',
-        link: 'collection',
-        tooltip: 'Common collection.'
-      },
-      {
-        label: 'Level-2',
+        label: 'Level 2',
         icon: 'smile',
         tooltip: 'Level 2',
         children: [
           {
-            label: 'Level-3',
+            label: 'Level 3',
             icon: 'smile',
             tooltip: 'Level 3'
           }
@@ -63,10 +57,16 @@ export const navigation: NavigationNode[] = [
     tooltip: 'Table component.',
     children: [
       {
-        label: 'Common Table',
+        label: 'Common Tables',
         icon: 'table',
-        link: 'table',
-        tooltip: 'Default table.'
+        link: 'common-table-list',
+        tooltip: 'Default table list.'
+      },
+      {
+        label: 'Collection Table',
+        icon: 'table',
+        link: 'collection-table',
+        tooltip: 'Collection Table'
       }
     ]
   },

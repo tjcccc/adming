@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NavigationNode } from '@adming/models/navigation.model';
 
 @Component({
