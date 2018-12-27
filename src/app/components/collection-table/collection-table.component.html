@@ -1,4 +1,13 @@
-<h2 *ngIf="tableTitle">{{tableTitle.collectionTable}}</h2>
+<h2 *ngIf="tableTitle">{{tableTitle}}</h2>
+<div class="table-panel">
+  <div class="table-page">
+    <label>{{label.page}}</label>{{pageNumber}} / {{totalPageCount}}
+  </div>
+  <div class="btn-group">
+    <button class="navigation prev" (click)="gotoPage(pageNumber - 1)" [disabled]="pageNumber == 1">{{label.prev}}</button>
+    <button class="navigation next" (click)="gotoPage(pageNumber + 1)" [disabled]="pageNumber == totalPageCount">{{label.next}}</button>
+  </div>
+</div>
 <table [ngClass]="tableStyle">
   <thead>
     <tr class="align-center">
@@ -37,20 +46,6 @@
   </tbody>
 </table>
 <div class="table-navigation">
-  <div><label>Page:</label>{{pageNumber}} / {{getTotalPageCount(tableData, entriesPerPage)}}</div>
-  <button class="prev">PREV</button>
-  <button>1</button>
-  <button>2</button>
-  <button>3</button>
-  <button>4</button>
-  <button>5</button>
-  <button>...</button>
-  <button>23</button>
-  <button>24</button>
-  <button>25</button>
-  <button>26</button>
-  <button>27</button>
-  <button class="next" (click)="gotoPage(3)">NEXT</button>
   <form action="">
     <label for="page">PAGE</label>
     <input type="number">

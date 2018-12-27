@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AdmingTableComponent } from '@adming/components/adming-table/adming-table.component';
+import { terms } from '@adming/config/terms.config';
 import { User } from '@adming/models/user.model';
 
 @Component({
@@ -14,12 +15,19 @@ export class CollectionTableComponent extends AdmingTableComponent implements On
   @Input() users: User[] = [];
   @Input() tableStyle = 'collection striped full';
 
+  label = {
+    page: terms.label.page,
+    prev: terms.label.prev,
+    next: terms.label.next
+  };
+
   constructor() {
     super();
   }
 
   ngOnInit() {
     this.tableData = this.users;
+    super.ngOnInit();
   }
 
 }

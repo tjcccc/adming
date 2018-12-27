@@ -10,6 +10,7 @@ export const terms = {
     name: 'NAME',
     password: 'PASSWORD',
     confirmPassword: 'CONFIRM PASSWORD',
+    page: 'PAGE',
     prev: 'PREV',
     next: 'NEXT',
     go: 'GO'

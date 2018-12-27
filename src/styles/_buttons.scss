@@ -1,5 +1,21 @@
 @import "variables";
 
+.btn-group {
+  & > button {
+    margin: 0 $space-common;
+  }
+  & > button:first-child {
+    margin-left: 0;
+  }
+  & > button:last-child {
+    margin-right: 0;
+  }
+}
+
+button {
+  font-weight: bold;
+}
+
 button.btn-function {
   outline: none;
   border-radius: $btn-radius;
@@ -20,5 +36,32 @@ button.btn-function {
   }
   &:disabled {
     background: $disabled-bg;
+  }
+}
+
+button.navigation {
+  outline: none;
+  border-radius: $btn-radius;
+  background: $bg-light;
+  color: $link-blue;
+  line-height: 2rem;
+  padding: ($space-common * 1) ($space-common * 4);
+  font-size: $font-size-m;
+  &::before,
+  &::after {
+    font-size: $font-size-m;
+  }
+  &.prev::before {
+    content: '\25C0\00a0';
+  }
+  &.next::after {
+    content: '\00a0\25B6';
+  }
+  &:hover,
+  &:active {
+    color: $link-blue-hover;
+  }
+  &:disabled {
+    color: $link-disabled;
   }
 }

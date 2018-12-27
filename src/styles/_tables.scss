@@ -147,3 +147,20 @@ table.collection {
     }
   }
 }
+
+.table-panel {
+  height: 4rem;
+  font-size: $font-size-m;
+  vertical-align: middle;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & > .table-page {
+    padding: 0 $space-common;
+    color: $text-dark;
+    font-weight: bold;
+    & label {
+      padding-right: $space-common;
+    }
+  }
+}
