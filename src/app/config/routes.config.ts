@@ -4,7 +4,7 @@ import { FormComponent } from '@adming/components/form/form.component';
 import { UserRegistrationFormComponent } from '@adming/components/user-registration-form/user-registration-form.component';
 import { TestFormComponent } from '@adming/components/test-form/test-form.component';
 import { CommonTableListComponent } from '@adming/components/common-table-list/common-table-list.component';
-import { CollectionTableComponent } from '@adming/components/collection-table/collection-table.component';
+import { CollectionTableShowcaseComponent } from '@adming/components/collection-table-showcase/collection-table-showcase.component';
 
 export const routes: Routes = [
   {
@@ -33,7 +33,7 @@ export const routes: Routes = [
     component: CommonTableListComponent
   },
   {
-    path: 'collection-table',
-    component: CollectionTableComponent
+    path: 'collection-table-showcase',
+    component: CollectionTableShowcaseComponent
   }
 ];

@@ -65,7 +65,7 @@ export const navigation: NavigationNode[] = [
       {
         label: 'Collection Table',
         icon: 'table',
-        link: 'collection-table',
+        link: 'collection-table-showcase',
         tooltip: 'Collection Table'
       }
     ]

@@ -1,63 +1,59 @@
-<div class="page">
-  <h1>{{pageTitle}}</h1>
-  <hr>
-  <h2>{{tableTitle.collectionTable}}</h2>
-  <table class="collection striped full">
-    <thead>
+<h2 *ngIf="tableTitle">{{tableTitle.collectionTable}}</h2>
+<table [ngClass]="tableStyle">
+  <thead>
+    <tr class="align-center">
+      <th>#</th>
+      <th>NAME</th>
+      <th>E-MAIL</th>
+      <th>LEVEL</th>
+      <th>STATE</th>
+      <th>CONTROL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-template ngFor let-item [ngForOf]="getCurrentPageData(tableData, entriesPerPage, pageNumber)" let-i="index" [ngForTrackBy]="trackByFn">
       <tr class="align-center">
-        <th>#</th>
-        <th>NAME</th>
-        <th>E-MAIL</th>
-        <th>LEVEL</th>
-        <th>STATE</th>
-        <th>CONTROL</th>
+        <td class="highlight label">{{getTableItemIndex(i, entriesPerPage, pageNumber)}}</td>
+        <td><a appNextRowTrigger>{{item.name}}</a></td>
+        <td>{{item.email}}</td>
+        <td>{{item.level}}</td>
+        <td>{{item.state}}</td>
+        <td>
+          <a href="#">Edit</a>
+          <a href="#">Delete</a>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-      <ng-template ngFor let-item [ngForOf]="getCurrentPageData(tableData, entriesPerPage, pageNumber)" let-i="index" [ngForTrackBy]="trackByFn">
-        <tr class="align-center">
-          <td class="highlight label">{{ getTableItemIndex(i, entriesPerPage, pageNumber) }}</td>
-          <td><a appNextRowTrigger>{{item.name}}</a></td>
-          <td>{{item.email}}</td>
-          <td>{{item.level}}</td>
-          <td>{{item.state}}</td>
-          <td>
-            <a href="#">Edit</a>
-            <a href="#">Delete</a>
-          </td>
-        </tr>
-        <tr style="display: none;">
-          <td colspan="6">
-            <ul>
-              <li><label>Phone:</label>{{item.phone}}</li>
-              <li><label>Birthdate:</label>{{formatDate(item.birth)}}</li>
-              <li><label>Sex:</label>{{item.sex}}</li>
-              <li><label>Real name:</label>{{item.firstName + ' ' + item.lastName}}</li>
-            </ul>
-          </td>
-        </tr>
-      </ng-template>
-    </tbody>
-  </table>
-  <div class="table-navigation">
-    <div><label>Page:</label>{{pageNumber}} / {{getTotalPageCount(tableData, entriesPerPage)}}</div>
-    <button class="prev">PREV</button>
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button>4</button>
-    <button>5</button>
-    <button>...</button>
-    <button>23</button>
-    <button>24</button>
-    <button>25</button>
-    <button>26</button>
-    <button>27</button>
-    <button class="next" (click)="gotoPage(3)">NEXT</button>
-    <form action="">
-      <label for="page">PAGE</label>
-      <input type="number">
-      <button>GO</button>
-    </form>
-  </div>
+      <tr style="display: none;">
+        <td colspan="6">
+          <ul>
+            <li><label>Phone:</label>{{item.phone}}</li>
+            <li><label>Birthdate:</label>{{formatDate(item.birth)}}</li>
+            <li><label>Sex:</label>{{item.sex}}</li>
+            <li><label>Real name:</label>{{item.firstName + ' ' + item.lastName}}</li>
+          </ul>
+        </td>
+      </tr>
+    </ng-template>
+  </tbody>
+</table>
+<div class="table-navigation">
+  <div><label>Page:</label>{{pageNumber}} / {{getTotalPageCount(tableData, entriesPerPage)}}</div>
+  <button class="prev">PREV</button>
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+  <button>4</button>
+  <button>5</button>
+  <button>...</button>
+  <button>23</button>
+  <button>24</button>
+  <button>25</button>
+  <button>26</button>
+  <button>27</button>
+  <button class="next" (click)="gotoPage(3)">NEXT</button>
+  <form action="">
+    <label for="page">PAGE</label>
+    <input type="number">
+    <button>GO</button>
+  </form>
 </div>

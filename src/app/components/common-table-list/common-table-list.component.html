@@ -1,5 +1,9 @@
 <div class="page">
   <h1>{{pageTitle}}</h1>
   <hr>
-  <app-common-table [tableTitle]="tableTitles.tableA" [users]="users"></app-common-table>
+  <app-common-table [tableStyle]="'common full'" [tableTitle]="tableTitles.tableA" [users]="users"></app-common-table>
+  <br>
+  <app-common-table [tableStyle]="'common bordered'" [tableTitle]="tableTitles.tableB" [users]="users"></app-common-table>
+  <br>
+  <app-common-table [tableStyle]="'common striped full'" [tableTitle]="tableTitles.tableC" [users]="users"></app-common-table>
 </div>

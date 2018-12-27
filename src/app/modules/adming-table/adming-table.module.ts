@@ -1,21 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TableComponent } from '@adming/components/table/table.component';
-import { CollectionTableComponent } from '@adming/components/collection-table/collection-table.component';
+import { AdmingTableComponent } from '@adming/components/adming-table/adming-table.component';
+
 import { NextRowTriggerDirective } from '@adming/directives/table/next-row-trigger.directive';
 
 @NgModule({
   declarations: [
-    TableComponent,
-    CollectionTableComponent,
+    AdmingTableComponent,
     NextRowTriggerDirective
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    TableComponent,
-    CollectionTableComponent,
+    AdmingTableComponent,
     NextRowTriggerDirective
   ]
 })

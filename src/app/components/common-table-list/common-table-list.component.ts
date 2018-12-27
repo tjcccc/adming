@@ -10,7 +10,9 @@ export class CommonTableListComponent implements OnInit {
 
   pageTitle = 'Common Table List';
   tableTitles = {
-    tableA: 'Common Table Style 1'
+    tableA: 'Common Table Style 1',
+    tableB: 'Common Table Style 2',
+    tableC: 'Common Table Style 3'
   };
   users: User[] = [];
 

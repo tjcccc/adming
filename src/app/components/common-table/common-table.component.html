@@ -1,5 +1,5 @@
-<h2>{{tableTitle}}</h2>
-<table class="common full">
+<h2 *ngIf="tableTitle">{{tableTitle}}</h2>
+<table [ngClass]="tableStyle">
   <thead>
     <tr class="align-center">
       <th>#</th>

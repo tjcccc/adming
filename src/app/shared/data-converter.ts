@@ -1,6 +1,6 @@
 import * as moment from 'moment';
 
-export const dataProcessing = {
+export const dataConverter = {
   formatDate: (rawDate: Date): string => {
     return moment(rawDate).format('YYYY-MM-DD');
   }
