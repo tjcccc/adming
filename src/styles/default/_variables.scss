@@ -28,6 +28,7 @@ $input-line: #ccc;
 $input-line-highlight: $highlight-blue;
 $input-line-error-highlight: $highlight-red;
 $disabled-bg: #ccc;
+$disabled-label: #999;
 $border-light: #ccc;
 $table-header-light: #ddd;
 $table-header-dark: $primary-color;
@@ -42,10 +43,14 @@ $space-common: 0.5rem;
 $space-header: 1rem;
 
 // Width
+$std-width: 10rem;
+$std-height: 2rem;
+$std-diameter: 3rem;
 $sidebar-width: 20rem;
 $right-content-width: calc(100vw - #{$sidebar-width + $space-common * 4 * 2});
 
 // Radius
+$std-round-radius: $std-diameter / 2;
 $btn-radius: 0.6rem;
 $input-radius: 0.4rem;
 $container-radius: 0.4rem;

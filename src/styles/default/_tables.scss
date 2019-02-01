@@ -148,6 +148,12 @@ table.collection {
   }
 }
 
+table .option {
+  & > a {
+    margin: 0 $space-common;
+  }
+}
+
 .table-panel {
   height: 4rem;
   font-size: $font-size-m;
@@ -165,8 +171,27 @@ table.collection {
   }
 }
 
-table .option {
-  & > a {
-    margin: 0 $space-common;
+.table-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & > form {
+    font-size: $font-size-s;
+    & > button {
+      font-size: $font-size-s !important;
+      &:disabled {
+        background: $bg-light !important;
+        color: $disabled-label !important;
+      }
+    }
+  }
+  & > nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: ($space-common * 2) 0;
+    & > button {
+      margin: 0 $space-common;
+    }
   }
 }

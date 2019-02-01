@@ -119,3 +119,13 @@ form.common {
     font-size: $font-size-s;
   }
 }
+
+.table-navigation > form {
+  & > input {
+    width: $std-diameter * 2;
+    height: $std-height;
+    padding: $space-common;
+    margin: 0 $space-common;
+    text-align: center;
+  }
+}

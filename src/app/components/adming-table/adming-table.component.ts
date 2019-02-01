@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { dataConverter } from '@adming/shared/data-converter';
 
 @Component({
@@ -12,8 +12,10 @@ export class AdmingTableComponent implements OnInit, OnChanges {
   @Input() pageNumber?: number;
 
   totalPageCount: number;
+  navPageNumber = 1;
 
   formatDate = dataConverter.formatDate;
+  makeArrayForLoop = dataConverter.makeArrayForLoop;
 
   constructor() {}
 
@@ -63,8 +65,26 @@ export class AdmingTableComponent implements OnInit, OnChanges {
   }
 
   gotoPage = (pageNumber: number) => {
+    if (typeof pageNumber !== 'number') {
+      this.pageNumber = 1;
+    }
     // console.log(pageNumber, this.totalPageCount);
     this.pageNumber = this.fixPageNumber(pageNumber, this.totalPageCount);
+  }
+
+  isInNavRange = (index: number, pageNumber: number, range: number) => {
+    // For first 9.
+    if (pageNumber < (range / 2)) {
+      return (index + 1) < range;
+    }
+
+    // For last 9.
+    if ((this.totalPageCount - pageNumber) < (range / 2)) {
+      return Math.abs(index + 1 - pageNumber) < (range - (this.totalPageCount - pageNumber) - 1);
+    }
+
+    // Others.
+    return Math.abs(index + 1 - pageNumber) < (range / 2);
   }
 
   trackByFn = (index: number, item: any) => {

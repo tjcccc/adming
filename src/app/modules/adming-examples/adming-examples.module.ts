@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { CommonTableComponent } from '@adming/components/common-table/common-table.component';
 import { CollectionTableComponent } from '@adming/components/collection-table/collection-table.component';
 import { CommonTableListComponent } from '@adming/components/common-table-list/common-table-list.component';
@@ -13,7 +14,8 @@ import { CollectionTableShowcaseComponent } from '@adming/components/collection-
     CollectionTableShowcaseComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     CommonTableComponent,

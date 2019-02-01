@@ -46,12 +46,31 @@
   </tbody>
 </table>
 <div class="table-navigation">
-  <nav *ngFor="let pageNav of users; index as i; trackBy: trackByFn">
-    <button type="button" (click)="gotoPage(i + 1)">{{i + 1}}</button>
-  </nav>
-  <form action="">
-    <label for="page">PAGE</label>
-    <input type="number">
-    <button type="button">GO</button>
+  <form>
+    <input
+      name="nav-page"
+      type="number"
+      [(ngModel)]="navPageNumber"
+      (keyup.enter)="gotoPage(navPageNumber)"
+      placeholder="Page?">
+    <button
+      class="round"
+      type="button"
+      (click)="gotoPage(navPageNumber)"
+      [disabled]="navPageNumber < 1 || navPageNumber > totalPageCount">
+      GO
+    </button>
   </form>
+  <nav>
+    <ng-template ngFor let-item [ngForOf]="makeArrayForLoop(totalPageCount)" let-i="index" [ngForTrackBy]="trackByFn">
+      <button
+        *ngIf="isInNavRange(i, pageNumber, 10)"
+        class="round"
+        type="button"
+        (click)="gotoPage(i + 1)"
+        [disabled]="i + 1 == pageNumber">
+        {{i + 1}}
+      </button>
+    </ng-template>
+  </nav>
 </div>

@@ -1,19 +1,16 @@
 @import "variables";
 
-.btn-group {
-  & > button {
-    margin: 0 $space-common;
+button.round {
+  width: $std-diameter;
+  height: $std-diameter;
+  border-radius: $std-round-radius;
+  background: $bg-light;
+  padding: 0;
+  text-align: center;
+  &:disabled {
+    background: $primary-color;
+    color: white;
   }
-  & > button:first-child {
-    margin-left: 0;
-  }
-  & > button:last-child {
-    margin-right: 0;
-  }
-}
-
-button {
-  font-weight: bold;
 }
 
 button.btn-function {
@@ -63,5 +60,17 @@ button.navigation {
   }
   &:disabled {
     color: $link-disabled;
+  }
+}
+
+.btn-group {
+  & > button {
+    margin: 0 $space-common;
+  }
+  & > button:first-child {
+    margin-left: 0;
+  }
+  & > button:last-child {
+    margin-right: 0;
   }
 }

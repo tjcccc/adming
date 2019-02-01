@@ -42,3 +42,26 @@ a {
   @include a-common-hover;
   @include children-vertical-align-middle;
 }
+
+button {
+  font-weight: 600;
+  font-size: $font-size-m;
+  outline: none;
+  color: $link-blue;
+  background: $bg-light;
+  &:hover {
+    background: darken($bg-light, $darken-hover-bg);
+  }
+  &:active {
+    background: darken($bg-light, $darken-hover-bg * 2);
+  }
+}
+
+input {
+  font-size: $font-size-m;
+  border: $border-width-common solid $input-line;
+  border-radius: $input-radius;
+  &:focus {
+    border-color: $input-line-highlight;
+  }
+}
