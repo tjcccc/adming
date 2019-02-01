@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '@adming/models/user.model';
-import { usersMock300 } from '@adming/mock/users.mock';
+import { UserService } from '@adming/services/user/user.service';
 
 @Component({
   selector: 'app-collection-table-showcase',
@@ -16,10 +16,15 @@ export class CollectionTableShowcaseComponent implements OnInit {
   };
   users: User[] = [];
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.users = usersMock300;
+    this.getUsers();
+  }
+
+  getUsers = () => {
+    this.userService.getUsers()
+      .subscribe(users => this.users = users);
   }
 
 }

@@ -15,16 +15,19 @@ export class AdmingTableComponent implements OnInit, OnChanges {
 
   formatDate = dataConverter.formatDate;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-    this.totalPageCount = this.getTotalPageCount(this.tableData, this.entriesPerPage);
-  }
+  ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.tableData || changes.entriesPerPage) {
-      this.totalPageCount = this.getTotalPageCount(this.tableData, this.entriesPerPage);
+      this.loadTableData(changes.tableData);
     }
+  }
+
+  loadTableData = (tableData: any) => {
+    this.tableData = tableData;
+    this.totalPageCount = this.getTotalPageCount(this.tableData, this.entriesPerPage);
   }
 
   getTableItemIndex = (currentLoopIndex: number, entriesPerPage: number, pageNumber: number) => {
@@ -32,8 +35,8 @@ export class AdmingTableComponent implements OnInit, OnChanges {
   }
 
   getTotalPageCount = (tableData: Array<any>, entriesPerPage: number) => {
-    if (tableData === undefined || entriesPerPage === 0) {
-      return 0;
+    if (tableData === null || tableData === undefined || entriesPerPage === 0) {
+      return 1;
     }
     return Math.ceil(tableData.length / entriesPerPage);
   }

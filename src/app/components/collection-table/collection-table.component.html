@@ -20,7 +20,7 @@
     </tr>
   </thead>
   <tbody>
-    <ng-template ngFor let-item [ngForOf]="getCurrentPageData(tableData, entriesPerPage, pageNumber)" let-i="index" [ngForTrackBy]="trackByFn">
+    <ng-template ngFor let-item [ngForOf]="getCurrentPageData(users, entriesPerPage, pageNumber)" let-i="index" [ngForTrackBy]="trackByFn">
       <tr class="align-center">
         <td class="highlight label">{{getTableItemIndex(i, entriesPerPage, pageNumber)}}</td>
         <td><a appNextRowTrigger>{{item.name}}</a></td>

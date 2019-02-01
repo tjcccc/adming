@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChange } from '@angular/core';
 import { AdmingTableComponent } from '@adming/components/adming-table/adming-table.component';
 import { terms } from '@adming/config/terms.config';
 import { User } from '@adming/models/user.model';
@@ -26,8 +26,6 @@ export class CollectionTableComponent extends AdmingTableComponent implements On
   }
 
   ngOnInit() {
-    this.tableData = this.users;
-    super.ngOnInit();
+    this.loadTableData(this.users);
   }
-
 }
