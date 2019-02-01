@@ -38,7 +38,7 @@ export class AdmingTableComponent implements OnInit, OnChanges {
     if (tableData === null || tableData === undefined || entriesPerPage === 0) {
       return 1;
     }
-    return Math.ceil(tableData.length / entriesPerPage);
+    return Math.ceil(tableData.length / entriesPerPage) < 1 ? 1 : Math.ceil(tableData.length / entriesPerPage);
   }
 
   fixPageNumber = (pageNumber: number, totalPageCount: number) => {
@@ -48,13 +48,13 @@ export class AdmingTableComponent implements OnInit, OnChanges {
   }
 
   getCurrentPageData = (tableData: Array<any>, entriesPerPage: number, pageNumber: number) => {
-    if (tableData === undefined || entriesPerPage === 0) {
+    if (tableData === null || tableData === undefined || entriesPerPage === 0) {
       return new Array();
     }
 
-    const totalPageCount = this.getTotalPageCount(tableData, entriesPerPage);
+    this.loadTableData(tableData);
     pageNumber = pageNumber < 1 ? 1 : pageNumber;
-    pageNumber = pageNumber > totalPageCount ? totalPageCount : pageNumber;
+    pageNumber = pageNumber > this.totalPageCount ? this.totalPageCount : pageNumber;
 
     // Page Number = Index + 1
     const startIndex = entriesPerPage * (pageNumber - 1);
@@ -63,7 +63,14 @@ export class AdmingTableComponent implements OnInit, OnChanges {
   }
 
   gotoPage = (pageNumber: number) => {
-    console.log(pageNumber, this.totalPageCount);
+    // console.log(pageNumber, this.totalPageCount);
     this.pageNumber = this.fixPageNumber(pageNumber, this.totalPageCount);
+  }
+
+  trackByFn = (index: number, item: any) => {
+    if (!item) {
+      return null;
+    }
+    return index;
   }
 }

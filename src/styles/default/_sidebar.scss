@@ -1,0 +1,77 @@
+@import "variables";
+
+.sidebar {
+  width: $sidebar-width;
+  min-height: 100vh;
+  overflow: hidden;
+  background: $primary-color;
+  z-index: 2;
+  padding: ($space-common * 2) 0;
+  color: white;
+}
+
+.sidebar-menu {
+  width: 20rem;
+  visibility: visible;
+}
+
+.sidebar-menu-item {
+  & button,
+  & a {
+    cursor: pointer;
+    display: block;
+    background: none;
+    text-align: left;
+    padding: $space-common * 2;
+    color: white;
+    box-sizing: content-box;
+    outline: none;
+    &:link,
+    &:hover,
+    &:visited {
+      color: white;
+      text-decoration: none;
+    }
+    &:hover {
+      background: darken($primary-color, $darken-hover-bg);
+    }
+    & > span {
+      margin-left: $space-common;
+    }
+  }
+
+  & .level-1 {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: $font-size-m;
+    font-weight: 600;
+  }
+
+  & .level-2 {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: $font-size-m;
+    font-weight: normal;
+    padding-left: ($space-common * 4);
+  }
+
+  & .level-3 {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: $font-size-s;
+    font-weight: normal;
+    padding-left: ($space-common * 2);
+  }
+
+  & .children-container.collapsed {
+    display: none;
+  }
+
+  & .children-container.expanded {
+    display: block;
+  }
+
+  & .selected {
+    background: darken($primary-color, $darken-hover-bg);
+  }
+}

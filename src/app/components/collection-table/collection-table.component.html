@@ -27,7 +27,7 @@
         <td>{{item.email}}</td>
         <td>{{item.level}}</td>
         <td>{{item.state}}</td>
-        <td>
+        <td class="option">
           <a href="#">Edit</a>
           <a href="#">Delete</a>
         </td>
@@ -46,9 +46,12 @@
   </tbody>
 </table>
 <div class="table-navigation">
+  <nav *ngFor="let pageNav of users; index as i; trackBy: trackByFn">
+    <button type="button" (click)="gotoPage(i + 1)">{{i + 1}}</button>
+  </nav>
   <form action="">
     <label for="page">PAGE</label>
     <input type="number">
-    <button>GO</button>
+    <button type="button">GO</button>
   </form>
 </div>

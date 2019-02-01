@@ -1,10 +1,10 @@
-<div *ngIf="node && !node.children">
+<div *ngIf="node && !node.children" class="sidebar-menu-item">
   <a [ngClass]="cssClasses" [routerLink]="node.link" title="{{node.tooltip}}">
     <fa-icon *ngIf="node.icon" [icon]="icon" [fixedWidth]="true"></fa-icon>
     <span>{{node.label}}</span>
   </a>
 </div>
-<div *ngIf="node && node.children">
+<div *ngIf="node && node.children" class="sidebar-menu-item">
   <a *ngIf="node.link != null" [ngClass]="cssClasses" [routerLink]="node.link" title="{{node.tooltip}}" (click)="clickMenuItem()">
     <fa-icon *ngIf="node.icon" [icon]="icon" [fixedWidth]="true"></fa-icon>
     <span>{{node.label}}</span>

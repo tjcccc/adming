@@ -4,8 +4,7 @@ import { FormItemBase, FormItemType } from './form-item-base';
 
 @Component({
   selector: 'app-form-item',
-  templateUrl: './form-item.component.html',
-  styleUrls: ['./form-item.component.scss']
+  templateUrl: './form-item.component.html'
 })
 export class FormItemComponent implements OnInit {
 

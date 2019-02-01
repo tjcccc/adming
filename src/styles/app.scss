@@ -1,12 +1,8 @@
-@import "variables";
+// Reset
 @import "reset";
-@import "global";
-@import "layout";
-@import "header";
-@import "sidebar";
-@import "main";
-@import "footer";
-@import "forms";
-@import "tables";
-@import "buttons";
-@import "labels";
+
+// Normalize CSS
+@import "../../node_modules/normalize.css/normalize.css";
+
+// Theme
+@import "./default/theme";

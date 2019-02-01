@@ -1,3 +1,6 @@
+@import "variables";
+@import "mixins";
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: $primary-color;
@@ -28,6 +31,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
+  font-weight: 600;
   color: $text-dark;
+}
+
+a {
+  user-select: none;
+  cursor: pointer;
+  @include a-common;
+  @include a-common-hover;
+  @include children-vertical-align-middle;
 }

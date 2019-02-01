@@ -164,3 +164,9 @@ table.collection {
     }
   }
 }
+
+table .option {
+  & > a {
+    margin: 0 $space-common;
+  }
+}

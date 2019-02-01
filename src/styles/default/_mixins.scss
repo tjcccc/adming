@@ -1,0 +1,30 @@
+@import "variables";
+
+// Link
+@mixin a-common {
+  &:link,
+  &:visited {
+    color: $link-blue;
+    text-decoration: none;
+  }
+}
+@mixin a-common-disable {
+  &.disabled {
+    color: $value-disabled;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+@mixin a-common-hover {
+  &:hover {
+    color: darken($link-blue, $darken-shadow);
+    text-decoration: underline;
+  }
+}
+
+// Layout
+@mixin children-vertical-align-middle {
+  & > * {
+    vertical-align: middle;
+  }
+}
