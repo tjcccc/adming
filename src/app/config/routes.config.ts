@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from '@adming/components/home/home.component';
 import { FormComponent } from '@adming/components/form/form.component';
+import { ComponentsPageComponent } from '@adming/pages/components-page/components-page.component';
 import { UserRegistrationFormComponent } from '@adming/components/user-registration-form/user-registration-form.component';
 import { TestFormComponent } from '@adming/components/test-form/test-form.component';
 import { CommonTableListComponent } from '@adming/components/common-table-list/common-table-list.component';
@@ -35,5 +36,9 @@ export const routes: Routes = [
   {
     path: 'collection-table-showcase',
     component: CollectionTableShowcaseComponent
+  },
+  {
+    path: 'components',
+    component: ComponentsPageComponent
   }
 ];

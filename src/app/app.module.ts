@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AdmingIconsModule } from '@adming/modules/adming-icons/adming-icons.module';
+import { AdmingPagesModule } from '@adming/modules/adming-pages/adming-pages.module';
 import { AdmingHeaderModule } from '@adming/modules/adming-header/adming-header.module';
 import { AdmingSidebarModule } from '@adming/modules/adming-sidebar/adming-sidebar.module';
 import { AdmingHomeModule } from '@adming/modules/adming-home/adming-home.module';
@@ -25,6 +26,7 @@ import { AppComponent } from '@adming/app.component';
     BrowserModule,
     HttpClientModule,
     AdmingIconsModule,
+    AdmingPagesModule,
     AdmingHeaderModule,
     AdmingSidebarModule,
     AdmingHomeModule,

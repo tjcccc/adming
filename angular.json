@@ -118,11 +118,11 @@
   "defaultProject": "adming",
   "schematics": {
     "@schematics/angular:component": {
-      "prefix": "app",
+      "prefix": "adming",
       "styleext": "scss"
     },
     "@schematics/angular:directive": {
-      "prefix": "app"
+      "prefix": "adming"
     }
   }
 }

@@ -27,6 +27,12 @@ export const navigation: NavigationNode[] = [
     ]
   },
   {
+    label: 'Components',
+    icon: 'cubes',
+    link: 'components',
+    tooltip: 'Components collection.',
+  },
+  {
     label: 'Form',
     icon: 'edit',
     tooltip: 'Form component.',
