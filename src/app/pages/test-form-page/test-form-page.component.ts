@@ -6,12 +6,11 @@ import { SelectFormItem } from '@adming/components/form-item/form-item-select';
 import { User } from '@adming/models/user.model';
 
 @Component({
-  selector: 'app-test-form',
-  templateUrl: './test-form.component.html',
-  styleUrls: ['./test-form.component.scss'],
+  selector: 'adming-test-form-page',
+  templateUrl: './test-form-page.component.html',
   providers: [ FormItemControlService ]
 })
-export class TestFormComponent implements OnInit {
+export class TestFormPageComponent implements OnInit {
 
   testForm: FormGroup;
 

@@ -1,3 +1,8 @@
+export enum FormItemTerm {
+  Type = 'type',
+  Options = 'options'
+}
+
 export enum FormItemType {
   InputText = 'text',
   InputNumber = 'number',

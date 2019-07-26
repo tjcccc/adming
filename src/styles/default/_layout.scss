@@ -1,6 +1,6 @@
 @import "variables";
 
-app-root {
+adming-root {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 4rem auto 2rem;
@@ -10,7 +10,7 @@ app-root {
   grid-gap: 0;
 }
 
-app-header {
+adming-header {
   grid-area: header;
 }
 

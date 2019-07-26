@@ -3,12 +3,12 @@
   <hr>
   <form class="common" [formGroup]="userRegistrationForm" (ngSubmit)="onSubmit()">
     <div class="form-row">
-      <app-form-item [form]="userRegistrationForm" [formItem]="emailInput"></app-form-item>
-      <app-form-item [form]="userRegistrationForm" [formItem]="usernameInput"></app-form-item>
+      <adming-form-item [form]="userRegistrationForm" [formItem]="emailInput"></adming-form-item>
+      <adming-form-item [form]="userRegistrationForm" [formItem]="usernameInput"></adming-form-item>
     </div>
     <div class="form-row">
-      <app-form-item [form]="userRegistrationForm" [formItem]="passwordInput"></app-form-item>
-      <app-form-item [form]="userRegistrationForm" [formItem]="passwordConfirmationInput" [matchingItem]="passwordInput"></app-form-item>
+      <adming-form-item [form]="userRegistrationForm" [formItem]="passwordInput"></adming-form-item>
+      <adming-form-item [form]="userRegistrationForm" [formItem]="passwordConfirmationInput" [matchingItem]="passwordInput"></adming-form-item>
     </div>
     <div class="button-group content-center">
         <button class="btn-function" type="submit" [disabled]="!userRegistrationForm.valid">Register</button>

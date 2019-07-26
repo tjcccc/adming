@@ -1,9 +1,9 @@
 <div class="form-container">
   <form class="common" [formGroup]="testForm" (ngSubmit)="onSubmit()">
     <div class="form-row">
-      <app-form-item [form]="testForm" [formItem]="nameInput"></app-form-item>
-      <app-form-item [form]="testForm" [formItem]="ageInput"></app-form-item>
-      <app-form-item [form]="testForm" [formItem]="sexSelect"></app-form-item>
+      <adming-form-item [form]="testForm" [formItem]="nameInput"></adming-form-item>
+      <adming-form-item [form]="testForm" [formItem]="ageInput"></adming-form-item>
+      <adming-form-item [form]="testForm" [formItem]="sexSelect"></adming-form-item>
     </div>
     <div class="button-group content-center">
         <button class="btn-function" type="submit" [disabled]="!testForm.valid">Show</button>

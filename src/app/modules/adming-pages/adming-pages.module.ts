@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdmingComponentsModule } from '@adming/modules/adming-components/adming-components.module';
-import { ComponentsPageComponent } from '@adming/pages/components-page/components-page.component';
+import { HomePageComponent } from '@adming/pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
-    ComponentsPageComponent
+    HomePageComponent
   ],
   imports: [
-    CommonModule,
-    AdmingComponentsModule
+    CommonModule
   ],
   exports: [
-    ComponentsPageComponent
+    HomePageComponent
   ]
 })
 export class AdmingPagesModule { }

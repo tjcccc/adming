@@ -6,7 +6,7 @@ import { SelectFormItem } from '@adming/components/form-item/form-item-select';
 import { User } from '@adming/models/user.model';
 
 @Component({
-  selector: 'app-form',
+  selector: 'adming-form',
   templateUrl: './form.component.html',
   providers: [ FormItemControlService ]
 })

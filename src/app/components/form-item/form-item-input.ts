@@ -1,4 +1,4 @@
-import { FormItemBase, FormItemType } from './form-item-base';
+import { FormItemTerm, FormItemType, FormItemBase } from './form-item-base';
 
 export class TextInputFormItem extends FormItemBase<string> {
   controlType = FormItemType.InputText;
@@ -6,7 +6,7 @@ export class TextInputFormItem extends FormItemBase<string> {
 
   constructor(setting: {} = {}) {
     super(setting);
-    this.type = setting['type'] || '';
+    this.type = setting[FormItemTerm.Type] || '';
   }
 }
 
@@ -16,7 +16,7 @@ export class NumberInputFormItem extends FormItemBase<number> {
 
   constructor(setting: {} = {}) {
     super(setting);
-    this.type = setting['type'] || '';
+    this.type = setting[FormItemTerm.Type] || '';
 
   }
 }
@@ -27,7 +27,7 @@ export class PasswordInputFormItem extends FormItemBase<string> {
 
   constructor(setting: {} = {}) {
     super(setting);
-    this.type = setting['type'] || '';
+    this.type = setting[FormItemTerm.Type] || '';
   }
 }
 
@@ -37,6 +37,6 @@ export class MailInputFormItem extends FormItemBase<string> {
 
   constructor(setting: {} = {}) {
     super(setting);
-    this.type = setting['type'] || '';
+    this.type = setting[FormItemTerm.Type] || '';
   }
 }

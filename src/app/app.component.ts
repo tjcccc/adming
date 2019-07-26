@@ -8,7 +8,7 @@ import { NavigationNode } from '@adming/models/navigation.model';
 import { NavigationService } from '@adming/services/navigation/navigation.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'adming-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

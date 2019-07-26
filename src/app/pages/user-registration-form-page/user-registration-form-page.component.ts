@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
-import { terms } from '@adming/config/terms.config';
 import { FormItemControlService } from '@adming/services/form/form-item-control.service';
 import { UserService } from '@adming/services/user/user.service';
 import { TextInputFormItem, MailInputFormItem, PasswordInputFormItem } from '@adming/components/form-item/form-item-input';
+import { User } from '@adming/models/user.model';
 import { forbiddenInputValidator } from '@adming/directives/form/forbidden-input-validator.directive';
 import { forbiddenName } from '@adming/config/forbidden-name.config';
-import { User } from '@adming/models/user.model';
+import { terms } from '@adming/config/terms.config';
 
 @Component({
-  selector: 'app-user-registration-form',
-  templateUrl: './user-registration-form.component.html',
+  selector: 'adming-user-registration-form-page',
+  templateUrl: './user-registration-form-page.component.html',
   providers: [ FormItemControlService ]
 })
-export class UserRegistrationFormComponent implements OnInit {
+export class UserRegistrationFormPageComponent implements OnInit {
 
   pagetitle = 'Adming Form';
   userRegistrationForm: FormGroup;

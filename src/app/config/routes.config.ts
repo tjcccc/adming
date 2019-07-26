@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from '@adming/components/home/home.component';
+import { HomePageComponent } from '@adming/pages/home-page/home-page.component';
 import { FormComponent } from '@adming/components/form/form.component';
 import { ComponentsPageComponent } from '@adming/pages/components-page/components-page.component';
-import { UserRegistrationFormComponent } from '@adming/components/user-registration-form/user-registration-form.component';
-import { TestFormComponent } from '@adming/components/test-form/test-form.component';
-import { CommonTableListComponent } from '@adming/components/common-table-list/common-table-list.component';
-import { CollectionTableShowcaseComponent } from '@adming/components/collection-table-showcase/collection-table-showcase.component';
+import { UserRegistrationFormPageComponent } from '@adming/pages/user-registration-form-page/user-registration-form-page.component';
+import { TestFormPageComponent } from '@adming/pages/test-form-page/test-form-page.component';
+import { CommonTablesPageComponent } from '@adming/pages/common-tables-page/common-tables-page.component';
+import { CollectionTablesPageComponent } from '@adming/pages/collection-tables-page/collection-tables-page.component';
 
 export const routes: Routes = [
   {
@@ -15,7 +15,7 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomePageComponent
   },
   {
     path: 'form',
@@ -23,19 +23,19 @@ export const routes: Routes = [
   },
   {
     path: 'user-registration-form',
-    component: UserRegistrationFormComponent
+    component: UserRegistrationFormPageComponent
   },
   {
     path: 'test-form',
-    component: TestFormComponent
+    component: TestFormPageComponent
   },
   {
-    path: 'common-table-list',
-    component: CommonTableListComponent
+    path: 'common-tables',
+    component: CommonTablesPageComponent
   },
   {
-    path: 'collection-table-showcase',
-    component: CollectionTableShowcaseComponent
+    path: 'collection-tables',
+    component: CollectionTablesPageComponent
   },
   {
     path: 'components',

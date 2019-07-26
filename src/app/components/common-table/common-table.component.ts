@@ -3,7 +3,7 @@ import { AdmingTableComponent } from '@adming/components/adming-table/adming-tab
 import { User } from '@adming/models/user.model';
 
 @Component({
-  selector: 'app-common-table',
+  selector: 'adming-common-table',
   templateUrl: './common-table.component.html'
 })
 export class CommonTableComponent extends AdmingTableComponent implements OnInit {

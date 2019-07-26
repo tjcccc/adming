@@ -141,12 +141,12 @@ constructor(private formItemControlService: FormItemControlService) {
 <div class="form-container">
   <form class="common" [formGroup]="yourForm" (ngSubmit)="onSubmit()">
     <div class="form-row">
-      <app-form-item [form]="yourForm" [formItem]="nameInput"></app-form-item>
-      <app-form-item [form]="yourForm" [formItem]="ageInput"></app-form-item>
+      <adming-form-item [form]="yourForm" [formItem]="nameInput"></adming-form-item>
+      <adming-form-item [form]="yourForm" [formItem]="ageInput"></adming-form-item>
     </div>
     <div class="form-row">
-      <app-form-item [form]="yourForm" [formItem]="sexSelect"></app-form-item>
-      <app-form-item [form]="yourForm" [formItem]="emailInput"></app-form-item>
+      <adming-form-item [form]="yourForm" [formItem]="sexSelect"></adming-form-item>
+      <adming-form-item [form]="yourForm" [formItem]="emailInput"></adming-form-item>
     </div>
     <div class="button-group content-center">
         <button class="btn-function" type="submit" [disabled]="!admingForm.valid">Show</button>
@@ -162,14 +162,14 @@ constructor(private formItemControlService: FormItemControlService) {
 
 ### 相同内容输入验证
 
-如果要验证一个表单项的输入内容是否与另一个相同，则需要在 `<app-form-item>` 中将欲匹配的表单项填入 `matchingItem` 中。
+如果要验证一个表单项的输入内容是否与另一个相同，则需要在 `<adming-form-item>` 中将欲匹配的表单项填入 `matchingItem` 中。
 
 示例：
 
 ```typescript
 <div class="form-row">
-  <app-form-item [form]="yourForm" [formItem]="item1"></app-form-item>
-  <app-form-item [form]="yourForm" [formItem]="item2" [matchingItem]="item1"></app-form-item>
+  <adming-form-item [form]="yourForm" [formItem]="item1"></adming-form-item>
+  <adming-form-item [form]="yourForm" [formItem]="item2" [matchingItem]="item1"></adming-form-item>
 </div>
 ```
 

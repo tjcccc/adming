@@ -1,11 +1,11 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appNextRowTrigger]'
+  selector: '[admingNextRowTrigger]'
 })
 export class NextRowTriggerDirective {
 
-  constructor(private el: ElementRef) { }
+  constructor() { }
 
   @HostListener('mouseenter') onmouseenter = () => {
 

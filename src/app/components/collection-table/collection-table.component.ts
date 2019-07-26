@@ -4,7 +4,7 @@ import { terms } from '@adming/config/terms.config';
 import { User } from '@adming/models/user.model';
 
 @Component({
-  selector: 'app-collection-table',
+  selector: 'adming-collection-table',
   templateUrl: './collection-table.component.html'
 })
 export class CollectionTableComponent extends AdmingTableComponent implements OnInit {

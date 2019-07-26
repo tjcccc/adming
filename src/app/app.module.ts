@@ -6,7 +6,6 @@ import { AdmingIconsModule } from '@adming/modules/adming-icons/adming-icons.mod
 import { AdmingPagesModule } from '@adming/modules/adming-pages/adming-pages.module';
 import { AdmingHeaderModule } from '@adming/modules/adming-header/adming-header.module';
 import { AdmingSidebarModule } from '@adming/modules/adming-sidebar/adming-sidebar.module';
-import { AdmingHomeModule } from '@adming/modules/adming-home/adming-home.module';
 import { AdmingFormModule } from '@adming/modules/adming-form/adming-form.module';
 import { AdmingTableModule } from '@adming/modules/adming-table/adming-table.module';
 import { AdmingExamplesModule } from '@adming/modules/adming-examples/adming-examples.module';
@@ -29,7 +28,6 @@ import { AppComponent } from '@adming/app.component';
     AdmingPagesModule,
     AdmingHeaderModule,
     AdmingSidebarModule,
-    AdmingHomeModule,
     AdmingFormModule,
     AdmingTableModule,
     AdmingExamplesModule

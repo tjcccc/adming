@@ -16,11 +16,11 @@
     <fa-icon *ngIf="node.children" [icon]="navIcon" rotate="{{navIconRotate}}" pull="right"></fa-icon>
   </button>
   <div class="children-container" [ngClass]="cssClasses">
-    <app-sidebar-menu-item
+    <adming-sidebar-menu-item
       *ngFor="let node of nodeChildren"
       [node]="node"
       [level]="level + 1"
       [selectedPath]="selectedPath">
-    </app-sidebar-menu-item>
+    </adming-sidebar-menu-item>
   </div>
 </div>

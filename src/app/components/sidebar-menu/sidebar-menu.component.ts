@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { NavigationNode } from '@adming/models/navigation.model';
 
 @Component({
-  selector: 'app-sidebar-menu',
+  selector: 'adming-sidebar-menu',
   templateUrl: './sidebar-menu.component.html'
 })
 export class SidebarMenuComponent implements OnInit {

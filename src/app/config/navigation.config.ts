@@ -65,13 +65,13 @@ export const navigation: NavigationNode[] = [
       {
         label: 'Common Tables',
         icon: 'table',
-        link: 'common-table-list',
+        link: 'common-tables',
         tooltip: 'Default table list.'
       },
       {
         label: 'Collection Table',
         icon: 'table',
-        link: 'collection-table-showcase',
+        link: 'collection-tables',
         tooltip: 'Collection Table'
       }
     ]

@@ -1,4 +1,4 @@
-import { FormItemBase, FormItemType } from './form-item-base';
+import { FormItemTerm, FormItemType, FormItemBase } from './form-item-base';
 
 export class SelectFormItem extends FormItemBase<string> {
   controlType = FormItemType.Select;
@@ -6,6 +6,6 @@ export class SelectFormItem extends FormItemBase<string> {
 
   constructor(setting: {} = {}) {
     super(setting);
-    this.options = setting['options'] || [];
+    this.options = setting[FormItemTerm.Options] || [];
   }
 }

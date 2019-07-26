@@ -4,10 +4,10 @@ import { UserService } from '@adming/services/user/user.service';
 import { usersMock300 } from '@adming/mock/users.mock';
 
 @Component({
-  selector: 'app-collection-table-showcase',
-  templateUrl: './collection-table-showcase.component.html'
+  selector: 'adming-collection-tables-page',
+  templateUrl: './collection-tables-page.component.html'
 })
-export class CollectionTableShowcaseComponent implements OnInit {
+export class CollectionTablesPageComponent implements OnInit {
 
   pageTitle = 'Collection Table Showcase';
   tableTitles = {
@@ -26,7 +26,7 @@ export class CollectionTableShowcaseComponent implements OnInit {
 
   getUsers = () => {
     this.userService.getUsers()
-      .subscribe(users => this.users = users);
+      .subscribe((users: User[]) => this.users = users);
   }
 
 }

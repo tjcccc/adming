@@ -3,7 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { FormItemBase, FormItemType } from './form-item-base';
 
 @Component({
-  selector: 'app-form-item',
+  selector: 'adming-form-item',
   templateUrl: './form-item.component.html'
 })
 export class FormItemComponent implements OnInit {

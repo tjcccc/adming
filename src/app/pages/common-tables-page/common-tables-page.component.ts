@@ -3,10 +3,10 @@ import { User } from '@adming/models/user.model';
 import { usersMock } from '@adming/mock/users.mock';
 
 @Component({
-  selector: 'app-common-table-list',
-  templateUrl: './common-table-list.component.html'
+  selector: 'adming-common-tables-page',
+  templateUrl: './common-tables-page.component.html'
 })
-export class CommonTableListComponent implements OnInit {
+export class CommonTablesPageComponent implements OnInit {
 
   pageTitle = 'Common Table List';
   tableTitles = {

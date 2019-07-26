@@ -6,7 +6,7 @@ const FONT_AWESOME_ICON_PREFIX = 'fas';
 const NAVIGATION_ICON_DEFAULT = 'angle-down';
 
 @Component({
-  selector: 'app-sidebar-menu-item',
+  selector: 'adming-sidebar-menu-item',
   templateUrl: './sidebar-menu-item.component.html'
 })
 export class SidebarMenuItemComponent implements OnChanges {

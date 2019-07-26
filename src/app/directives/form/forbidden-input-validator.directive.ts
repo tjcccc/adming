@@ -2,10 +2,10 @@ import { Directive, Input } from '@angular/core';
 import { Validator, ValidatorFn, AbstractControl } from '@angular/forms';
 
 @Directive({
-  selector: '[appForbiddenInputValidator]'
+  selector: '[admingForbiddenInputValidator]'
 })
 export class ForbiddenInputValidatorDirective implements Validator {
-  @Input('appForbiddenInputValidator') forbiddenInput: string[];
+  @Input('admingForbiddenInputValidator') forbiddenInput: string[];
 
   validate(control: AbstractControl): { [key: string]: any } | null {
     return this.forbiddenInput ? forbiddenInputValidator(this.forbiddenInput)(control) : null;
@@ -22,6 +22,6 @@ export function forbiddenInputValidator(names: string[]): ValidatorFn {
   const namesRe = new RegExp(names.join('|'), 'i');
   return (control: AbstractControl): { [key: string]: any } | null => {
     const forbidden = namesRe.test(control.value);
-    return forbidden ? { 'forbiddenName': { value: control.value } } : null;
+    return forbidden ? { forbiddenName: { value: control.value } } : null;
   };
 }
