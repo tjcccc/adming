@@ -13,7 +13,7 @@ ng generate component your-form
 ### 引入表单服务
 
 ```typescript
-import { FormItemControlService } from '@adming/services/form/form-item-control.service';
+import { FormItemControlService } from '@adming-app/services/form/form-item-control.service';
 
 @Component({
   providers: [ FormItemControlService ]
@@ -25,7 +25,7 @@ import { FormItemControlService } from '@adming/services/form/form-item-control.
 #### 输入框
 
 ```typescript
-import { TextInputFormItem, NumberInputFormItem, PasswordInputFormItem, MailInputFormItem } from '@adming/components/form-item/form-item-input';
+import { TextInputFormItem, NumberInputFormItem, PasswordInputFormItem, MailInputFormItem } from '@adming-app/components/form-item/form-item-input';
 ```
 
 - `TextInputFormItem`: 文本
@@ -36,7 +36,7 @@ import { TextInputFormItem, NumberInputFormItem, PasswordInputFormItem, MailInpu
 #### 下拉菜单
 
 ```typescript
-import { SelectFormItem } from '@adming/components/form-item/form-item-select';
+import { SelectFormItem } from '@adming-app/components/form-item/form-item-select';
 ```
 
 - `SelectFormItem`: 下拉菜单

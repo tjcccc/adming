@@ -19,7 +19,15 @@
       "dom"
     ],
     "paths": {
-      "@adming/*": [ "src/app/*" ]
+      "adming": [
+        "dist/adming"
+      ],
+      "adming/*": [
+        "dist/adming/*"
+      ],
+      "@adming-app/*": [
+        "projects/adming-app/src/app/*"
+      ]
     }
   },
   "angularCompilerOptions": {
