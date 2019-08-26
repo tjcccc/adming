@@ -29,6 +29,8 @@ export class SidebarMenuItemComponent implements OnChanges {
 
   constructor(faIconLibrary: FaIconLibrary) {
     faIconLibrary.addIconPacks(fas);
+
+    // It could be removed.
     faIconLibrary.addIcons(NAVIGATION_ICON_DEFAULT);
   }
 

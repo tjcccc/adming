@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'adming-components-page',
+  selector: 'app-components-page',
   templateUrl: './components-page.component.html'
 })
 export class ComponentsPageComponent implements OnInit {

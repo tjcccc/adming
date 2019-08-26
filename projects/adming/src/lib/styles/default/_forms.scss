@@ -1,0 +1,131 @@
+@import "variables";
+
+form.common {
+  & > .form-row {
+    display: flex;
+    padding: $space-common 0;
+    & > * {
+      flex: 1 1 0rem;
+      padding: 0 $space-common;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+  & > .button-group {
+    margin: $space-common * 2;
+  }
+  & label {
+    display: block;
+    font-size: $font-size-s;
+    font-weight: bold;
+    padding: $space-common 0;
+  }
+}
+
+// general
+.form-item {
+  & > input,
+  & > select {
+    font-size: $font-size-m;
+  }
+}
+
+// textbox
+.form-item {
+  & > input[type="text"],
+  & > input[type="number"],
+  & > input[type="password"],
+  & > input[type="email"] {
+    width: 100%;
+    height: $line-height-s;
+    box-sizing: border-box;
+    background: #fff;
+    padding: $space-common;
+    border: 0.1rem solid $input-line;
+    border-radius: $input-radius;
+    color: $text-dark;
+    &:focus {
+      border-color: $input-line-highlight;
+    }
+  }
+}
+
+// select
+.form-item {
+  & > select,
+  & > select > option {
+    // Clear default style.
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    &::-ms-expand {
+      display: none;
+    }
+  }
+  & > select {
+    width: 100%;
+    height: $line-height-s;
+    box-sizing: border-box;
+    padding: $space-common ($space-common * 6) $space-common $space-common;
+    background: #fff;
+    border: 0.1rem solid $input-line;
+    border-radius: $input-radius;
+    color: $text-dark;
+    &:focus {
+      border-color: $input-line-highlight;
+    }
+    & > option {
+      height: $line-height-s - $space-common * 2;
+      padding: $space-common * 2;
+      outline: none;
+      border: 1px solid #efefef;
+      border-left: none;
+      border-right: none;
+      &:hover {
+        background: $highlight-blue;
+      }
+    }
+  }
+  & > fa-icon {
+    pointer-events: none;
+    font-size: $font-size-l;
+    color: $label-dark;
+    position: absolute;
+    margin: 0.3rem 0 0 -3rem;
+  }
+}
+
+// error-message
+.form-item {
+  &.error {
+    & > label {
+      color: $warning-red;
+    }
+    & > input,
+    & > select {
+      border-color: $warning-red;
+      color: $warning-red;
+      &:focus {
+        border-color: $input-line-error-highlight;
+      }
+    }
+  }
+  & > .error-message {
+    color: $warning-red;
+    font-size: $font-size-s;
+  }
+}
+
+.table-navigation > form {
+  & > input {
+    width: $std-diameter * 2;
+    height: $std-height;
+    padding: $space-common;
+    margin: 0 $space-common;
+    text-align: center;
+  }
+}

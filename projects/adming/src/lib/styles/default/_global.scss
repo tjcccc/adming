@@ -1,0 +1,67 @@
+@import "variables";
+@import "mixins";
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: $primary-color;
+}
+
+h1 {
+  font-size: $font-size-xxl;
+}
+h2 {
+  font-size: $font-size-xl;
+}
+h3 {
+  font-size: $font-size-l;
+}
+h4 {
+  font-size: $font-size-m;
+}
+h5 {
+  font-size: $font-size-s;
+}
+h6 {
+  font-size: $font-size-xs;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: $text-dark;
+}
+
+a {
+  user-select: none;
+  cursor: pointer;
+  @include a-common;
+  @include a-common-hover;
+  @include children-vertical-align-middle;
+}
+
+button {
+  font-weight: 600;
+  font-size: $font-size-m;
+  outline: none;
+  color: $link-blue;
+  background: $bg-light;
+  &:hover {
+    background: darken($bg-light, $darken-hover-bg);
+  }
+  &:active {
+    background: darken($bg-light, $darken-hover-bg * 2);
+  }
+}
+
+input {
+  font-size: $font-size-m;
+  border: $border-width-common solid $input-line;
+  border-radius: $input-radius;
+  &:focus {
+    border-color: $input-line-highlight;
+  }
+}

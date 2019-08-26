@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdmingComponentsModule } from '@adming-app/modules/adming-components/adming-components.module';
 import { AdmingFormModule } from '@adming-app/modules/adming-form/adming-form.module';
 import { FormComponent } from '@adming-app/components/form/form.component';
 import { UserRegistrationFormPageComponent } from '@adming-app/pages/user-registration-form-page/user-registration-form-page.component';
@@ -10,6 +9,9 @@ import { CollectionTableComponent } from '@adming-app/components/collection-tabl
 import { CommonTablesPageComponent } from '@adming-app/pages/common-tables-page/common-tables-page.component';
 import { CollectionTablesPageComponent } from '@adming-app/pages/collection-tables-page/collection-tables-page.component';
 import { ComponentsPageComponent } from '@adming-app/pages/components-page/components-page.component';
+
+// Import components or modules from adming library.
+import { AdmingComponentsModule } from 'adming';
 
 @NgModule({
   declarations: [

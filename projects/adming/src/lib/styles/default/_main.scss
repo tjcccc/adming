@@ -1,0 +1,37 @@
+@import "variables";
+
+.main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: $primary-color;
+}
+
+.content-container {
+  padding: ($space-common * 4);
+  z-index: 1;
+  background: $bg-container;
+  & .page {
+    & h1,
+    & h2,
+    & h3 {
+      padding: $space-header 0;
+    }
+  }
+}
+
+.content-left {
+  text-align: left !important;
+}
+
+.content-right {
+  text-align: right !important;
+}
+
+.content-center {
+  text-align: center !important;
+}
+
+.highlight {
+  font-weight: bold;
+}

@@ -1,0 +1,197 @@
+@import "variables";
+
+table {
+  width: auto;
+  overflow: auto;
+  border-collapse: collapse;
+}
+
+table.common {
+  &.bordered {
+    &,
+    & th,
+    & td {
+      border: $table-border-width solid $border-light;
+    }
+    & thead > tr {
+      background: $table-header-light !important;
+      & > th {
+        color: $label-dark;
+      }
+    }
+  }
+  &.striped {
+    & tbody > tr {
+      &:nth-of-type(#{$table-striped-order}) {
+        background: $table-highlight;
+      }
+      &:hover {
+        background: darken($table-highlight, $darken-shadow);
+      }
+    }
+
+  }
+  & > thead > tr {
+    background: $table-header-dark;
+  }
+  & > tbody > tr {
+    &:hover {
+      background: $table-highlight;
+    }
+  }
+  & tr {
+    border-bottom: $table-border-width solid $border-light;
+    &.align-left {
+      & > th,
+      & > td {
+        text-align: left;
+      }
+    }
+    &.align-right {
+      & > th,
+      & > td {
+        text-align: right;
+      }
+    }
+    &.align-center {
+      & > th,
+      & > td {
+        text-align: center;
+      }
+    }
+  }
+  & th,
+  & td {
+    font-size: $font-size-m;
+    padding: $space-common * 2;
+  }
+  & th {
+    color: $label-light;
+    font-weight: bold;
+  }
+  & td {
+    color: $text-dark;
+    &.label {
+      color: $label-dark;
+    }
+  }
+}
+
+table.collection {
+  &.bordered {
+    &,
+    & th,
+    & td {
+      border: $table-border-width solid $border-light;
+    }
+    & thead > tr {
+      background: $table-header-light !important;
+      & > th {
+        color: $label-dark;
+      }
+    }
+  }
+  &.striped {
+    & tbody > tr {
+      &:nth-of-type(#{$table-striped-nested-interval}n + 1) {
+        background: $table-highlight;
+      }
+      &:hover {
+        background: darken($table-highlight, $darken-shadow);
+      }
+    }
+
+  }
+  & > thead > tr {
+    background: $table-header-dark;
+  }
+  & > tbody > tr {
+    &:hover {
+      background: $table-highlight;
+    }
+  }
+  & tr {
+    border-bottom: $table-border-width solid $border-light;
+    &.align-left {
+      & > th,
+      & > td {
+        text-align: left;
+      }
+    }
+    &.align-right {
+      & > th,
+      & > td {
+        text-align: right;
+      }
+    }
+    &.align-center {
+      & > th,
+      & > td {
+        text-align: center;
+      }
+    }
+  }
+  & th,
+  & td {
+    font-size: $font-size-m;
+    padding: $space-common * 2;
+  }
+  & th {
+    color: $label-light;
+    font-weight: bold;
+  }
+  & td {
+    color: $text-dark;
+    &.label {
+      color: $label-dark;
+    }
+  }
+}
+
+table .option {
+  & > a {
+    margin: 0 $space-common;
+  }
+}
+
+.table-panel {
+  height: 4rem;
+  font-size: $font-size-m;
+  vertical-align: middle;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & > .table-page {
+    padding: 0 $space-common;
+    color: $text-dark;
+    font-weight: bold;
+    & label {
+      padding-right: $space-common;
+    }
+  }
+}
+
+.table-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & > form {
+    font-size: $font-size-s;
+    & > button {
+      font-size: $font-size-s !important;
+      &:disabled {
+        background: $bg-light !important;
+        color: $disabled-label !important;
+      }
+    }
+  }
+  & > nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: ($space-common * 2) 0;
+    & > button {
+      margin: 0 $space-common;
+    }
+  }
+}

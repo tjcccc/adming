@@ -9,7 +9,15 @@
     "lib": [
       "dom",
       "es2018"
-    ]
+    ],
+    "paths": {
+      "@adming/": [
+        "projects/adming/src/lib/"
+      ],
+      "@adming/*": [
+        "projects/adming/src/lib/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,

@@ -1,0 +1,15 @@
+@import "variables";
+
+header {
+  background: $bg-dark;
+  height: 3rem;
+  z-index: 10;
+  padding: $space-common 0;
+  & > h1 {
+    color: $text-light;
+    line-height: 3rem;
+    display: block;
+    padding: 0 ($space-common * 2);
+    float: left;
+  }
+}

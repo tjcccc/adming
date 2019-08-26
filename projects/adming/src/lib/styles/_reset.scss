@@ -1,0 +1,128 @@
+body,
+div,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+legend,
+fieldset,
+input,
+textarea,
+p,
+q,
+blockquote,
+caption,
+th,
+td,
+header,
+nav,
+aside,
+section,
+hgroup,
+article,
+footer {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-size: 62.5%;
+}
+
+img,
+button,
+fieldset {
+  border: 0;
+}
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+label,
+i,
+span {
+  display: inline-block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 0;
+  -webkit-border-horizontal-spacing: 0;
+  -webkit-border-vertical-spacing: 0;
+}
+
+caption,
+th {
+  text-align: left;
+  font-style: normal;
+  font-weight: bold;
+}
+
+td {
+  vertical-align: top;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ol: default, for safari */
+ol {
+  margin-left: 1.3rem;
+}
+
+/* ol: for chrome */
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+  ol {
+    margin-left: 1.3rem;
+  }
+}
+
+/* ol: for firefox */
+@media all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm) {
+  ol {
+    margin-left: 1.1rem;
+  }
+}
+
+/* ol: for >=ie9 */
+@media screen and (min-width:0\0) {
+  ol {
+    margin-left: 1.6rem;
+  }
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #000;
+  box-shadow: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+a:focus {
+  outline: none;
+}

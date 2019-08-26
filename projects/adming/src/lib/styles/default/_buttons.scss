@@ -1,0 +1,76 @@
+@import "variables";
+
+button.round {
+  width: $std-diameter;
+  height: $std-diameter;
+  border-radius: $std-round-radius;
+  background: $bg-light;
+  padding: 0;
+  text-align: center;
+  &:disabled {
+    background: $primary-color;
+    color: white;
+  }
+}
+
+button.btn-function {
+  outline: none;
+  border-radius: $btn-radius;
+  background: $link-blue;
+  color: $text-light;
+  padding: ($space-common * 2) ($space-common * 4);
+  box-shadow: 0 $button-height darken($link-blue, $darken-shadow);
+  font-size: $font-size-m;
+  &:hover,
+  &:active {
+    background: darken($link-blue, $darken-hover-bg);
+    box-shadow: 0 $button-height darken($link-blue, $darken-shadow * 2);
+  }
+  &:active,
+  &:disabled {
+    transform: translate(0, $button-height);
+    box-shadow: none;
+  }
+  &:disabled {
+    background: $disabled-bg;
+  }
+}
+
+button.navigation {
+  outline: none;
+  border-radius: $btn-radius;
+  background: $bg-light;
+  color: $link-blue;
+  line-height: 2rem;
+  padding: ($space-common * 1) ($space-common * 4);
+  font-size: $font-size-m;
+  &::before,
+  &::after {
+    font-size: $font-size-m;
+  }
+  &.prev::before {
+    content: '\25C0\00a0';
+  }
+  &.next::after {
+    content: '\00a0\25B6';
+  }
+  &:hover,
+  &:active {
+    color: $link-blue-hover;
+  }
+  &:disabled {
+    color: $link-disabled;
+  }
+}
+
+.btn-group {
+  & > button {
+    margin: 0 $space-common;
+  }
+  & > button:first-child {
+    margin-left: 0;
+  }
+  & > button:last-child {
+    margin-right: 0;
+  }
+}
