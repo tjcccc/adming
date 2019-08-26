@@ -2,7 +2,7 @@
  * Reference: angular.io (https://github.com/angular/angular/tree/master/aio)
  */
 
-import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { LocationService } from '@adming-app/services/location/location.service';
 import { NavigationNode } from '@adming-app/models/navigation.model';
 import { NavigationService } from '@adming-app/services/navigation/navigation.service';

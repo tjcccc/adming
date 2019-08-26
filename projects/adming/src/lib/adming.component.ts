@@ -3,9 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'adming-adming',
   template: `
-    <p>
-      adming works!
-    </p>
+    <span>✅</span>
   `,
   styles: []
 })

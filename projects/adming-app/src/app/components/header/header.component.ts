@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+// test library
+import { AdmingComponent } from 'adming';
+
 @Component({
   selector: 'adming-header',
   templateUrl: './header.component.html'

@@ -1,9 +1,11 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { NavigationNode } from '@adming-app/models/navigation.model';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { fas, faAngleDown as NAVIGATION_ICON_DEFAULT, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 const LEVEL_STYLE_PREFIX = 'level-';
 const FONT_AWESOME_ICON_PREFIX = 'fas';
-const NAVIGATION_ICON_DEFAULT = 'angle-down';
+// const NAVIGATION_ICON_DEFAULT = 'faAngleDown';
 
 @Component({
   selector: 'adming-sidebar-menu-item',
@@ -19,12 +21,16 @@ export class SidebarMenuItemComponent implements OnChanges {
   isSelected = false;
   isChildSelected = false;
   cssClasses: { [index: string]: boolean };
-  icon: string[];
-  navIcon: string[] = [FONT_AWESOME_ICON_PREFIX, NAVIGATION_ICON_DEFAULT];
+  icon: IconDefinition;
+  navIcon: IconDefinition = NAVIGATION_ICON_DEFAULT;
   navIconRotate: number;
   nodeChildren: NavigationNode[];
+  iconLibrary: FaIconLibrary;
 
-  constructor() { }
+  constructor(faIconLibrary: FaIconLibrary) {
+    faIconLibrary.addIconPacks(fas);
+    faIconLibrary.addIcons(NAVIGATION_ICON_DEFAULT);
+  }
 
   ngOnChanges() {
     this.setNodeChildren();
@@ -36,8 +42,8 @@ export class SidebarMenuItemComponent implements OnChanges {
 
   setIcon() {
     if (this.node) {
-      this.icon = [FONT_AWESOME_ICON_PREFIX, this.node.icon];
-      this.navIcon = [FONT_AWESOME_ICON_PREFIX, NAVIGATION_ICON_DEFAULT];
+      this.icon = this.node.icon;
+      this.navIcon = NAVIGATION_ICON_DEFAULT;
       this.navIconRotate = 0;
     }
   }
@@ -63,8 +69,8 @@ export class SidebarMenuItemComponent implements OnChanges {
     let requestNodes: NavigationNode[] = [];
     if (node.children) {
       requestNodes = requestNodes.concat(node.children.filter(childNode => childNode.link === path));
-      for (let i = 0; i < node.children.length; i += 1) {
-        requestNodes = requestNodes.concat(this.filterChildNodesByPath(node.children[i], path));
+      for (const childNode of node.children) {
+        requestNodes = requestNodes.concat(this.filterChildNodesByPath(childNode, path));
       }
     }
     return requestNodes;

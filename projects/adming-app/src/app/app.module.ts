@@ -17,6 +17,9 @@ import { NavigationService } from '@adming-app/services/navigation/navigation.se
 // Components
 import { AppComponent } from '@adming-app/app.component';
 
+// Adming Library
+import { AdmingModule } from 'adming';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -25,12 +28,13 @@ import { AppComponent } from '@adming-app/app.component';
     BrowserModule,
     HttpClientModule,
     AdmingIconsModule,
-    AdmingPagesModule,
     AdmingHeaderModule,
     AdmingSidebarModule,
     AdmingFormModule,
     AdmingTableModule,
-    AdmingExamplesModule
+    AdmingPagesModule,
+    AdmingExamplesModule,
+    AdmingModule
   ],
   providers: [
     ConfigService,
