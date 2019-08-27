@@ -1,10 +1,10 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { NavigationNode } from '@adming-app/models/navigation.model';
+import { NavigationNode } from '../../models/navigation.model';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas, faAngleDown as NAVIGATION_ICON_DEFAULT, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 const LEVEL_STYLE_PREFIX = 'level-';
-const FONT_AWESOME_ICON_PREFIX = 'fas';
+// const FONT_AWESOME_ICON_PREFIX = 'fas';
 // const NAVIGATION_ICON_DEFAULT = 'faAngleDown';
 
 @Component({

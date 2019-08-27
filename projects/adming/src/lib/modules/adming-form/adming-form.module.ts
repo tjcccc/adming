@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AdmingIconsModule } from '@adming-app/modules/adming-icons/adming-icons.module';
-import { FormItemComponent } from '@adming-app/components/form-item/form-item.component';
+import { AdmingIconsModule } from '../adming-icons/adming-icons.module';
+import { FormItemComponent } from '../../components/form-item/form-item.component';
+import { ForbiddenInputValidatorDirective } from '../../directives/form/forbidden-input-validator.directive';
 
 @NgModule({
   declarations: [
-    FormItemComponent
+    FormItemComponent,
+    ForbiddenInputValidatorDirective
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import { FormItemComponent } from '@adming-app/components/form-item/form-item.co
   exports: [
     FormsModule,
     ReactiveFormsModule,
-    FormItemComponent
+    FormItemComponent,
+    ForbiddenInputValidatorDirective
   ]
 })
 export class AdmingFormModule { }

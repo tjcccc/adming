@@ -4,7 +4,7 @@ import { UserService } from '@adming-app/services/user/user.service';
 import { usersMock300 } from '@adming-app/mock/users.mock';
 
 @Component({
-  selector: 'adming-collection-tables-page',
+  selector: 'app-collection-tables-page',
   templateUrl: './collection-tables-page.component.html'
 })
 export class CollectionTablesPageComponent implements OnInit {

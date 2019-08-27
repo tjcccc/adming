@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormItemControlService } from '@adming-app/services/form/form-item-control.service';
-import { TextInputFormItem, NumberInputFormItem } from '@adming-app/components/form-item/form-item-input';
-import { SelectFormItem } from '@adming-app/components/form-item/form-item-select';
+import { TextInputFormItem, NumberInputFormItem, SelectFormItem } from 'adming';
 import { User } from '@adming-app/models/user.model';
 
 @Component({

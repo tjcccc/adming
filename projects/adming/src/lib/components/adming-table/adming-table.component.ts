@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { dataConverter } from '@adming-app/shared/data-converter';
+import { dataConverter } from '../../utilities/data-converter';
 
 @Component({
   template: ''

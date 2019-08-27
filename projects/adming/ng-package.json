@@ -4,7 +4,10 @@
   "lib": {
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
-      "@adming/components/progress/progress.component": "ProgressComponent"
+      "@adming/components/progress/progress.component": "ProgressComponent",
+      "moment": "moment",
+      "@fortawesome/angular-fontawesome": "AngularFontAwesome",
+      "@fortawesome/free-solid-svg-icons": "FontAwesomeFreeSolidSvgIcons"
     }
   }
 }

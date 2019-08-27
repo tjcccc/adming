@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { FormItemBase } from '@adming-app/components/form-item/form-item-base';
+import { FormItemBase } from 'adming';
 
 @Injectable()
 export class FormItemControlService {

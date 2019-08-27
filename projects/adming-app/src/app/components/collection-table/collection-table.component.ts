@@ -1,10 +1,10 @@
 import { Component, Input, OnInit, OnChanges, SimpleChange } from '@angular/core';
-import { AdmingTableComponent } from '@adming-app/components/adming-table/adming-table.component';
+import { AdmingTableComponent } from 'adming';
 import { terms } from '@adming-app/config/terms.config';
 import { User } from '@adming-app/models/user.model';
 
 @Component({
-  selector: 'adming-collection-table',
+  selector: 'app-collection-table',
   templateUrl: './collection-table.component.html'
 })
 export class CollectionTableComponent extends AdmingTableComponent implements OnInit {

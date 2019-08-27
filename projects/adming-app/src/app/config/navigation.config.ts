@@ -1,4 +1,4 @@
-import { NavigationNode } from '@adming-app/models/navigation.model';
+import { NavigationNode } from 'adming';
 
 export const navigation: NavigationNode[] = [
   {

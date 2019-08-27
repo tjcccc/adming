@@ -3,7 +3,7 @@ import { User } from '@adming-app/models/user.model';
 import { usersMock } from '@adming-app/mock/users.mock';
 
 @Component({
-  selector: 'adming-common-tables-page',
+  selector: 'app-common-tables-page',
   templateUrl: './common-tables-page.component.html'
 })
 export class CommonTablesPageComponent implements OnInit {

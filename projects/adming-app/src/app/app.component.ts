@@ -3,8 +3,7 @@
  */
 
 import { Component, OnInit, HostListener } from '@angular/core';
-import { LocationService } from '@adming-app/services/location/location.service';
-import { NavigationNode } from '@adming-app/models/navigation.model';
+import { LocationService, NavigationNode } from 'adming';
 import { NavigationService } from '@adming-app/services/navigation/navigation.service';
 
 @Component({

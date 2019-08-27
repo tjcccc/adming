@@ -1,4 +1,6 @@
-import * as moment from 'moment';
+import * as momentLibrary from 'moment';
+
+const moment = momentLibrary;
 
 export const dataConverter = {
 
@@ -7,7 +9,7 @@ export const dataConverter = {
     return moment(rawDate).format('YYYY-MM-DD');
   },
 
-  // Maka an empty array with specific length.
+  // Make an empty array with specific length.
   makeArrayForLoop: (length: number): Array<any> => {
     return new Array(length);
   }

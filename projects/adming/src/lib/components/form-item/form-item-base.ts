@@ -21,6 +21,7 @@ export class FormItemBase<T> {
   controlType: FormItemType;
   validators: [any];
   errorMessage: string;
+  options: any;
 
   constructor(setting: {
       value?: T,

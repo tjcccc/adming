@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormItemControlService } from '@adming-app/services/form/form-item-control.service';
 import { UserService } from '@adming-app/services/user/user.service';
-import { TextInputFormItem, MailInputFormItem, PasswordInputFormItem } from '@adming-app/components/form-item/form-item-input';
+import { TextInputFormItem, MailInputFormItem, PasswordInputFormItem } from 'adming';
 import { User } from '@adming-app/models/user.model';
-import { forbiddenInputValidator } from '@adming-app/directives/form/forbidden-input-validator.directive';
+import { forbiddenInputValidator } from 'adming';
 import { forbiddenName } from '@adming-app/config/forbidden-name.config';
 import { terms } from '@adming-app/config/terms.config';
 
