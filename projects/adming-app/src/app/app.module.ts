@@ -3,9 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-// From Adming Library
-import { AdmingIconsModule, AdmingSidebarModule, AdmingFormModule, AdmingTableModule } from 'adming';
-
 // Modules
 import { AdmingPagesModule } from '@adming-app/modules/adming-pages/adming-pages.module';
 import { AdmingHeaderModule } from '@adming-app/modules/adming-header/adming-header.module';
@@ -25,10 +22,6 @@ import { AppComponent } from '@adming-app/app.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AdmingIconsModule,
-    AdmingSidebarModule,
-    AdmingFormModule,
-    AdmingTableModule,
     AdmingHeaderModule,
     AdmingPagesModule,
     AdmingExamplesModule

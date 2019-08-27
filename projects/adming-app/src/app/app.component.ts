@@ -3,7 +3,8 @@
  */
 
 import { Component, OnInit, HostListener } from '@angular/core';
-import { LocationService, NavigationNode } from 'adming';
+import { NavigationNode } from 'adming';
+import { LocationService } from '@adming-app/services/location/location.service';
 import { NavigationService } from '@adming-app/services/navigation/navigation.service';
 
 @Component({
@@ -26,7 +27,7 @@ export class AppComponent implements OnInit {
   constructor(
     private navigationService: NavigationService,
     private locationService: LocationService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.locationService.currentPath.subscribe(

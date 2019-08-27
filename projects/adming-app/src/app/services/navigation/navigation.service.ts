@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, ConnectableObservable } from 'rxjs';
 import { publishLast } from 'rxjs/operators';
 import { ConfigService } from '@adming-app/services/config/config.service';
-import { NavigationNode } from 'adming';
 import { navigation } from '@adming-app/config/navigation.config';
+import { NavigationNode } from 'adming';
 
 const CONFIG_NAVIGATION_URL = 'assets/config/navigation.json';
 
