@@ -9,7 +9,7 @@ import { forbiddenName } from '@adming-app/config/forbidden-name.config';
 import { terms } from '@adming-app/config/terms.config';
 
 @Component({
-  selector: 'adming-user-registration-form-page',
+  selector: 'app-user-registration-form-page',
   templateUrl: './user-registration-form-page.component.html',
   providers: [ FormItemControlService ]
 })

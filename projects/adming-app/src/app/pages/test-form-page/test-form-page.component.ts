@@ -5,7 +5,7 @@ import { TextInputFormItem, NumberInputFormItem, SelectFormItem } from 'adming';
 import { User } from '@adming-app/models/user.model';
 
 @Component({
-  selector: 'adming-test-form-page',
+  selector: 'app-test-form-page',
   templateUrl: './test-form-page.component.html',
   providers: [ FormItemControlService ]
 })
