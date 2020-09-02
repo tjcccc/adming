@@ -15,7 +15,12 @@
             "tsConfig": "projects/adming/tsconfig.lib.json",
             "project": "projects/adming/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/adming/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -57,7 +62,7 @@
             "main": "projects/adming-app/src/main.ts",
             "polyfills": "projects/adming-app/src/polyfills.ts",
             "tsConfig": "projects/adming-app/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/adming-app/src/favicon.ico",
               "projects/adming-app/src/assets"
@@ -80,7 +85,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
