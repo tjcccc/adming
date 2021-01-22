@@ -166,7 +166,7 @@ constructor(private formItemControlService: FormItemControlService) {
 
 示例：
 
-```typescript
+```html
 <div class="form-row">
   <adming-form-item [form]="yourForm" [formItem]="item1"></adming-form-item>
   <adming-form-item [form]="yourForm" [formItem]="item2" [matchingItem]="item1"></adming-form-item>
