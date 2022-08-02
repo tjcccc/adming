@@ -1,0 +1,10 @@
+<div *ngIf="node" class="sidebar-menu-item" (click)="onClick()">
+  <a [ngClass]="stateStyle" [routerLink]="noLink ? undefined : node.link" title="{{node.tooltip}}">
+    <fa-icon *ngIf="node.icon" [icon]="node.icon" [fixedWidth]="true"></fa-icon>
+    <span>{{node.label}}</span>
+    <fa-icon *ngIf="hasChildren" [icon]="collapseIcon" [rotate]="collapseIconRotate" pull="right"></fa-icon>
+  </a>
+</div>
+<ng-container *ngIf="isExpanded">
+  <ng-content></ng-content>
+</ng-container>

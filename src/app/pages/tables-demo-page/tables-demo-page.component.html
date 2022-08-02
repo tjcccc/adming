@@ -1,0 +1,21 @@
+<div class="page">
+  <h2>Tables Demo</h2>
+  <hr />
+  <div style="padding-bottom: 2.4rem">
+    <h3>Common Table</h3>
+    <br />
+    <div style="display: grid; row-gap: 1.6rem; padding: 0 1.6rem">
+      <adming-common-table-demo [tableTitle]="'Common Table Style 1'" [users]="users" [tableStyle]="'common full'"></adming-common-table-demo>
+      <adming-common-table-demo [tableTitle]="'Common Table Style 2'" [users]="users" [tableStyle]="'common bordered'"></adming-common-table-demo>
+      <adming-common-table-demo [tableTitle]="'Common Table Style 3'" [users]="users" [tableStyle]="'common bordered striped full'"></adming-common-table-demo>
+    </div>
+  </div>
+  <hr />
+  <div>
+    <h3>Collection Table</h3>
+    <br />
+    <div style="display: grid; row-gap: 1.6rem; padding: 0 1.6rem">
+      <adming-collection-table-demo [tableTitle]="'Collection Table Style 1'" [users]="manyUsers"></adming-collection-table-demo>
+    </div>
+  </div>
+</div>

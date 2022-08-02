@@ -1,0 +1,13 @@
+@import "variables";
+
+// Progress
+.progress-background {
+  background: $bg-light;
+  border-radius: $container-radius;
+  height: $space-tight * 2;
+  & > .progress-fill {
+    height: inherit;
+    border-radius: $container-radius;
+    background: $success-green;
+  }
+}

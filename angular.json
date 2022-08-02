@@ -4,161 +4,104 @@
   "newProjectRoot": "projects",
   "projects": {
     "adming": {
-      "projectType": "library",
-      "root": "projects/adming",
-      "sourceRoot": "projects/adming/src",
-      "prefix": "adming",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/adming/tsconfig.lib.json",
-            "project": "projects/adming/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/adming/tsconfig.lib.prod.json"
-            }
-          }
-},
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/adming/src/test.ts",
-            "tsConfig": "projects/adming/tsconfig.spec.json",
-            "karmaConfig": "projects/adming/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/adming/tsconfig.lib.json",
-              "projects/adming/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "adming-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/adming-app",
-      "sourceRoot": "projects/adming-app/src",
-      "prefix": "app",
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "adming",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/adming-app",
-            "index": "projects/adming-app/src/index.html",
-            "main": "projects/adming-app/src/main.ts",
-            "polyfills": "projects/adming-app/src/polyfills.ts",
-            "tsConfig": "projects/adming-app/tsconfig.app.json",
-            "aot": true,
+            "outputPath": "dist/adming",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/adming-app/src/favicon.ico",
-              "projects/adming-app/src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "projects/adming-app/src/styles.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/adming-app/src/environments/environment.ts",
-                  "with": "projects/adming-app/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
-              ]
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "adming-app:build"
-          },
           "configurations": {
             "production": {
-              "browserTarget": "adming-app:build:production"
+              "browserTarget": "adming:build:production"
+            },
+            "development": {
+              "browserTarget": "adming:build:development"
             }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4800
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "adming-app:build"
+            "browserTarget": "adming:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/adming-app/src/test.ts",
-            "polyfills": "projects/adming-app/src/polyfills.ts",
-            "tsConfig": "projects/adming-app/tsconfig.spec.json",
-            "karmaConfig": "projects/adming-app/karma.conf.js",
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/adming-app/src/favicon.ico",
-              "projects/adming-app/src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "projects/adming-app/src/styles.scss"
+              "src/styles.scss"
             ],
             "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/adming-app/tsconfig.app.json",
-              "projects/adming-app/tsconfig.spec.json",
-              "projects/adming-app/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/adming-app/e2e/protractor.conf.js",
-            "devServerTarget": "adming-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "adming-app:serve:production"
-            }
           }
         }
       }

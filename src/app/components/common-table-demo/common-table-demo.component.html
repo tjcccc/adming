@@ -1,0 +1,31 @@
+<h4 *ngIf="tableTitle" style="margin-bottom: 0.8rem">{{tableTitle}}</h4>
+<table [ngClass]="tableStyle">
+  <thead>
+  <tr class="align-center">
+    <th>#</th>
+    <th>NAME</th>
+    <th>E-MAIL</th>
+    <th>PHONE</th>
+    <th>LEVEL</th>
+    <th>STATE</th>
+    <th>BIRTH-DATE</th>
+    <th>SEX</th>
+    <th>REAL NAME</th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-template ngFor let-item [ngForOf]="tableData" let-i="index" [ngForTrackBy]="trackByFn">
+    <tr class="align-center">
+      <td class="highlight label">{{i + 1}}</td>
+      <td><a href="#">{{item.name}}</a></td>
+      <td>{{item.email}}</td>
+      <td>{{item.phone}}</td>
+      <td>{{item.level}}</td>
+      <td>{{item.state}}</td>
+      <td>{{formatDate(item.birth)}}</td>
+      <td>{{item.sex}}</td>
+      <td>{{item.firstName + ' ' + item.lastName}}</td>
+    </tr>
+  </ng-template>
+  </tbody>
+</table>

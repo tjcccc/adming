@@ -1,0 +1,78 @@
+<h4 *ngIf="tableTitle">{{tableTitle}}</h4>
+<div class="table-panel">
+  <div class="table-page">
+    <label>{{label.page}}</label>{{pageNumber}} / {{totalPageCount}}
+  </div>
+  <div class="btn-group">
+    <button class="navigation prev" (click)="gotoPage(pageNumber - 1)" [disabled]="pageNumber == 1">{{label.prev}}</button>
+    <button class="navigation next" (click)="gotoPage(pageNumber + 1)" [disabled]="pageNumber == totalPageCount">{{label.next}}</button>
+  </div>
+</div>
+<table [ngClass]="tableStyle">
+  <thead>
+  <tr class="align-center">
+    <th>#</th>
+    <th>NAME</th>
+    <th>E-MAIL</th>
+    <th>LEVEL</th>
+    <th>STATE</th>
+    <th>CONTROL</th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-template ngFor let-item [ngForOf]="getCurrentPageData(users, entriesPerPage, pageNumber)" let-i="index" [ngForTrackBy]="trackByFn">
+    <tr class="align-center">
+      <td class="highlight label">{{getTableItemIndex(i, entriesPerPage, pageNumber)}}</td>
+      <td><a admingNextRowTrigger>{{item.name}}</a></td>
+      <td>{{item.email}}</td>
+      <td>{{item.level}}</td>
+      <td>{{item.state}}</td>
+      <td class="option">
+        <a href="#">Edit</a>
+        <a href="#">Delete</a>
+      </td>
+    </tr>
+    <tr style="display: none;">
+      <td colspan="6">
+        <ul>
+          <li><label>Phone:</label>{{item.phone}}</li>
+          <li><label>BirthDate:</label>{{formatDate(item.birth)}}</li>
+          <li><label>Sex:</label>{{item.sex}}</li>
+          <li><label>Real name:</label>{{item.firstName + ' ' + item.lastName}}</li>
+        </ul>
+      </td>
+    </tr>
+  </ng-template>
+  </tbody>
+</table>
+<div class="table-navigation">
+  <form class="h-stack">
+    <input
+      name="nav-page"
+      type="number"
+      min="1"
+      [max]="totalPageCount"
+      [(ngModel)]="navPageNumber"
+      (keyup.enter)="gotoPage(navPageNumber)"
+      placeholder="Page?">
+    <button
+      class="round"
+      type="button"
+      (click)="gotoPage(navPageNumber)"
+      [disabled]="navPageNumber < 1 || navPageNumber > totalPageCount">
+      GO
+    </button>
+  </form>
+  <nav>
+    <ng-template ngFor let-item [ngForOf]="makeArrayForLoop(totalPageCount)" let-i="index" [ngForTrackBy]="trackByFn">
+      <button
+        *ngIf="isInNavRange(i, pageNumber, 10)"
+        class="round"
+        type="button"
+        (click)="gotoPage(i + 1)"
+        [disabled]="i + 1 == pageNumber">
+        {{i + 1}}
+      </button>
+    </ng-template>
+  </nav>
+</div>

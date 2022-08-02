@@ -1,0 +1,13 @@
+<div class="sidebar">
+  <div class="sidebar-menu">
+    <adming-sidebar-menu-item [node]="dashboardDemoNode" [level]="1"></adming-sidebar-menu-item>
+    <adming-sidebar-menu-item [node]="menuLevelsDemoNode" [level]="1" [noLink]="true" [hasChildren]="true">
+      <adming-sidebar-menu-item [node]="level2DemoNode" [level]="2" [noLink]="true" [hasChildren]="true" [parentNode]="menuLevelsDemoNode">
+        <adming-sidebar-menu-item [node]="level3DemoNode" [level]="3" [noLink]="true" [parentNode]="level2DemoNode"></adming-sidebar-menu-item>
+      </adming-sidebar-menu-item>
+    </adming-sidebar-menu-item>
+    <adming-sidebar-menu-item [node]="componentsDemoNode" [level]="1"></adming-sidebar-menu-item>
+    <adming-sidebar-menu-item [node]="formsDemoNode" [level]="1"></adming-sidebar-menu-item>
+    <adming-sidebar-menu-item [node]="tablesDemoNode" [level]="1"></adming-sidebar-menu-item>
+  </div>
+</div>
